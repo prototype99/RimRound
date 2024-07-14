@@ -5,7 +5,7 @@
 		<defName>BlobBed_FoldsOfHeaven_z</defName>
 		<label>blob bed</label>
 		<description>A spot on a very obese pawn where people should sleep. Very comfortable.</description>
-		<thingClass>Building_Bed</thingClass>
+		<thingClass>RimRound.Things.Building_BlobBed</thingClass>
 		<graphicData>
 		  <texPath>BlankTexture</texPath>
 		  <graphicClass>Graphic_Multi</graphicClass>

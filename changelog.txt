@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 51d3cfd1f79d95c747e87885e71cf89ad5ba4520
+Commit Hash: 6c1765716ca775997515bc82f0836145be3706c4
+Author: Niwatori401
+Date: Sun Jul 14 22:21:56 2024
+
+No longer apply sleeping alone thoughts for pawns sleeping on blob bed
+
+==================================================
+Commit Hash: 4b0034d87add34649994a138d8c49c232c94905e
 Author: Niwatori401
 Date: Sun Jun 23 07:38:08 2024
 
