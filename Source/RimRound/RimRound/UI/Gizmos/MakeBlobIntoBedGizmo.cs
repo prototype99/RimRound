@@ -9,6 +9,7 @@ using RimRound.Comps;
 using RimWorld;
 using RimRound.Utilities;
 using Verse.Sound;
+using RimRound.Things;
 
 namespace RimRound.UI
 {
@@ -33,7 +34,7 @@ namespace RimRound.UI
             if (comp.IsBed)
             {
                 IntVec3 parentPos = new IntVec3(comp.parent.Position.x, comp.parent.Position.y, comp.parent.Position.z);
-                parentPos.z -= 1;
+                parentPos.z -= 2;
 
                 ThingDef bedToSpawn = null;
 
@@ -56,8 +57,9 @@ namespace RimRound.UI
                         break;
                 }
 
-                comp.blobBed = GenSpawn.Spawn(bedToSpawn, parentPos, comp.parent.Map);
-                
+                Thing t = ThingMaker.MakeThing(bedToSpawn);
+                comp.blobBed = GenSpawn.Spawn(t, parentPos, comp.parent.Map, Rot4.South);
+                ((Building_BlobBed)comp.blobBed).originatingPawn = comp.parent.AsPawn();
                 comp.blobBed.SetFaction(Faction.OfPlayer, null);
                 Utilities.HediffUtility.AddHediffSeverity(Defs.HediffDefOf.RimRound_BlobBed, comp.parent.AsPawn(), 1.0f, true);
             }
