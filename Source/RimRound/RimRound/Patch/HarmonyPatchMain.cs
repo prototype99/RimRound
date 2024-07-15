@@ -44,7 +44,13 @@ namespace RimRound.Patch
 				harmony, 
 				new ModPatchInfo("Camera+", "CameraPlus.DotTools", "ShouldShowMarker", MethodType.Normal), 
 				CameraPlus_Tools_ShouldShowDot_DontShowDotForGelatinous.GetPatchCollection());
+
+			ModCompatibilityUtility.TryPatch(
+				harmony,
+				new ModPatchInfo("Vanilla Nutrient Paste Expanded", "VNPE.Building_Dripper", "TickRare", MethodType.Normal),
+				VENutrientPaste_Building_Dripper_FixForRR.GetPatchCollection());
 			
+
 			//ModCompatibilityUtility.TryPatch(
 			//	harmony,
 			//	new ModPatchInfo("Statue of Colonist", "StatueOfColonistRenderer", "Render", MethodType.Normal),

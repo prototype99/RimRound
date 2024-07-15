@@ -113,6 +113,7 @@ namespace RimRound.Utilities
             catch (Exception e)
             {
                 Log.Error($"[RimRound] Failed to patch {modPatchInfo.ModName}'s {modPatchInfo.MethodName}. Please report this!");
+                Log.Warning($"Details: {e.Message}, {e.StackTrace}");
             }
             
         }
