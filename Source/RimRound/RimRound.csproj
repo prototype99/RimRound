@@ -233,6 +233,7 @@
     <Compile Include="RimRound\Patch\RimWorldPatches\ThoughtWorker_WantToSleepWithSpouseOrLover_IncludeBlobBedPartner.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\Toils-LayDown_ApplyBedThoughts_AlterThoughtsForBlobBeds.cs" />
     <Compile Include="RimRound\Patch\StatueOfColonist\StatueOfColonist_StatueOfColonistGraphicSet_TryGetGraphicApparel_FixForRRBodies.cs" />
+    <Compile Include="RimRound\Patch\VanillaExpanded\VENutrientPaste_Building_Dripper_FixForRR.cs" />
     <Compile Include="RimRound\Things\Building_BlobBed.cs" />
     <Compile Include="RimRound\Things\Building_ZenithOrb.cs" />
     <Compile Include="RimRound\UI\CustomBodySelectDropdown.cs" />
