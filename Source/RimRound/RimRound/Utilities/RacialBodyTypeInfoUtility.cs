@@ -16,9 +16,16 @@ namespace RimRound.Utilities
     public static class RacialBodyTypeInfoUtility
     {
 
+        static TaggedString GetEnglishStringFromKey(this String key) {
+            TaggedString res;
+            LanguageDatabase.defaultLanguage.TryGetTextFromKey(key, out res);
+
+            return res;
+        }
+
         static RacialBodyTypeInfoUtility()
         {
-            string[] raceEntries = "RR_RaceData".Translate().RawText.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] raceEntries = "RR_RaceData".GetEnglishStringFromKey().RawText.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             
             foreach (String line in raceEntries)
             {
@@ -30,7 +37,7 @@ namespace RimRound.Utilities
             }
 
 
-            string[] bodyTextureInfo = "RR_TextureData".Translate().RawText.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] bodyTextureInfo = "RR_TextureData".GetEnglishStringFromKey().RawText.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (String line in bodyTextureInfo)
             {

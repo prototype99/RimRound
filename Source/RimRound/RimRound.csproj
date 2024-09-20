@@ -50,12 +50,14 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\Harmony15\Current\Assemblies\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dev\harmony\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AlienRace">
-      <HintPath>..\..\..\HumanoidAlienRaces15\1.5\Assemblies\AlienRace.dll</HintPath>
+    <Reference Include="AlienRace, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0473c1c409d3997, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">

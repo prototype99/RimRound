@@ -17,6 +17,10 @@
 
 RESULT_HASH.txt
 Thumbs.db:encryptable
+Thumbs.db
+
+1.5/Assemblies/0Harmony.dll
+1.5/Assemblies/AlienRace.dll
 
 # Mono auto generated files
 mono_crash.*

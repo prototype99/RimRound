@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 179f37079411df9bec42bbe35c6f9e9793821de4
+Commit Hash: bfe852d7f7b376f40fcaa1cffd78f78d18e72d9e
+Author: Niwatori401
+Date: Fri Sep 20 21:06:18 2024
+
+Fix crashing due to using non-English language and launching the game in dev mode
+
+==================================================
+Commit Hash: 70545626695a18677798815d9aea4867a656981f
 Author: Niwatori401
 Date: Mon Jul 15 00:44:46 2024
 
