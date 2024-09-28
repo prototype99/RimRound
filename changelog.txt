@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: bfe852d7f7b376f40fcaa1cffd78f78d18e72d9e
+Commit Hash: defae52cb79c1022d7105e73e9026cc5363e4989
+Author: Niwatori401
+Date: Sat Sep 28 01:49:46 2024
+
+Add compression suit (courtesy Steven)
+
+==================================================
+Commit Hash: 52dfeee6df5982b875e4fbea885d5402d7ad2e03
 Author: Niwatori401
 Date: Fri Sep 20 21:06:18 2024
 

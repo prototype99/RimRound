@@ -38,6 +38,7 @@
 		<li>1.5/ExternalMods/Hoverchair</li>		
 		<li>1.5/ExternalMods/SuperSpacesFatteningFoods</li>		
 		<li>1.5/ExternalMods/RimRoundExtraWeapons</li>
+		<li>1.5/ExternalMods/RimRoundExtraEvents</li>
 		<!--li>ExternalMods/RRX_Mealtime</li-->
 		<li IfModActive="Ludeon.RimWorld.Ideology">1.5/IdeologyDefs</li>
 		<li IfModActive="ArmoredAmpharos.Dogbolds">1.5/ExternalMods/DogboldRaceSupport</li>	
