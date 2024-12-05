@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 1df612a4bfa1de5feaf8256ff844e7267f051b89
+Commit Hash: 35f89af2685ebe6a06c268986a8ddf0aa0b9df49
+Author: Niwatori401
+Date: Thu Dec 5 21:41:09 2024
+
+Add new male sprites courtesy meatslop
+
+==================================================
+Commit Hash: 898ba3c0f2ab131513866fd57bc78eaabe923f46
 Author: Niwatori401
 Date: Thu Dec 5 21:38:56 2024
 
