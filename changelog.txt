@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: 35f89af2685ebe6a06c268986a8ddf0aa0b9df49
+Commit Hash: 69fe138cb6f3c43860b38be497cd32f54faf374f
+Author: Niwatori401
+Date: Thu Dec 5 21:42:33 2024
+
+Remove unused textures
+Adjust color of gluttonium
+
+==================================================
+Commit Hash: 2e5a0dd65cc39bcb4f9acf0a649f2cf4178dec2b
 Author: Niwatori401
 Date: Thu Dec 5 21:41:09 2024
 
