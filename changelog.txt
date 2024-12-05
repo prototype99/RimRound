@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: defae52cb79c1022d7105e73e9026cc5363e4989
+Commit Hash: 1df612a4bfa1de5feaf8256ff844e7267f051b89
+Author: Niwatori401
+Date: Thu Dec 5 21:38:56 2024
+
+Add power armor set for standard females 005-050 courtesy SWAGOVERDOSE
+
+==================================================
+Commit Hash: a9947948c5b060b8c605e57ccf3fe8428d2a50e5
 Author: Niwatori401
 Date: Sat Sep 28 01:49:46 2024
 
