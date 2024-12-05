@@ -500,6 +500,19 @@ namespace RimRound.UI
                 width = generalSettingsRect.width - bufferForCheckmarks,
                 height = spaceBetweenCheckBoxes
             },
+            "RR_Mtw_GeneralSettings_UseNewMaleSprites",
+            ref GlobalSettings.useNewMaleSprites,
+            false, null, null, false,
+            () => { BodyTypeUtility.AssignBodyTypeCategoricalExemptions(true); },
+            "RR_ToolTip_Preferences_UseNewMaleSprites");
+
+            CheckboxLabeled(new Rect
+            {
+                x = 0,
+                y = generalSettingsTitleRect.yMax + spaceBetweenCheckBoxes * jndex++,
+                width = generalSettingsRect.width - bufferForCheckmarks,
+                height = spaceBetweenCheckBoxes
+            },
             "RR_Mtw_GeneralSettings_OnlyUseStandardSprites",
             ref GlobalSettings.onlyUseStandardBodyType,
             false, null, null, false,

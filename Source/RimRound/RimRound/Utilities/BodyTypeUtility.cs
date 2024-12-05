@@ -146,6 +146,10 @@ namespace RimRound.Utilities
                 bodytypeCleaned = Regex.Replace(bodytypeCleaned, "a_", "_");
             }
 
+            if (GlobalSettings.useNewMaleSprites && Regex.IsMatch(bodytypeCleaned, @"^M_"))
+            {
+                bodytypeCleaned += "New";
+            }
 
             if (bodytypeCleaned == Defs.BodyTypeDefOf.F_060_Lardy.defName && !GlobalSettings.useOldLardySprite)
             {

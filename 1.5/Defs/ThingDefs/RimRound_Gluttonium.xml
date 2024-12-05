@@ -19,6 +19,14 @@
       <mineableScatterCommonality>1.00</mineableScatterCommonality> <!-- as often as steel, with smaller blotches -->
       <mineableScatterLumpSizeRange>3~6</mineableScatterLumpSizeRange>
     </building>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(77,190,37,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="ResourceBase">

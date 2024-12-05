@@ -1,5 +1,14 @@
 ==================================================
-Commit Hash: 69fe138cb6f3c43860b38be497cd32f54faf374f
+Commit Hash: 7e8ae38252df933577d3b0f088f643471780e42f
+Author: Niwatori401
+Date: Thu Dec 5 21:45:16 2024
+
+Add setting to use new male bodies
+Make gluttonium glow
+Update credits
+
+==================================================
+Commit Hash: 85a44d48ab0c2b7beb00c9984a34230cc7297e31
 Author: Niwatori401
 Date: Thu Dec 5 21:42:33 2024
 
