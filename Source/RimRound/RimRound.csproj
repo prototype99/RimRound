@@ -162,6 +162,10 @@
     <Compile Include="RimRound\AI\WeightOpinions\ThoughtWorker_WeightOpinion_NeutralPlus.cs" />
     <Compile Include="RimRound\Comps\Abilities\CompAbilityEffect_ConvertWeightOpinion.cs" />
     <Compile Include="RimRound\Comps\Abilities\CompProperties_ConvertWeightOpinion.cs" />
+    <Compile Include="RimRound\Comps\Buildings\CompProperties_AssignableToPawnModified.cs" />
+    <Compile Include="RimRound\Comps\Buildings\CompProperties_RestingWeightGainMod.cs" />
+    <Compile Include="RimRound\Comps\Buildings\Comp_AssignableToPawnModified.cs" />
+    <Compile Include="RimRound\Comps\Buildings\Comp_RestingWeightGainMod.cs" />
     <Compile Include="RimRound\Comps\Map\MapComp_RRGasGrid.cs" />
     <Compile Include="RimRound\Comps\PsychicShips\CompCauseGameCondition_HungerDrone.cs" />
     <Compile Include="RimRound\Comps\PsychicShips\CompIncreaseHunger.cs" />
@@ -183,6 +187,9 @@
     <Compile Include="RimRound\AI\HistoryAutoRecorderWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWorker_PawnWeight.cs" />
     <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienRenderTreePatches_BodyGraphicForPrefix_ChangeSpritePath.cs" />
+    <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetFootSlotPos_AdjustForRRBed.cs" />
+    <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetSleepingSlotPos_AdjustForRRBed.cs" />
+    <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_SleepingSlotsCount_AdjustForRRBed.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\GraphicalPatches\PawnRenderNodeWorker-Body_CanDrawNow_AdjustForShowBlanketSetting.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\HistoryAutoRecorderGroup\HistoryAutoRecorderGroup_DrawGraph_CallChildMethod.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\HistoryAutoRecorderGroup\HistoryAutoRecorderGroup_ExposeData_CallChildMethods.cs" />
