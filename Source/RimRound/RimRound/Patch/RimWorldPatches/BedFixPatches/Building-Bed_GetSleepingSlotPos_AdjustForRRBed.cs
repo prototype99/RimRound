@@ -15,12 +15,12 @@ namespace RimRound.Patch.RimWorldPatches
     {
         public static void Postfix(Building_Bed __instance, ref IntVec3 __result)
         {
-            Log.Warning($"Old Pos: {__result}");
+            //Log.Warning($"Old Pos: {__result}");
             if (__instance.def.defName == "NotRegalBed")
             {
                 __result.x += 1;
             }
-            Log.Warning($"New Pos: {__result}");
+            //Log.Warning($"New Pos: {__result}");
             return;
         }
     }
