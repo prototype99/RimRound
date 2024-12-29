@@ -1,5 +1,14 @@
 ==================================================
-Commit Hash: 88f5dbb12dcb5aead9fc940526d7f39c3f30ecb8
+Commit Hash: f6a7cfecbd2ab5d3751b1fdbd512115949ff9ae8
+Author: Niwatori401
+Date: Sun Dec 29 04:41:52 2024
+
+Apply RR Comps to BasePawn, not just Humans
+Add checks that only humanoids are affected
+Add patch for HAR to prevent scaling with bodysize
+
+==================================================
+Commit Hash: 2cd3d108435f8c10a6a7c20d3b88534ad1ff4b06
 Author: Niwatori401
 Date: Sat Dec 21 21:08:43 2024
 

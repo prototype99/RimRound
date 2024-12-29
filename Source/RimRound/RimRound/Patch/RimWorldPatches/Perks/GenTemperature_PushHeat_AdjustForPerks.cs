@@ -16,7 +16,7 @@ namespace RimRound.Patch
     {
         public static bool Prefix(Thing __0, ref float __1) 
         {
-            if (__0 is Pawn p)
+            if (__0 is Pawn p && p.RaceProps.Humanlike)
             {
                 var comp = p.TryGetComp<FullnessAndDietStats_ThingComp>();
                 if (comp is null)

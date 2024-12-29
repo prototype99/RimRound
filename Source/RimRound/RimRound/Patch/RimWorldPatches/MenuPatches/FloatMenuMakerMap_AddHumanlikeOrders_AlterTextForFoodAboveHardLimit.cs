@@ -33,7 +33,7 @@ namespace RimRound.Patch
                             t.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ?? 
                             FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
 
-                        if (__1.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp && 
+                        if (__1.RaceProps.Humanlike && __1.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp && 
                             t.def.ingestible.CachedNutrition * fullnessToNutritionRatio >= FnDStatsComp.RemainingFullnessUntil(FnDStatsComp.HardLimit)) 
                         {
                             if (!FnDStatsComp.fullnessbar.peaceForeverHeld) 

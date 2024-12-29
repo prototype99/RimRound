@@ -19,7 +19,7 @@ namespace RimRound.Hediffs
         {
             base.PostAdd(dinfo);
 
-            if (this.pawn.TryGetComp<FullnessAndDietStats_ThingComp>() is null)
+            if (this.pawn.TryGetComp<FullnessAndDietStats_ThingComp>() is null || !pawn.RaceProps.Humanlike)
             {
                 this.pawn.health.RemoveHediff(this);
             }

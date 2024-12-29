@@ -10,6 +10,22 @@ namespace RimRound.Comps
 {
     public class ThingComp_GeneticDispositions : ThingComp
     {
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
+
+
+
         public float diabetesPredisposition = Values.RandomFloat(0,1);
         public float fLDPredisposition = Values.RandomFloat(0,1);
         public float aFLDPredisposition = Values.RandomFloat(0,1);
@@ -37,6 +53,9 @@ namespace RimRound.Comps
 
         public override void PostExposeData()
         {
+            if (Disabled) { return; }
+
+
             Scribe_Values.Look<float>(ref diabetesPredisposition, "diabetesPredisposition");
             Scribe_Values.Look<float>(ref fLDPredisposition, "fLDPredisposition");
             Scribe_Values.Look<float>(ref aFLDPredisposition, "aFLDPredisposition");
