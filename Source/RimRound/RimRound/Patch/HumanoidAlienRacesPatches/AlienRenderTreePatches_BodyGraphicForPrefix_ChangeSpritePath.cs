@@ -49,7 +49,9 @@ namespace RimRound.Patch.HumanoidAlienRacesPatches
 
         private static string ChangeSpritePathIfNecessary(string path, Pawn pawn)
         {
-            return BodyTypeUtility.GetProperBodyGraphicPathFromPawn(pawn);
+            String bodypath = BodyTypeUtility.GetProperBodyGraphicPathFromPawn(pawn);
+            Log.Warning($"body path was {bodypath}");
+            return bodypath;
         }
 
         static readonly MethodInfo ChangeSpritePathMethodInfo =

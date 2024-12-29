@@ -280,6 +280,15 @@ Remove unused files
 
 ==================================================
 Author: Niwatori401
+Date: Sun Dec 29 08:31:48 2024
+
+Add working preliminary global race support
+- Body parts not aligned with head will not be drawn for RR bodies
+- Body parts will not be scaled with body size for RR bodies
+- All races not otherwise supported default to the human set
+
+==================================================
+Author: Niwatori401
 Date: Sun Dec 29 04:41:52 2024
 
 Apply RR Comps to BasePawn, not just Humans

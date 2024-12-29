@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using RimRound.Utilities;
 
 namespace RimRound.Patch
 {
@@ -35,7 +36,8 @@ namespace RimRound.Patch
                     }
 
                     codeInstructions[i] = new CodeInstruction(OpCodes.Call, replacementMI);
-                    codeInstructions.Insert(i, new CodeInstruction(OpCodes.Pop));
+                    codeInstructions.Insert(i, new CodeInstruction(OpCodes.Ldloc_0)); // Add AlienPawnRenderNodeProperties_BodyAddon instance
+                    codeInstructions.Insert(i, new CodeInstruction(OpCodes.Pop)); // Remove BodyAddon instance
 
                     break;
                 }
@@ -47,8 +49,14 @@ namespace RimRound.Patch
             return codeInstructions;
         }
 
-        public static bool ShouldScaleWithPawnDrawsize() {
-            return false;
+        public static bool ShouldScaleWithPawnDrawsize(AlienPawnRenderNodeProperties_BodyAddon props) {
+            BodyTypeDef bodytype = props?.alienComp?.parent?.AsPawn()?.story?.bodyType;
+
+            if (bodytype == null) {
+                return true;
+            }
+
+            return !BodyTypeUtility.IsRRBody(bodytype);
         }
     }
 }

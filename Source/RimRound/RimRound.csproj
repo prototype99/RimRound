@@ -185,6 +185,7 @@
     <Compile Include="RimRound\AI\HistoryAutoRecorderGroupWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWorker_PawnWeight.cs" />
+    <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienPawnRenderNodeWorker-BodyAddon_CanDrawNow_OnlyDrawHeadItemsForRRBodies.cs" />
     <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienPawnRenderNodeWorker-BodyAddon_ScaleFor_DontScaleForBodySizeForRRBodies.cs" />
     <Compile Include="RimRound\IWeightStageChangedListener.cs" />
     <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienRenderTreePatches_BodyGraphicForPrefix_ChangeSpritePath.cs" />
