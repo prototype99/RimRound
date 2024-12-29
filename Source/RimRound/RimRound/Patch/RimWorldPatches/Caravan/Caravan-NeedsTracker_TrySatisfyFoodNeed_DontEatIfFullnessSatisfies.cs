@@ -64,7 +64,7 @@ namespace RimRound.Patch
                 return (int)HungerCategory.Fed;
 
             var comp = pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
-            if (comp is null)
+            if (comp is null || !pawn.RaceProps.Humanlike)
                 return (int)curHunger;
 
             float currentNutritionWithFullnessPercentage = (need.CurLevel + (comp.CurrentFullness * comp.CurrentFullnessToNutritionRatio)) / need.MaxLevel;

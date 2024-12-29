@@ -18,6 +18,8 @@ namespace RimRound.Patch
         public static void Postfix(Thing __instance, Pawn __0,
             ref float __result)
         {
+            if (!__0.RaceProps.Humanlike) { return; }
+
             FullnessAndDietStats_ThingComp comp = __0?.TryGetComp<FullnessAndDietStats_ThingComp>();
             if (GeneralUtility.IsNotNull(comp)) 
             {

@@ -13,9 +13,9 @@ namespace RimRound.Patch
     [HarmonyPatch("GenerateInitialHediffs")]
     public class PawnGenerator_GenerateInitialHediffs_AddWeightHediffAndSetBodyType
     {
-        public static void Postfix(Pawn pawn) 
+        public static void Postfix(Pawn pawn)
         {
-            if (pawn.TryGetComp<FullnessAndDietStats_ThingComp>() is null)
+            if (pawn.TryGetComp<FullnessAndDietStats_ThingComp>() is null || !pawn.RaceProps.Humanlike)
                 return;
 
             Utilities.PawnGeneratorUtility.AddHediffsToPawn(pawn);

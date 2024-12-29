@@ -26,7 +26,7 @@ namespace RimRound.Comps
         public bool Disabled {
             get {
                 if (disabled == null) {
-                    disabled = this.parent.AsPawn()?.needs?.food == null;
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
                 }
                 return disabled.GetValueOrDefault();
             }
@@ -52,6 +52,7 @@ namespace RimRound.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+            if (Disabled) { return; }
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {

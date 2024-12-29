@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -185,6 +185,7 @@
     <Compile Include="RimRound\AI\HistoryAutoRecorderGroupWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWorker_PawnWeight.cs" />
+    <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienPawnRenderNodeWorker-BodyAddon_ScaleFor_DontScaleForBodySizeForRRBodies.cs" />
     <Compile Include="RimRound\IWeightStageChangedListener.cs" />
     <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienRenderTreePatches_BodyGraphicForPrefix_ChangeSpritePath.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetFootSlotPos_AdjustForRRBed.cs" />

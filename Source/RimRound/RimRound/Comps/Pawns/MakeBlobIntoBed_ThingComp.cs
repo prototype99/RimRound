@@ -14,6 +14,21 @@ namespace RimRound.Comps
 {
     public class MakeBlobIntoBed_ThingComp : ThingComp
     {
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
+
+
         public MakeBlobIntoBed_ThingComp() 
         {
 
@@ -43,6 +58,9 @@ namespace RimRound.Comps
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            if (Disabled) { return; }
+
             fndComp = parent.AsPawn().TryGetComp<FullnessAndDietStats_ThingComp>();
             if (fndComp is null)
             {
@@ -57,7 +75,7 @@ namespace RimRound.Comps
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (gizmo is null || gizmoRec is null || generatorGizmo is null || fndComp is null)
+            if (Disabled || gizmo is null || gizmoRec is null || generatorGizmo is null || fndComp is null)
                 yield break;
 
             if (!parent.AsPawn().InBed())
@@ -90,6 +108,9 @@ namespace RimRound.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+
+            if (Disabled) { return; }
+
             Scribe_Values.Look<bool>(ref _isBed, "blobIsBed", false);
             Scribe_Values.Look<bool>(ref _isRecSpot, "isRecSpot", false);
             Scribe_Values.Look<bool>(ref _isPowerSpot, "isPowerSpot", false);

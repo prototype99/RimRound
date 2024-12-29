@@ -13,6 +13,21 @@ namespace RimRound.Comps
 {
     public class PawnBodyType_ThingComp : ThingComp
     {
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
+
+
         public PawnBodyType_ThingComp() 
         {
             dynamicBodyExcemptionGizmo = new PersonalDynamicBodyGizmo(this);
@@ -22,6 +37,8 @@ namespace RimRound.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+            if (Disabled) { return; }
+
             Scribe_Values.Look<BodyArchetype>(ref _bodyarchetype, "_bodyarchetype", BodyArchetype.none, false);
             Scribe_Values.Look<string>(ref personallyExempt.reason, "personallyExempt", null);
             Scribe_Values.Look<string>(ref bodyTypeDictNameString, "bodyTypeDictNameString", null, false);
@@ -29,6 +46,8 @@ namespace RimRound.Comps
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (Disabled) { yield break; }
+
             if (GlobalSettings.showExemptionGizmo)
                 yield return dynamicBodyExcemptionGizmo;
 
@@ -39,6 +58,9 @@ namespace RimRound.Comps
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            if (Disabled) { return; }
+
 
             if (((Pawn)parent).RaceProps.Humanlike)
             {
@@ -54,6 +76,8 @@ namespace RimRound.Comps
         public override void CompTickRare()
         {
             base.CompTickRare();
+
+            if (Disabled) { return; }
 
             if (((Pawn)parent).RaceProps.Humanlike)
             {

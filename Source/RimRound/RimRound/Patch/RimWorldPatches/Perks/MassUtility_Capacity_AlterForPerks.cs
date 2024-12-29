@@ -21,7 +21,7 @@ namespace RimRound.Patch
 
             FullnessAndDietStats_ThingComp comp = __0.TryGetComp<FullnessAndDietStats_ThingComp>();
 
-            if (comp is null)
+            if (comp is null || !__0.RaceProps.Humanlike)
                 return;
 
             int packWhaleLevel = comp?.perkLevels?.PerkToLevels?["RR_PackWhale_Title"] ?? 0;

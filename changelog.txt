@@ -280,6 +280,14 @@ Remove unused files
 
 ==================================================
 Author: Niwatori401
+Date: Sun Dec 29 04:41:52 2024
+
+Apply RR Comps to BasePawn, not just Humans
+Add checks that only humanoids are affected
+Add patch for HAR to prevent scaling with bodysize
+
+==================================================
+Author: Niwatori401
 Date: Sat Dec 21 21:08:43 2024
 
 Remove log spam from new bed
