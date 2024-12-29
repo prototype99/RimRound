@@ -33,6 +33,30 @@ namespace RimRound.Utilities
         }
 
 
+        public static Dictionary<String, Dictionary<BodyTypeDef, bool>> raceToValidBodyTexturePaths = new Dictionary<String, Dictionary<BodyTypeDef, bool>>();
+
+        private static bool CheckIfBodyDefHasCustomGraphicsForRace(string raceName, BodyTypeDef bodyTypeDef, string customPath)
+        {
+            if (IsRRBody(bodyTypeDef)) {
+                return false;
+            }
+
+            if (!raceToValidBodyTexturePaths.ContainsKey(raceName)) {
+                raceToValidBodyTexturePaths.Add(raceName, new Dictionary<BodyTypeDef, bool>());
+            }
+
+            string customBodyPath = customPath + BodyTypeUtility.ConvertBodyTypeDefDefnameAccordingToSettings(RacialBodyTypeInfoUtility.GetEquivalentBodyTypeDef(bodyTypeDef).defName);
+
+            if (!raceToValidBodyTexturePaths[raceName].ContainsKey(bodyTypeDef))
+            {
+                bool isGoodTex = !ContentFinder<Texture2D>.Get(customBodyPath + "_north", false).NullOrBad();
+                raceToValidBodyTexturePaths[raceName].Add(bodyTypeDef, isGoodTex);
+            }
+
+            return raceToValidBodyTexturePaths[raceName][bodyTypeDef];
+        }
+
+
         public static string GetProperBodyGraphicPathFromPawn(Pawn pawn)
         {
             if (ModsConfig.BiotechActive && pawn.story.bodyType == BodyTypeDefOf.Baby)
@@ -53,11 +77,20 @@ namespace RimRound.Utilities
             {
                 if (!IsRRBody(pawn.story.bodyType))
                 {
-                    if (alienBodyPath.Last() != '/') // Anty race ꒰ ง ˘ω˘ ꒱ว
-                        alienBodyPath = alienBodyPath.Substring(0, alienBodyPath.LastIndexOf('/') + 1);
+                    // Might need special handling for Anty race, previous code was removed
+                    if (alienBodyPath.Last() != '/')
+                    {
+                        alienBodyPath = alienBodyPath + "/";
+                    }
+
+                    if (CheckIfBodyDefHasCustomGraphicsForRace(alienRace.defName, pawn.story.bodyType, alienBodyPath)) {
+                        return alienBodyPath + "Naked_" + pawn.story.bodyType.defName;
+                    }
+                    else { 
+                        return basePath + "Naked_" + pawn.story.bodyType.defName;
+                    }
 
 
-                    return alienBodyPath + "Naked_" + pawn.story.bodyType.defName;
                 }
             }
 

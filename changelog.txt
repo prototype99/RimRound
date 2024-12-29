@@ -1,5 +1,15 @@
 ==================================================
-Commit Hash: f6a7cfecbd2ab5d3751b1fdbd512115949ff9ae8
+Commit Hash: 66ade93995a63519f91f09c7e7da4a2c68cfe71f
+Author: Niwatori401
+Date: Sun Dec 29 08:31:48 2024
+
+Add working preliminary global race support
+- Body parts not aligned with head will not be drawn for RR bodies
+- Body parts will not be scaled with body size for RR bodies
+- All races not otherwise supported default to the human set
+
+==================================================
+Commit Hash: df4752feb1e7bccebad5672a01a93d5b392cbb84
 Author: Niwatori401
 Date: Sun Dec 29 04:41:52 2024
 
