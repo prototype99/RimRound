@@ -13,7 +13,7 @@ namespace RimRound.Patch
 {
     [HarmonyPatch(typeof(AlienRace.AlienBackstoryDef))]
     [HarmonyPatch(nameof(AlienRace.AlienBackstoryDef.ResolveReferences))]
-    internal class BackstoryDef_ResolveReferences_ChangeRandomBodyAssignmentForNullBackstoriesToThin
+    public class BackstoryDef_ResolveReferences_ChangeRandomBodyAssignmentForNullBackstoriesToThin
     {
 		static MethodInfo getRandomMI = typeof(DefDatabase<BodyTypeDef>).GetMethod("GetRandom", BindingFlags.Static | BindingFlags.Public);
 		static MethodInfo getNamedMI = typeof(DefDatabase<BodyTypeDef>).GetMethods().Where(m => m.Name == "GetNamed").First();

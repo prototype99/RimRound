@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 66ade93995a63519f91f09c7e7da4a2c68cfe71f
+Commit Hash: 5a8ec572b235a25cb6e665c59a5d533ed01e109d
+Author: Niwatori401
+Date: Mon Dec 30 04:37:07 2024
+
+Mods that align head-anchored parts per body type now work with RR bodies
+
+==================================================
+Commit Hash: b760bde16f3fec667cf263fdd2449543d6e5d3e4
 Author: Niwatori401
 Date: Sun Dec 29 08:31:48 2024
 
