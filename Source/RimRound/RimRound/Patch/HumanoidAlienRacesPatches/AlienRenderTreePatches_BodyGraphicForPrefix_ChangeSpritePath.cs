@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RimRound.Patch.HumanoidAlienRacesPatches
+namespace RimRound.Patch
 {
     [HarmonyPatch(typeof(AlienRenderTreePatches))]
     [HarmonyPatch(nameof(AlienRenderTreePatches.BodyGraphicForPrefix))]
@@ -50,7 +50,6 @@ namespace RimRound.Patch.HumanoidAlienRacesPatches
         private static string ChangeSpritePathIfNecessary(string path, Pawn pawn)
         {
             String bodypath = BodyTypeUtility.GetProperBodyGraphicPathFromPawn(pawn);
-            Log.Warning($"body path was {bodypath}");
             return bodypath;
         }
 
