@@ -146,7 +146,11 @@ namespace RimRound.Utilities
                 bodytypeCleaned = Regex.Replace(bodytypeCleaned, "a_", "_");
             }
 
-            if (GlobalSettings.useNewMaleSprites && Regex.IsMatch(bodytypeCleaned, @"^M_"))
+            if (GlobalSettings.useLegacyMaleSprites && Regex.IsMatch(bodytypeCleaned, @"^M_")) 
+            {
+                bodytypeCleaned += "Old";
+            }
+            else if (GlobalSettings.useAltMaleSprites && Regex.IsMatch(bodytypeCleaned, @"^M_")) // Else is intentional and necessary here
             {
                 bodytypeCleaned += "New";
             }

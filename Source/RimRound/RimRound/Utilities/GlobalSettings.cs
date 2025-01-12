@@ -65,7 +65,8 @@ namespace RimRound.Utilities
         public static bool moodletsForWeightOpinions = true;
         public static bool varyMinWeightForBodyTypeByBodySize = true;
         public static bool useOldLardySprite = false;
-        public static bool useNewMaleSprites = false;
+        public static bool useAltMaleSprites = false;
+        public static bool useLegacyMaleSprites = false;
         public static bool useZoomPortraitStyle = false;
         public static bool onlyUseStandardBodyType = false;
         public static bool hidePacksForCustomBodies = true;

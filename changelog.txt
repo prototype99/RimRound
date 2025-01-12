@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: 88f5dbb12dcb5aead9fc940526d7f39c3f30ecb8
+Commit Hash: 250577ef1736e679a64c6dca59a00caeb41a633f
+Author: Niwatori401
+Date: Sun Jan 12 22:48:39 2025
+
+Add new male body set and clothing (Courtesy Gosuke)
+Remove unused files
+
+==================================================
+Commit Hash: 2cd3d108435f8c10a6a7c20d3b88534ad1ff4b06
 Author: Niwatori401
 Date: Sat Dec 21 21:08:43 2024
 

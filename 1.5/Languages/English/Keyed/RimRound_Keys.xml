@@ -103,7 +103,8 @@
 	<RR_Mtw_GeneralSettings_VaryMinWeightForBodyTypeByBodySize>Vary weight requirements by bodysize</RR_Mtw_GeneralSettings_VaryMinWeightForBodyTypeByBodySize>
 	<RR_Mtw_GeneralSettings_ShowSpecialDebugSettings>Show special debug settings</RR_Mtw_GeneralSettings_ShowSpecialDebugSettings>
 	<RR_Mtw_GeneralSettings_UseLegacyLardySprite>Use legacy lardy sprite</RR_Mtw_GeneralSettings_UseLegacyLardySprite>
-	<RR_Mtw_GeneralSettings_UseNewMaleSprites>Use new male sprites</RR_Mtw_GeneralSettings_UseNewMaleSprites>
+	<RR_Mtw_GeneralSettings_UseAltMaleSprites>Use alternate male sprites</RR_Mtw_GeneralSettings_UseAltMaleSprites>
+	<RR_Mtw_GeneralSettings_UseLegacyMaleSprites>Use legacy male sprites</RR_Mtw_GeneralSettings_UseLegacyMaleSprites>
 	<RR_Mtw_GeneralSettings_OnlyUseStandardSprites>Only use standard sprites</RR_Mtw_GeneralSettings_OnlyUseStandardSprites>
 	<RR_Mtw_GeneralSettings_hidePacksForCustomBodies>Hide pack items for custom bodies</RR_Mtw_GeneralSettings_hidePacksForCustomBodies>
 	<RR_Mtw_GeneralSettings_usePoundsWherePossible>Use lbs where possible</RR_Mtw_GeneralSettings_usePoundsWherePossible>
@@ -164,7 +165,9 @@
 	<RR_ToolTip_Preferences_WeightOpinionsGiveMoodlets>Give mood buffs and debuffs for what a pawn's weight opinion is and how closely they are to their ideal body.</RR_ToolTip_Preferences_WeightOpinionsGiveMoodlets>
 	<RR_ToolTip_Preferences_VariedBodyWeightRequirements>Enable weight requirements being different for different sized sprites. Some races use a smaller sprite set. Additionally, smaller sprite sets can be applied to any race. This setting reduces the amount of weight required for each stage accordingly.</RR_ToolTip_Preferences_VariedBodyWeightRequirements>
 	<RR_ToolTip_Preferences_UseLegacyLardySprite>Use the variant lardy east/west sprite. Purely preference.</RR_ToolTip_Preferences_UseLegacyLardySprite>
-	<RR_ToolTip_Preferences_UseNewMaleSprites>Use the new male sprite set. May have less compatibility with existing clothes.</RR_ToolTip_Preferences_UseNewMaleSprites>
+	<RR_ToolTip_Preferences_UseAltMaleSprites>Use the new alternate male sprite set. May have less compatibility with existing clothes. This setting is overriden by using old sprite set.</RR_ToolTip_Preferences_UseAltMaleSprites>
+	<RR_ToolTip_Preferences_UseLegacyMaleSprites>Use the old male sprite set. This will override other body settings.</RR_ToolTip_Preferences_UseLegacyMaleSprites>
+
 
 	<RR_ToolTip_Preferences_UseOnlyStandardSet>Toggle use of apple body type sprites. They can have less support, so you can switch all pawns to use this type here. If you want more fine grained control, pawn body archetype can be switched in debug mode.</RR_ToolTip_Preferences_UseOnlyStandardSet>
 	<RR_ToolTip_Preferences_UseZoomPortraitStyle>Use the alternate portrait style. Switches between keeping their face the same size or fitting their body to the box. Purely preference.</RR_ToolTip_Preferences_UseZoomPortraitStyle>
@@ -472,6 +475,7 @@ Art, Sprite work, UI
 - ArtOfFire1
 - BambooAle
 - Bloopy
+- Gosuke
 - meatslop
 - SWAGOVERDOSE
 - Toggle
