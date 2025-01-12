@@ -77,9 +77,19 @@ namespace RimRound.Utilities
             {
                 if (!IsRRBody(pawn.story.bodyType))
                 {
-                    // Might need special handling for Anty race, previous code was removed
-                    if (alienBodyPath.Last() != '/')
+                    /* 
+                     * There are two mistakes mod makers make. The first is forgetting the last slash on the body path. The other is Adding the body name in the path (e.g. <path>Race/bodies/Naked_Thin</path>)
+                     *  To account for both, we check if the last part of the path contains "Naked_"
+                     */
+
+                    if (alienBodyPath.Substring(alienBodyPath.LastIndexOf('/')).Contains("Naked_")) {
+                        Log.Warning($"Ran A for {alienRace.defName}");
+                        alienBodyPath = alienBodyPath.Substring(0, alienBodyPath.LastIndexOf('/') + 1);
+                    }
+                    else if (alienBodyPath.Last() != '/')
                     {
+                        Log.Warning($"Ran B for {alienRace.defName}");
+
                         alienBodyPath = alienBodyPath + "/";
                     }
 
