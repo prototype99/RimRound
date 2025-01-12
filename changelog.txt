@@ -280,6 +280,12 @@ Remove unused files
 
 ==================================================
 Author: Niwatori401
+Date: Sun Jan 12 20:35:22 2025
+
+Add heuristic fix for strangely configured body paths
+
+==================================================
+Author: Niwatori401
 Date: Mon Dec 30 04:37:07 2024
 
 Mods that align head-anchored parts per body type now work with RR bodies
