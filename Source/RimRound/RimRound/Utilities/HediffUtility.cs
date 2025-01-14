@@ -83,16 +83,17 @@ namespace RimRound.Utilities
             return hediff;
         }
 
-        public static bool RemoveHediffOfDefFrom(HediffDef def, Pawn pawn)
+        public static void RemoveHediffOfDefFrom(HediffDef def, Pawn pawn)
         {
             Hediff h = pawn?.health?.hediffSet?.hediffs?.Find(x => x.def == def) ?? null;
 
             if (h is null)
             {
-                return false;
+                return;
             }
 
-            return pawn.health.hediffSet.hediffs.Remove(h);
+            pawn.health.RemoveHediff(h);
+            return;
         }
 
         public static Hediff GetHediffOfDefFrom(HediffDef def, Pawn pawn)

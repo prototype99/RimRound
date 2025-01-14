@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: a3c530966f6bf761eb07669002d13557308eff42
+Commit Hash: 55ac09aac57579c963a0727faa50abf6b04ec03f
+Author: Niwatori401
+Date: Tue Jan 14 22:55:14 2025
+
+Fix blob bed not disabling automatically upon weight loss
+
+==================================================
+Commit Hash: 29d27f596cb29497a9eb5f1f604b609352231c3c
 Author: Niwatori401
 Date: Tue Jan 14 02:20:07 2025
 

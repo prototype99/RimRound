@@ -27,60 +27,23 @@ namespace RimRound.UI
             Order = 401;
         }
 
+
         private void ToggleAction()
         {
             Resources.gizmoClick.PlayOneShotOnCamera(null);
             comp.IsBed = !comp.IsBed;
             if (comp.IsBed)
             {
-                IntVec3 parentPos = new IntVec3(comp.parent.Position.x, comp.parent.Position.y, comp.parent.Position.z);
-                parentPos.z -= 2;
-
-                ThingDef bedToSpawn = null;
-
-                switch (fndComp?.perkLevels?.PerkToLevels?["RR_FoldsOfHeaven_Title"] ?? 4)
-                {
-                    case 0:
-                        bedToSpawn = Defs.ThingDefOf.BlobBed_FoldsOfHeaven_z;
-                        break;
-                    case 1:
-                        bedToSpawn = Defs.ThingDefOf.BlobBed_FoldsOfHeaven_I;
-                        break;
-                    case 2:
-                        bedToSpawn = Defs.ThingDefOf.BlobBed_FoldsOfHeaven_II;
-                        break;
-                    case 3:
-                        bedToSpawn = Defs.ThingDefOf.BlobBed_FoldsOfHeaven_III;
-                        break;
-                    default:
-                        Log.Error("Folds of Heaven level in Blob Bed gizmo");
-                        break;
-                }
-
-                Thing t = ThingMaker.MakeThing(bedToSpawn);
-                comp.blobBed = GenSpawn.Spawn(t, parentPos, comp.parent.Map, Rot4.South);
-                ((Building_BlobBed)comp.blobBed).originatingPawn = comp.parent.AsPawn();
-                comp.blobBed.SetFaction(Faction.OfPlayer, null);
-                Utilities.HediffUtility.AddHediffSeverity(Defs.HediffDefOf.RimRound_BlobBed, comp.parent.AsPawn(), 1.0f, true);
+                comp.SpawnBed();
             }
             else 
             {
-                Reset();
+                comp.ResetBed();
             }
         }
 
 
-        public void Reset() 
-        {
-            comp.IsBed = false;
-            Utilities.HediffUtility.RemoveHediffOfDefFrom(Defs.HediffDefOf.RimRound_BlobBed, comp.parent.AsPawn());
-            if (GeneralUtility.IsNotNull(comp.blobBed))
-            {
-                comp.blobBed.DeSpawn();
-                comp.blobBed = null;
-            }
-                
-        }
+
 
         MakeBlobIntoBed_ThingComp comp;
         FullnessAndDietStats_ThingComp fndComp;

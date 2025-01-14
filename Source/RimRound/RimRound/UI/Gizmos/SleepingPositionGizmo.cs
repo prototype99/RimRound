@@ -35,7 +35,9 @@ namespace RimRound.UI
             comp.sleepIndex++;
 			comp.sleepIndex %= 4;
 			fakebool = !fakebool;
-			comp.parent.AsPawn().GetComp<MakeBlobIntoBed_ThingComp>().gizmo.Reset();
+			var bedComp = comp.parent.AsPawn().GetComp<MakeBlobIntoBed_ThingComp>();
+			bedComp.IsBed = false;
+            bedComp.ResetBed();
 		}
 		
 		public override GizmoResult GizmoOnGUI(Vector2 loc, float maxWidth, GizmoRenderParms parms)
