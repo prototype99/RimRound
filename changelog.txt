@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: 250577ef1736e679a64c6dca59a00caeb41a633f
+Commit Hash: a3c530966f6bf761eb07669002d13557308eff42
+Author: Niwatori401
+Date: Tue Jan 14 02:20:07 2025
+
+Add male shirt-button sprites (Morbidly Obese/Lardy) for males
+Fix texture for shirt-button with obese males
+
+==================================================
+Commit Hash: a5819e58e52524ee95584dd172202dc2aff42df5
 Author: Niwatori401
 Date: Sun Jan 12 22:48:39 2025
 
