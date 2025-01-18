@@ -174,13 +174,13 @@ namespace RimRound.Utilities
             return null;
         }
 
-        public static Type GetTypeFromMod(string modname, string typeName)
+        public static Type GetTypeFromMod(string modname, string nonQualifiedTypename)
         {
             if (CheckModInstalled(modname))
             {
                 foreach (Type t in ModCompatibilityUtility.loadedTypes)
                 {
-                    if (t.Name == typeName)
+                    if (t.Name == nonQualifiedTypename)
                     {
                         return t;
                     }

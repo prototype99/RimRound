@@ -49,17 +49,27 @@ namespace RimRound.Patch
 				harmony,
 				new ModPatchInfo("Vanilla Nutrient Paste Expanded", "VNPE.Building_Dripper", "TickRare", MethodType.Normal),
 				VENutrientPaste_Building_Dripper_FixForRR.GetPatchCollection());
-			
 
-			//ModCompatibilityUtility.TryPatch(
-			//	harmony,
-			//	new ModPatchInfo("Statue of Colonist", "StatueOfColonistRenderer", "Render", MethodType.Normal),
-			//	StatueOfColonist_StatueOfColonistRenderer_Render_SwitchGetBodyMeshForAlienRaceVersion.GetPatchCollection());
+            ModCompatibilityUtility.TryPatch(
+                harmony,
+                new ModPatchInfo("Vehicle Framework", "Vehicles.VehiclePawn", "TrySatisfyFood", MethodType.Normal),
+                VehicleFramework_VehiclePawn_TrySatisfyFood_AccountForFullness.GetPatchCollection());
 
-    //        ModCompatibilityUtility.TryPatch(
-				//harmony,
-				//new ModPatchInfo("Statue of Colonist", "StatueOfColonistGraphicSet", "TryGetGraphicApparel", MethodType.Normal),
-				//StatueOfColonist_StatueOfColonistGraphicSet_TryGetGraphicApparel_FixForRRBodies.GetPatchCollection());
+            ModCompatibilityUtility.TryPatch(
+                harmony,
+                new ModPatchInfo("Vehicle Framework", "Vehicles.CaravanHelper", "MakeVehicleCaravan", MethodType.Normal),
+                VehicleFramework_CaravanHelper_MakeVehicleCaravan_ChangeDietMode.GetPatchCollection());
+
+            //  This mod is stuck in 1.4
+            //  ModCompatibilityUtility.TryPatch(
+            //	harmony,
+            //	new ModPatchInfo("Statue of Colonist", "StatueOfColonistRenderer", "Render", MethodType.Normal),
+            //	StatueOfColonist_StatueOfColonistRenderer_Render_SwitchGetBodyMeshForAlienRaceVersion.GetPatchCollection());
+
+            //ModCompatibilityUtility.TryPatch(
+            //harmony,
+            //new ModPatchInfo("Statue of Colonist", "StatueOfColonistGraphicSet", "TryGetGraphicApparel", MethodType.Normal),
+            //StatueOfColonist_StatueOfColonistGraphicSet_TryGetGraphicApparel_FixForRRBodies.GetPatchCollection());
 
 
             int patchedMethodsCount = 0;

@@ -518,7 +518,7 @@ namespace RimRound.Comps
 
         private DietMode dietMode = DietMode.Nutrition;
 
-        public DietMode preCaravanDietMode;
+        public DietMode preCaravanDietMode = DietMode.Nutrition;
 
         public bool defaultBodyTypeForced = false;
 

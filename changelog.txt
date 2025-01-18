@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: 55ac09aac57579c963a0727faa50abf6b04ec03f
+Commit Hash: 9cb881fc7baa6d5fa788fd05c4a7a82d0c5e30f6
+Author: Niwatori401
+Date: Sat Jan 18 08:19:53 2025
+
+Add caravan compatibility for Vehicle Framework
+Clarify usage for ModCompatibilityUtility function
+
+==================================================
+Commit Hash: e10f0335869976ad129909d9fabb803bdc796c77
 Author: Niwatori401
 Date: Tue Jan 14 22:55:14 2025
 

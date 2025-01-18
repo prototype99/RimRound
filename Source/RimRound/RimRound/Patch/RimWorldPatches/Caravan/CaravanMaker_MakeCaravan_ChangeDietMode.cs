@@ -25,35 +25,11 @@ namespace RimRound.Patch
             }
             else
             {
-
                 CaravanPatchUtility.activeCaravans.Add(id, new List<Pawn>(__0));
             }
 
             foreach (Pawn p in __0)
                 CaravanPatchUtility.SetDietModeToDisabled(p);
         }
-
-       
-
     }
-
-
-    //[HarmonyPatch(typeof(Caravan))]
-    //[HarmonyPatch(nameof(Caravan.AddPawn))]
-    //public class Caravan_AddPawn_ChangeDietMode
-    //{
-    //    public static void Postfix(Pawn __0, int ___uniqueId) 
-    //    {
-    //        if (CaravanPatchUtility.activeCaravans.Find(x => x.First == ___uniqueId) is Pair<int, List<Pawn>> caravan && caravan.First != 0)
-    //        {
-    //            caravan.Second.Add(__0);
-    //        }
-    //        else 
-    //        {
-    //            CaravanPatchUtility.activeCaravans.Add(new Pair<int, List<Pawn>>(___uniqueId, new List<Pawn>() { __0 }));
-    //        }
-
-    //        CaravanPatchUtility.SetDietModeToDisabled(__0);
-    //    }
-    //}
 }
