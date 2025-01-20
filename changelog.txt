@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 9cb881fc7baa6d5fa788fd05c4a7a82d0c5e30f6
+Commit Hash: f79b2ce1d51f5f8286e72124c63c57ae11fadbbf
+Author: Niwatori401
+Date: Mon Jan 20 18:16:48 2025
+
+Add Jacket sprite for standard female set (005-050) (courtesy Toggle)
+
+==================================================
+Commit Hash: 297c10140635b91bf01f02ed51c144fb520ca94f
 Author: Niwatori401
 Date: Sat Jan 18 08:19:53 2025
 
