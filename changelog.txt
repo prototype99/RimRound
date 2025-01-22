@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: f79b2ce1d51f5f8286e72124c63c57ae11fadbbf
+Commit Hash: d8a40b2e3371139b6e536a13ff7dd6d80a5beac0
+Author: Niwatori401
+Date: Wed Jan 22 20:57:58 2025
+
+Add power armor sprites for Apple female (010-050) (Courtesy Toggle & SWAGOVERDOSE)
+
+==================================================
+Commit Hash: e7a60dd0d80099beb0fa78fa23d0564a47d62830
 Author: Niwatori401
 Date: Mon Jan 20 18:16:48 2025
 
