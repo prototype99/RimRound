@@ -360,6 +360,10 @@ namespace RimRound.Utilities
 
         private static bool ValidatePawnShouldBeRedrawn(Pawn pawn)
         {
+            if (pawn.IsWorldPawn()) { 
+                return false;
+            }
+
             List<Pawn> allPawns = null;
             if (Find.CurrentMap is null)
                 allPawns = Find.GameInitData.startingAndOptionalPawns;

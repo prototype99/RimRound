@@ -1,17 +1,20 @@
 ==================================================
-<<<<<<< HEAD
-Commit Hash: 362489f094b843b6d955529d89d6624c670924da
-=======
-Commit Hash: 0b654fdc5381d5e09966392aa12f2e05f9eb220d
+Commit Hash: a26ad80b08c3cdde9293bf807456e79012da820b
+Author: Niwatori401
+Date: Thu Jan 23 01:38:54 2025
+
+Fix error that tried to draw world pawns
+Start fix for humanoid pawns without a food need
+
+==================================================
+Commit Hash: e85884f552c89cc4e5d2d99f52c9e0cfed79a55a
 Author: Niwatori401
 Date: Sun Jan 26 22:02:48 2025
 
 Ticks bars adjust to prevent lag with very large stomachs
-Add debug gizmo to add fullness capacity
 
 ==================================================
-Commit Hash: b57c998e6585068e171706c193e0f9c6f3a66f2f
->>>>>>> 14f7ebd (Ticks bars adjust to prevent lag with very large stomachs)
+Commit Hash: 052dd2a04b15946cf6c40ca9d50e7b78e92ac727
 Author: Niwatori401
 Date: Sat Jul 5 16:59:48 2025
 

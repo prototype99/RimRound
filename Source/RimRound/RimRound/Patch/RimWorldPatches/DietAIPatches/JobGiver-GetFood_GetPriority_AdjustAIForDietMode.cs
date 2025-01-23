@@ -22,10 +22,13 @@ namespace RimRound.Patch
 	{
 		public static void Postfix(Pawn __0, ref float __result)
 		{
-			if (__0.RaceProps.Humanlike)
+			if (__0 == null || __0?.needs?.food?.CurLevel == null) {
+				return;
+			}
+
+			if (__0?.RaceProps?.Humanlike ?? false)
 			{
 				FullnessAndDietStats_ThingComp fullnessComp = __0?.TryGetComp<FullnessAndDietStats_ThingComp>();
-				//WeightGizmo_ThingComp gizmoComp = __0?.TryGetComp<WeightGizmo_ThingComp>();
 
 				if (fullnessComp == null)
 					return;
