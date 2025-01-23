@@ -1,5 +1,14 @@
 ==================================================
-Commit Hash: 21c999c485071967efba0cf18d7478e203647b90
+Commit Hash: ae8cd3f648820340c2487c13f1170b782b207622
+Author: Niwatori401
+Date: Thu Jan 23 01:38:54 2025
+
+Start fix for humanoid pawns without a food need
+Fix error that tried to draw world pawns
+Remove unnecessary logging
+
+==================================================
+Commit Hash: 71673c1e52b877db7abd8168ba8a7e06bfd29ca9
 Author: Niwatori401
 Date: Sun Jan 12 20:35:22 2025
 
