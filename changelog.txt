@@ -231,6 +231,14 @@ Author: Niwatori401
 Date: Sat Jan 25 23:03:42 2025
 
 Add debug gizmo for fixing broken nutrition
+==================================================
+
+Author: Niwatori401
+Date: Thu Jan 23 01:38:54 2025
+
+Start fix for humanoid pawns without a food need
+Fix error that tried to draw world pawns
+Remove unnecessary logging
 
 ==================================================
 Author: Niwatori401
