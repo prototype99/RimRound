@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="MakeableDrugPillBase">
+	<!--ThingDef ParentName="MakeableDrugPillBase">
 		<defName>RREE_AppetitePill</defName>
 		<label>Experimental Appetite Stimulant</label>
 		<description>A drug for produced for increasing one's appetite, increasing both their physical and mental need for food. Each dose lengthens the effective duration by another day.\n\nThis, however, has quite the effect on the user's psyche, and repeated use may prove harmful to their mental state.</description>
@@ -73,7 +73,7 @@
 				<listOrder>1000</listOrder>
 			</li>
 		</comps>
-	</ThingDef>
+	</ThingDef-->
 
 	<HediffDef>
 		<defName>RREE_AppetitePillHigh</defName>

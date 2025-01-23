@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: d8a40b2e3371139b6e536a13ff7dd6d80a5beac0
+Commit Hash: 4423e9fb079c7bf8b8ead41ec183d553ee319a21
+Author: Niwatori401
+Date: Thu Jan 23 00:58:52 2025
+
+Fix startup config error in RREE
+Organize source files for RREE
+
+==================================================
+Commit Hash: d33a8c6a937616d9d0fa2143b3683ca2883eb092
 Author: Niwatori401
 Date: Wed Jan 22 20:57:58 2025
 
