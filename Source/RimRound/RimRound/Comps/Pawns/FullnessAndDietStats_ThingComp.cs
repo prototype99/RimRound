@@ -151,6 +151,30 @@ namespace RimRound.Comps
                         this.CurrentFullness = 0;
                     }
                 };
+
+                yield return new Command_Action
+                {
+                    defaultLabel = "Fill nutrition",
+                    icon = Resources.FILL_STOMACH_ICON,
+                    action = delegate ()
+                    {
+                        Resources.gizmoClick.PlayOneShotOnCamera(null);
+                        Need_Food nf = this.parent.AsPawn().needs.food;
+                        nf.CurLevelPercentage = 1;
+                    }
+                };
+
+                yield return new Command_Action
+                {
+                    defaultLabel = "Empty nutrition",
+                    icon = Resources.EMPTY_STOMACH_ICON,
+                    action = delegate ()
+                    {
+                        Resources.gizmoClick.PlayOneShotOnCamera(null);
+                        Need_Food nf = this.parent.AsPawn().needs.food;
+                        nf.CurLevelPercentage = 0;
+                    }
+                };
             }
         }
 
