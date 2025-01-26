@@ -253,6 +253,21 @@ namespace RimRound.Comps
                         }
                     };
 
+                    yield return new Command_Action
+                    {
+                        defaultLabel = $"{(positivity == 1 ? "Add" : "Subtract")} Fullness capacity ({offsetAmounts[offsetAmountsIndex]} Liters)",
+                        icon = (positivity == 1 ? Resources.ADD_SEVERITY_ICON : Resources.REDUCE_SEVERITY_ICON),
+                        action = delegate ()
+                        {
+                            Resources.gizmoClick.PlayOneShotOnCamera(null);
+                            FullnessAndDietStats_ThingComp comp = ((Pawn)parent).TryGetComp<FullnessAndDietStats_ThingComp>();
+
+                            if (comp is null)
+                                return;
+
+                            comp.AddFullnessCapacity(positivity * offsetAmounts[offsetAmountsIndex]);
+                        }
+                    };
 
                     yield return new Command_Action
                     {

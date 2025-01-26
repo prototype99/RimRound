@@ -35,6 +35,13 @@ Add prelimiary 1.6 support
 
 ==================================================
 Author: Niwatori401
+Date: Sun Jan 26 22:02:48 2025
+
+Ticks bars adjust to prevent lag with very large stomachs
+Add debug gizmo to add fullness capacity
+
+==================================================
+Author: Niwatori401
 Date: Thu Jan 23 01:38:54 2025
 
 Fix error that tried to draw world pawns
