@@ -50,8 +50,8 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\839005762\Assemblies\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="AlienRace">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\839005762\Assemblies\AlienRace.dll</HintPath>
@@ -330,6 +330,7 @@
     <Compile Include="RimRound\Patch\RimWorldPatches\PawnRenderer\PawnRenderNode-Tattoo-Body_GraphicFor_AddToggleForTattoos.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\PawnRenderer\PawnRenderer_GetBodyPos_HideBlankets.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\PawnRenderer\PawnRenderer_LayingFacing_SetRotation.cs" />
+    <None Include="packages.config" />
     <None Include="RimRound\Patch\RimWorldPatches\PawnRenderer\PawnRenderer_RenderPawnInternal_AdjustHeadDrawDepth.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\GraphicalPatches\PortraitsCache_Get_MakePortraitsScaleForBodySize.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\GraphicalPatches\PortraitsCache_RenderPortrait_DisablePawnPortraitRotationForPawnsInBed.cs" />
