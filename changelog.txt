@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: f5e03609d98316f64a571d851b690c7f0ad11ab9
+Commit Hash: 33800bce7306836526288c68f1e4c2dd14f0e948
+Author: Niwatori401
+Date: Sun Jan 26 01:14:56 2025
+
+Babies spawn with diet mode disabled
+
+==================================================
+Commit Hash: 96f5dd9c17671bb25902fe95b1d02e3ec9442694
 Author: Niwatori401
 Date: Sat Jan 25 23:03:42 2025
 

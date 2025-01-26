@@ -18,6 +18,7 @@ namespace RimRound.Utilities
             {
                 Utilities.HediffUtility.AddHediffOfDefTo(Defs.HediffDefOf.RimRound_Weight, pawn);
                 Utilities.HediffUtility.AddHediffOfDefTo(Defs.HediffDefOf.RimRound_Fullness, pawn);
+                SetNutritionMode(pawn);
 
                 var raceDict = RacialBodyTypeInfoUtility.GetRacialDictionary(pawn);
                 float weightMultiplier = 1;
@@ -39,6 +40,11 @@ namespace RimRound.Utilities
                     );
 
             }
+        }
+
+        public static void SetNutritionMode(Pawn pawn) { 
+            if (pawn.ageTracker.CurLifeStage.developmentalStage == DevelopmentalStage.Baby)
+                pawn.TryGetComp<FullnessAndDietStats_ThingComp>().DietMode = DietMode.Disabled;
         }
 
         public static void SetDefaultBodyType(Pawn pawn)
