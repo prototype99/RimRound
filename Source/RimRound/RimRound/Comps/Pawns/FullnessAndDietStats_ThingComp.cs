@@ -503,6 +503,10 @@ namespace RimRound.Comps
         }
 
 
+        public void AddFullnessCapacity(float liters) {
+            softLimitPersonal = Mathf.Max(softLimitPersonal + liters, 0.5f);
+        }
+
         public DietMode DietMode
         {
             get

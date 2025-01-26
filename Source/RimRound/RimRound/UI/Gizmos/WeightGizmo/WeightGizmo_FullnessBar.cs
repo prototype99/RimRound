@@ -229,12 +229,18 @@ namespace RimRound.UI
         {
 
             //Draws the little ticks at the bottom
+            float baseTickLiters = 0.2f;
+			float stepMultiplier = 5f;
+			int maxTicksOnBar = 20;
+            float dashInterval = baseTickLiters;
 
-            //This is the amount in liters each dash represents
-            float dashInterval = 0.20f;
-
-            //Add in clause to stop dashes after hard limit?
             int numberOfDashes = (int)(DisplayLimit / dashInterval);
+			while (numberOfDashes > maxTicksOnBar) {
+				dashInterval *= stepMultiplier;
+                numberOfDashes = (int)(DisplayLimit / dashInterval);
+            }
+
+
             int currentDashNumber = 0;
 
             float dashPercentInterval = dashInterval / DisplayLimit;
