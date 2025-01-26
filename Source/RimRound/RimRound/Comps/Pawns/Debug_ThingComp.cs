@@ -18,15 +18,32 @@ namespace RimRound.Comps
 
         PawnBodyType_ThingComp cachedPBTComp = null;
 
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            if (Disabled) { return; }
             cachedPBTComp = parent.TryGetComp<PawnBodyType_ThingComp>();
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (Disabled) { yield break; }
+
             if (Prefs.DevMode)
             {
                 yield return new Command_Action

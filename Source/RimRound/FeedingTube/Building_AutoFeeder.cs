@@ -352,6 +352,8 @@ namespace RimRound.FeedingTube
             return command_Action;
         }
 
+
+        // Might need to check for animals here
         private bool ValidateTarget(LocalTargetInfo target)
         {
             if (target.Pawn is null)

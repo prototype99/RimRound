@@ -13,6 +13,15 @@ Date: Sat Jan 25 23:03:42 2025
 Add debug gizmo for fixing broken nutrition
 
 ==================================================
+Commit Hash: ae8cd3f648820340c2487c13f1170b782b207622
+Author: Niwatori401
+Date: Thu Jan 23 01:38:54 2025
+
+Start fix for humanoid pawns without a food need
+Fix error that tried to draw world pawns
+Remove unnecessary logging
+
+==================================================
 Commit Hash: 16bc92e444ed67f37b7556393f320e38708b9e2f
 Author: Niwatori401
 Date: Thu Jan 23 00:58:52 2025
@@ -64,6 +73,39 @@ Date: Sun Jan 12 22:48:39 2025
 
 Add new male body set and clothing (Courtesy Gosuke)
 Remove unused files
+
+==================================================
+Commit Hash: 71673c1e52b877db7abd8168ba8a7e06bfd29ca9
+Author: Niwatori401
+Date: Sun Jan 12 20:35:22 2025
+
+Add heuristic fix for strangely configured body paths
+
+==================================================
+Commit Hash: 9071e7bb664494120443d5e36ef6ad469bd064dd
+Author: Niwatori401
+Date: Mon Dec 30 04:37:07 2024
+
+Mods that align head-anchored parts per body type now work with RR bodies
+
+==================================================
+Commit Hash: b760bde16f3fec667cf263fdd2449543d6e5d3e4
+Author: Niwatori401
+Date: Sun Dec 29 08:31:48 2024
+
+Add working preliminary global race support
+- Body parts not aligned with head will not be drawn for RR bodies
+- Body parts will not be scaled with body size for RR bodies
+- All races not otherwise supported default to the human set
+
+==================================================
+Commit Hash: df4752feb1e7bccebad5672a01a93d5b392cbb84
+Author: Niwatori401
+Date: Sun Dec 29 04:41:52 2024
+
+Apply RR Comps to BasePawn, not just Humans
+Add checks that only humanoids are affected
+Add patch for HAR to prevent scaling with bodysize
 
 ==================================================
 Commit Hash: 2cd3d108435f8c10a6a7c20d3b88534ad1ff4b06
