@@ -1,5 +1,17 @@
 ==================================================
+<<<<<<< HEAD
 Commit Hash: 362489f094b843b6d955529d89d6624c670924da
+=======
+Commit Hash: 0b654fdc5381d5e09966392aa12f2e05f9eb220d
+Author: Niwatori401
+Date: Sun Jan 26 22:02:48 2025
+
+Ticks bars adjust to prevent lag with very large stomachs
+Add debug gizmo to add fullness capacity
+
+==================================================
+Commit Hash: b57c998e6585068e171706c193e0f9c6f3a66f2f
+>>>>>>> 14f7ebd (Ticks bars adjust to prevent lag with very large stomachs)
 Author: Niwatori401
 Date: Sat Jul 5 16:59:48 2025
 
