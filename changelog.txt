@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 33800bce7306836526288c68f1e4c2dd14f0e948
+Commit Hash: aabf7fbac7e7729bfe72dca08d249312afc9816f
+Author: Niwatori401
+Date: Sun Feb 2 23:32:33 2025
+
+Add power armor sprites for Males (005-050) and recon armor sprites for Standard Females (005-050) (Courtesy Toggle)
+
+==================================================
+Commit Hash: 6fa67ddc46c7edbd781fc3d43114f1907554c675
 Author: Niwatori401
 Date: Sun Jan 26 01:14:56 2025
 
