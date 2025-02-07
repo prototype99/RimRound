@@ -1,5 +1,14 @@
 ==================================================
-Commit Hash: 33800bce7306836526288c68f1e4c2dd14f0e948
+Commit Hash: bc3975cd7d6fb64a45aa242fecdf1e738403c45d
+Author: Niwatori401
+Date: Fri Feb 7 05:34:45 2025
+
+Add sound files
+Add Zenith orb sound functionality
+Add settings for sound volume
+
+==================================================
+Commit Hash: 6fa67ddc46c7edbd781fc3d43114f1907554c675
 Author: Niwatori401
 Date: Sun Jan 26 01:14:56 2025
 

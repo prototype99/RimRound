@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Stomach Gurgle Sounds -->
+	<SoundDef>
+		<defName>RR_StomachGurgles_Light</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachGurgles_Medium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachGurgles_Heavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachGurgles_SuperHeavy</defName>
+	</SoundDef>
+
+	<!-- Stomach Empty Sounds -->
+	<SoundDef>
+		<defName>RR_StomachEmpty_Light</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachEmpty_Medium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachEmpty_Heavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_StomachEmpty_SuperHeavy</defName>
+	</SoundDef>
+
+
+	<!-- Slosh Sounds -->
+	<SoundDef>
+		<defName>RR_Slosh_Light</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Slosh_Medium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Slosh_Heavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Slosh_SuperHeavy</defName>
+	</SoundDef>
+
+
+
+	<!-- Stretch Sounds -->
+	<SoundDef>
+		<defName>RR_Stretch_1</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Stretch_2</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Stretch_3</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Stretch_4</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Stretch_5</defName>
+	</SoundDef>
+</Defs>

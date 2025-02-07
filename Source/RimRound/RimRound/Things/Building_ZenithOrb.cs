@@ -74,6 +74,50 @@ namespace RimRound.Things
             Scribe_TargetInfo.Look(ref forcedTarget, "forcedTarget");
         }
 
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (forcedTarget != null && forcedTarget.Pawn != null)
+            {
+                onSustainer = SpawnOnSustainer();
+            }
+            else
+            {
+                offSustainer = SpawnOffSustainer();
+            }
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.Destroy(mode);
+            onSustainer.End();
+            offSustainer.End();
+
+            onSustainer = null;
+            offSustainer = null;
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.DeSpawn(mode);
+            onSustainer.End();
+            offSustainer.End();
+
+            onSustainer = null;
+            offSustainer = null;
+        }
+
+        public override void Discard(bool silentlyRemoveReferences = false)
+        {
+            base.Discard(silentlyRemoveReferences);
+            onSustainer.End();
+            offSustainer.End();
+
+            onSustainer = null;
+            offSustainer = null;
+        }
+
         public override void Tick()
         {
             base.Tick();
@@ -181,13 +225,14 @@ namespace RimRound.Things
                     if (!this.ValidateTarget(t))
                     {
                         this.BeginTargeting();
+                        offSustainer = SpawnOffSustainer();
                         return;
                     }
                     this.CurrentPawn = t.Pawn;
                     this.CachedFNDComp = t.Pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
                     forcedTarget = t;
                     SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
-
+                    onSustainer = SpawnOnSustainer();
                     return;
                 },
                 delegate (LocalTargetInfo t) //highlight action
@@ -223,11 +268,33 @@ namespace RimRound.Things
             }
         }
 
+        private Sustainer SpawnOffSustainer() {
+            if (onSustainer != null) {
+                onSustainer.End();
+                onSustainer = null;
+            }
+
+            return offSustainer ?? RimRound.Defs.SoundDefOf.RR_ZenithOrbOffSound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+        }
+
+        private Sustainer SpawnOnSustainer() {
+            if (offSustainer != null) {
+                offSustainer.End();
+                offSustainer = null;
+            }
+
+            return onSustainer ?? RimRound.Defs.SoundDefOf.RR_ZenithOrbOnSound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+        }
+
         private void ResetForcedTarget()
         {
             this.forcedTarget = LocalTargetInfo.Invalid;
             this.CurrentPawn = null;
+            offSustainer = SpawnOffSustainer();
+            
         }
 
+        private Sustainer offSustainer;
+        private Sustainer onSustainer;
     }
 }

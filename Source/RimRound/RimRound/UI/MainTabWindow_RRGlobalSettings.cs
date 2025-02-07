@@ -49,6 +49,7 @@ namespace RimRound.UI
             mainSettings,
             alienBodySettings,
             hediffSettings,
+            soundSettings,
         };
 
         TabKind curTab = TabKind.mainSettings;
@@ -61,6 +62,11 @@ namespace RimRound.UI
                 "Main Settings",
                 delegate () { this.curTab = TabKind.mainSettings; },
                 () => this.curTab == TabKind.mainSettings));
+
+            this.tabs.Add(new TabRecord(
+                "Sound Settings",
+                delegate () { this.curTab = TabKind.soundSettings; },
+                () => this.curTab == TabKind.soundSettings));
 
             this.tabs.Add(new TabRecord(
                 "Alien Body Settings",
@@ -102,6 +108,9 @@ namespace RimRound.UI
                 case TabKind.hediffSettings:
                     DoHediffSettingsWindow(inRect);
                     return;
+                case TabKind.soundSettings:
+                    DoSoundSettingsWindow(inRect);
+                    return;
                 default:
                     return;
             }
@@ -112,6 +121,40 @@ namespace RimRound.UI
             public Gender gender;
             public String race;
         };
+
+        private void DoSoundSettingsWindow(Rect inRect) 
+        {
+            GUI.BeginGroup(inRect);
+            Text.Font = GameFont.Medium;
+            Rect soundSettingsTitleRect = new Rect(0, 50, 450, Text.LineHeight);
+            Widgets.Label(soundSettingsTitleRect, "RR_Nhs_SoundSettingsTitle".Translate());
+
+            Rect soundSettingsFieldRect = new Rect(0, soundSettingsTitleRect.yMax, soundSettingsTitleRect.width, 800);
+
+            Text.Font = GameFont.Small;
+            int numericFieldCount = 0;
+
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFeedingMachine", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachine");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachineSwallow, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRegularBreath, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundRegularBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRegularBreath");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundPleasureBreath, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundPleasureBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundPleasureBreath");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFootsteps, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFootsteps", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFootsteps");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachGurgles, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundStomachGurgles", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachGurgles");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachStretch, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundStomachStretch", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachStretch");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundZenithOrb, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundZenithOrb", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundZenithOrb");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRapidWeightGain, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundRapidWeightGain", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRapidWeightGain");
+
+            soundSettingsFieldRect.height = numericFieldCount * spaceBetweenNumberFields;
+
+            GUI.EndGroup();
+        }
+
+
 
         private void DoHediffSettingsWindow(Rect inRect) 
         {

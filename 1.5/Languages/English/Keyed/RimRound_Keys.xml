@@ -39,13 +39,23 @@
 	<FullnessDeathWarningTitle>Confirm your choice.</FullnessDeathWarningTitle>
 	<FullnessDeathWarningExplanation>This target fullness is too much for {0} and, if they eat this much, their stomach will likely rupture. This will inflict serious, possibly lethal wounds. Are you sure you want to set their target fullness to this value?</FullnessDeathWarningExplanation>
 	
+	<!-- Sound Settings Window -->
+	<RR_Nhs_SoundSettingsTitle>Sound Settings</RR_Nhs_SoundSettingsTitle>
+	<RR_Nhs_HediffNumericSettings_soundFeedingMachine>Feeding Machine Operation</RR_Nhs_HediffNumericSettings_soundFeedingMachine>
+	<RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow>Feeding Machine Swallowing</RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow>
+	<RR_Nhs_HediffNumericSettings_soundRegularBreath>Regular Breathing</RR_Nhs_HediffNumericSettings_soundRegularBreath>
+	<RR_Nhs_HediffNumericSettings_soundPleasureBreath>Pleasured Breathing</RR_Nhs_HediffNumericSettings_soundPleasureBreath>
+	<RR_Nhs_HediffNumericSettings_soundFootsteps>Footsteps</RR_Nhs_HediffNumericSettings_soundFootsteps>
+	<RR_Nhs_HediffNumericSettings_soundStomachGurgles>Stomach Gurgles</RR_Nhs_HediffNumericSettings_soundStomachGurgles>
+	<RR_Nhs_HediffNumericSettings_soundStomachStretch>Stomach Stretching</RR_Nhs_HediffNumericSettings_soundStomachStretch>
+	<RR_Nhs_HediffNumericSettings_soundZenithOrb>Zenith Orb Operation</RR_Nhs_HediffNumericSettings_soundZenithOrb>
+	<RR_Nhs_HediffNumericSettings_soundRapidWeightGain>Rapid Weight Gain</RR_Nhs_HediffNumericSettings_soundRapidWeightGain>
 	
 	<!--Main Tab Window-->
 	<RR_Mtw_Title>RimRound Control Panel</RR_Mtw_Title>
 	<RR_Mtw_MapNutritionStatsTitle>Map Nutrition</RR_Mtw_MapNutritionStatsTitle>
 	<RR_Mtw_ManagePawnDietsCheckboxLabel>Manage Pawn Diets</RR_Mtw_ManagePawnDietsCheckboxLabel>
 	
-
 	<RR_Mtw_NutritionOverview_TotalNutrition>Current Nutrition in all storage zones</RR_Mtw_NutritionOverview_TotalNutrition>
 	<RR_Mtw_NutritionOverview_SimpleMealNutrition>Nutrition from Simple Meals</RR_Mtw_NutritionOverview_SimpleMealNutrition>
 	<RR_Mtw_NutritionOverview_FineMealNutrition>Nutrition from Fine Meals</RR_Mtw_NutritionOverview_FineMealNutrition>
@@ -202,7 +212,16 @@
 	<RR_ToolTip_NumericPreferences_MinWeightChangeForThrowingText>When a pawn gains (or loses) a substantial amount of weight, the amount they gained is thrown as text. This can be annoying for pawns who are gaining rapidly over a long period of time. You can increase this value to raise how large the gain has to be to throw text.</RR_ToolTip_NumericPreferences_MinWeightChangeForThrowingText>
 	<RR_ToolTip_ThirdPartyModPreferences_MilkMultiplierByWeight>Multplier for how much weight impacts breast milk yield.</RR_ToolTip_ThirdPartyModPreferences_MilkMultiplierByWeight>
 		
-		
+	<RR_ToolTip_SoundSettings_SoundFeedingMachine>The sound the feeding machine makes while on</RR_ToolTip_SoundSettings_SoundFeedingMachine>
+	<RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow>The sound made by pawns when using the feeding machine</RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow>
+	<RR_ToolTip_SoundSettings_SoundRegularBreath>Breathing noises made when heavy pawns are exerting themselves</RR_ToolTip_SoundSettings_SoundRegularBreath>
+	<RR_ToolTip_SoundSettings_SoundPleasureBreath>Pawns with weight opinion “like” or “fanatical” will emit moans of pleasure while their stomach is full and they are gaining weight</RR_ToolTip_SoundSettings_SoundPleasureBreath>
+	<RR_ToolTip_SoundSettings_SoundFootsteps>Sounds made when heavy pawns move</RR_ToolTip_SoundSettings_SoundFootsteps>
+	<RR_ToolTip_SoundSettings_SoundStomachGurgles>Sounds made when a pawn has an empty stomach</RR_ToolTip_SoundSettings_SoundStomachGurgles>
+	<RR_ToolTip_SoundSettings_SoundStomachStretch>Sounds made when a pawn is at or near max fullness</RR_ToolTip_SoundSettings_SoundStomachStretch>
+	<RR_ToolTip_SoundSettings_SoundZenithOrb>The sound the zenith orb makes while on</RR_ToolTip_SoundSettings_SoundZenithOrb>
+	<RR_ToolTip_SoundSettings_SoundRapidWeightGain>Sounds made when a pawn is made to gain weight quickly either through artificial/temporary means or otherwise</RR_ToolTip_SoundSettings_SoundRapidWeightGain>
+
 	
 	<FloatMenuCantConsumeTooBig>Can't consume {1_labelShort}: Too big</FloatMenuCantConsumeTooBig>
 	

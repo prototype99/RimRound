@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+		<defName>RR_Footstep_Fat</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Footstep_Obese</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Footstep_MorbidlyObese</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Footstep_MorbidlyObese_II</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Footstep_Lardy</defName>
+	</SoundDef>
+</Defs>

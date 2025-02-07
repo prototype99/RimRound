@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Female Sounds -->
+	<SoundDef>
+		<defName>RR_F_BreathLight</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_BreathMedium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_BreathHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_BreathSuperHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_PleasureBreathLight</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_PleasureBreathMedium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_PleasureBreathHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_F_PleasureBreathSuperHeavy</defName>
+	</SoundDef>
+	
+	<!-- Male Sounds -->
+	<SoundDef>
+		<defName>RR_M_BreathLight</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_BreathMedium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_BreathHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_BreathSuperHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_PleasureBreathLight</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_PleasureBreathMedium</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_PleasureBreathHeavy</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_M_PleasureBreathSuperHeavy</defName>
+	</SoundDef>
+</Defs>

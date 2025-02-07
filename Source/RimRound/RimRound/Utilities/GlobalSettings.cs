@@ -12,6 +12,26 @@ namespace RimRound.Utilities
     //All fields in this class are saved in WorldComp_SaveValues.cs. Do not add reference type fields without adding exceptions to saving code
     public static class GlobalSettings
     {
+        #region Sound Settings
+        public static NumericFieldData<float> soundFeedingMachine = new NumericFieldData<float>(100, 0, 200);
+        public static NumericFieldData<float> soundFeedingMachineSwallow = new NumericFieldData<float>(100, 0, 200);
+
+        public static NumericFieldData<float> soundRegularBreath = new NumericFieldData<float>(100, 0, 200);
+        public static NumericFieldData<float> soundPleasureBreath = new NumericFieldData<float>(100, 0, 200);
+
+        public static NumericFieldData<float> soundFootsteps = new NumericFieldData<float>(100, 0, 200);
+
+        public static NumericFieldData<float> soundStomachGurgles = new NumericFieldData<float>(100, 0, 200);
+        public static NumericFieldData<float> soundStomachStretch = new NumericFieldData<float>(100, 0, 200);
+
+        public static NumericFieldData<float> soundRapidWeightGain = new NumericFieldData<float>(100, 0, 200);
+
+        public static NumericFieldData<float> soundZenithOrb = new NumericFieldData<float>(100, 0, 200);
+
+        #endregion
+
+
+
         #region Hediff Settings
 
         public static NumericFieldData<float> weightHediffManipulationPenaltyMult = new NumericFieldData<float>(1, 0, 100);

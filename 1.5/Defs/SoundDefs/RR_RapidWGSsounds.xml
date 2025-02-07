@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+		<defName>RR_Bwomf_1</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Bwomf_2</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Bwomf_3</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Bwomf_4</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Bwomf_5</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_Bwomf_6</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_RapidWeightGain</defName>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>RR_RapidWeightLoss</defName>
+	</SoundDef>
+</Defs>
