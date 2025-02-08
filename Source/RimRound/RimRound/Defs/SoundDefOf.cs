@@ -23,9 +23,6 @@ namespace RimRound.Defs
         public static SoundDef RR_ZenithOrbOnSound;
         public static SoundDef RR_ZenithOrbOffSound;
 
-        // Embiggener / Firearm Projectiles
-        public static SoundDef RR_EmbiggenerShootSound;
-
         // Rapid WG/WL sounds
         public static SoundDef RR_RapidWeightGain; // plays when a pawn is struck with the embiggener weapons, eats the cannot-stop-cake, swallows the fat pills, or  is targeted by the Zenith orb. 
         public static SoundDef RR_RapidWeightLoss;

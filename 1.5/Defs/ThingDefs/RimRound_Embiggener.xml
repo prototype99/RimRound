@@ -10,8 +10,8 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>0</damageAmountBase>
+      <damageDef>RR_EmbiggenerBulletDamage</damageDef>
+      <damageAmountBase>2</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <speed>55</speed>
     </projectile>
@@ -36,8 +36,8 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>0</damageAmountBase>
+      <damageDef>RR_PermanentEmbiggenerBulletDamage</damageDef>
+      <damageAmountBase>2</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <speed>55</speed>
     </projectile>
@@ -97,7 +97,7 @@
         <defaultProjectile>RR_FatteningBullet</defaultProjectile>
         <warmupTime>0.5</warmupTime>
         <range>35</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RR_EmbiggenerShootSound</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
       </li>
@@ -170,7 +170,7 @@
         <defaultProjectile>RR_FatteningBullet_Permanent</defaultProjectile>
         <warmupTime>0.8</warmupTime>
         <range>35</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RR_ExperimentalEmbiggenerShootSound</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
       </li>

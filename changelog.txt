@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: bc3975cd7d6fb64a45aa242fecdf1e738403c45d
+Commit Hash: e05c202c358e99478f00889b92ea849099b460df
+Author: Niwatori401
+Date: Sat Feb 8 01:45:41 2025
+
+Add sounds to RR weapons
+
+==================================================
+Commit Hash: 60a0bff1d07613f58b336f10399a8f382006c56a
 Author: Niwatori401
 Date: Fri Feb 7 05:34:45 2025
 
