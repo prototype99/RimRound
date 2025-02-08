@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 2979eb63e9887a1aed01b33522b76aefe55d88cc
+Commit Hash: 3e6be4d75da0d3b99a41c45f688400a1e08eb752
+Author: Niwatori401
+Date: Sat Feb 8 04:49:17 2025
+
+Add drinking sounds for pawns using auto feeder
+
+==================================================
+Commit Hash: 854be470dc854c2baabea43dc1c6c6160680319f
 Author: Niwatori401
 Date: Sat Feb 8 04:14:02 2025
 
