@@ -12,7 +12,7 @@ namespace RimRound.Defs
     public static class SoundDefOf
     {
         // “food machine v2” plays while the pawn is being fed from the feeding machine (hose). 
-        public static SoundDef RR_FeedingTube_Feeding;
+        public static SoundDef RR_FeedingTube_On;
 
         // Swallow sound play during use of the feeding machine. Intensity of swallowing depends on the machine setting. No sound plays for lose weight setting
         public static SoundDef RR_FeedingMachine_Swallow_Easy;

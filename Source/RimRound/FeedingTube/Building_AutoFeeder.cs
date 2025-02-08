@@ -76,7 +76,30 @@ namespace RimRound.FeedingTube
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            if (onSound == null && forcedTarget.Pawn != null) {
+                onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+            }
+        }
 
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.Destroy(mode);
+            onSound.End();
+            onSound = null;
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.DeSpawn(mode);
+            onSound.End();
+            onSound = null;
+        }
+
+        public override void Discard(bool silentlyRemoveReferences = false)
+        {
+            base.Discard(silentlyRemoveReferences);
+            onSound.End();
+            onSound = null;
         }
 
         public override void Tick()
@@ -373,9 +396,13 @@ namespace RimRound.FeedingTube
                         }
                         this.CurrentPawn = t.Pawn;
                         this.CachedFNDComp = t.Pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
-                        Log.Message($"Targeted Pawn! {this.CurrentPawn.Name}");
                         this.CurrentPawn.health.AddHediff(Defs.HediffDefOf.RimRound_UsingFeedingTube);
                         forcedTarget = t;
+                        
+                        if (onSound == null)
+                        {
+                            onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+                        }
                         SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
 
                         return;
@@ -415,6 +442,8 @@ namespace RimRound.FeedingTube
 
         private void ResetForcedTarget()
         {
+            onSound.End();
+            onSound = null;
             this.forcedTarget = LocalTargetInfo.Invalid;
             this.CurrentPawn.health.RemoveHediff(
                 (from h
@@ -425,6 +454,7 @@ namespace RimRound.FeedingTube
             this.CurrentPawn = null;
         }
 
+        private Sustainer onSound;
 
         private static readonly Material feedingTubeMat = MaterialPool.MatFrom("Things/Building/Production/FeedingTubePipeThickMat", ShaderDatabase.Transparent, Color.white);
         private static readonly Texture2D offIcon = ContentFinder<Texture2D>.Get("UI/AutoFeeder/Modes/Off", true);

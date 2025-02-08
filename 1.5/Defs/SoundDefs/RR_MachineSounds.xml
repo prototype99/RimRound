@@ -111,7 +111,7 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>RR_FeedingTube_Feeding</defName>
+		<defName>RR_FeedingTube_On</defName>
 		<context>MapOnly</context>
 		<sustain>True</sustain>
 		<maxVoices>10</maxVoices>
@@ -121,11 +121,11 @@
 			<muteWhenPaused>False</muteWhenPaused>
 			<grains>
 			  <li Class="AudioGrain_Clip">
-				<clipPath>Machine/FeedingMachine/RR_machine_running</clipPath>
+				<clipPath>Machine/FeedingMachine/FeedingMachineRunning</clipPath>
 			  </li>
 			</grains>
 			<volumeRange>40~40</volumeRange>
-			<distRange>10~70</distRange>
+			<distRange>10~40</distRange>
 		  </li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>
