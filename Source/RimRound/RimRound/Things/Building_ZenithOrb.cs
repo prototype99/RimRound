@@ -121,7 +121,7 @@ namespace RimRound.Things
         public override void Tick()
         {
             base.Tick();
-            if (GeneralUtility.IsHashIntervalTick(tickCheckInterval) && CurrentPawn != null)
+            if (CurrentPawn != null && CurrentPawn.IsHashIntervalTick(tickCheckInterval))
             {
                 if (CachedPowerTrader.PowerOn && GenRadial.RadialCellsAround(this.Position, cellRadius, true).Contains(CachedFNDComp.parent.Position))
                     CachedFNDComp.activeWeightGainRequests.Enqueue(new WeightGainRequest(50, Find.TickManager.TicksGame + 10, 0, false));

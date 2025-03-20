@@ -294,6 +294,7 @@
     <Compile Include="RimRound\Utilities\PrisonerUtility.cs" />
     <Compile Include="RimRound\Utilities\Resources.cs" />
     <Compile Include="RimRound\Utilities\RRGasType.cs" />
+    <Compile Include="RimRound\Utilities\SoundUtility.cs" />
     <Compile Include="RimRound\Utilities\StatChangeUtility.cs" />
     <Compile Include="RimRound\Utilities\WeightOpinionUtility.cs" />
     <None Include="app.config" />

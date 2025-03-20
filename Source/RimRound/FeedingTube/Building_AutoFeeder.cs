@@ -141,7 +141,7 @@ namespace RimRound.FeedingTube
             base.Discard(silentlyRemoveReferences);
             onSound.End();
             onSound = null;
-
+            
             drinkingSustainer.End();
             drinkingSustainer = null;
         }
@@ -149,7 +149,7 @@ namespace RimRound.FeedingTube
         public override void Tick()
         {
             base.Tick();
-            if (GeneralUtility.IsHashIntervalTick(tickCheckInterval) && CurrentPawn != null)
+            if (CurrentPawn != null && CurrentPawn.IsHashIntervalTick(tickCheckInterval))
             {
                 float currentNutritionPercent = CurrentPawn.needs.food.CurLevelPercentage;
                 switch (CurrentMode)

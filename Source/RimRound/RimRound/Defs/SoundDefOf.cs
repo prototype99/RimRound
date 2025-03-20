@@ -58,11 +58,14 @@ namespace RimRound.Defs
         public static SoundDef RR_Stretch_5;
 
         // Footsteps
-        public static SoundDef RR_Footstep_Fat; // Each has two sub sounds // These are played while pawn moves // Sounds are labelled by weight stage
-        public static SoundDef RR_Footstep_Obese;
-        public static SoundDef RR_Footstep_MorbidlyObese;
-        public static SoundDef RR_Footstep_MorbidlyObese_II;
-        public static SoundDef RR_Footstep_Lardy;
+        public static SoundDef RR_Footstep_Fat_1; // Each has two sub sounds // These are played while pawn moves // Sounds are labelled by weight stage
+        public static SoundDef RR_Footstep_Fat_2;
+        public static SoundDef RR_Footstep_Obese_1;
+        public static SoundDef RR_Footstep_Obese_2;
+        public static SoundDef RR_Footstep_MorbidlyObese_1;
+        public static SoundDef RR_Footstep_MorbidlyObese_2;
+        public static SoundDef RR_Footstep_Lardy_1;
+        public static SoundDef RR_Footstep_Lardy_2;
 
 
         // Breath

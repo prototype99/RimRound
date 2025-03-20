@@ -23,6 +23,15 @@ namespace RimRound.Utilities
             return false;
         }
 
+        public static bool IsPawnBelowWeightOpinion(Pawn pawn, WeightOpinion wo) 
+        {
+            WeightOpinion pawnOpinion = pawn.TryGetComp<ThingComp_PawnAttitude>()?.weightOpinion ?? WeightOpinion.None;
+            return pawnOpinion < wo;
+        }
+
+
+
+
         public static TraitDef GetWeightedRandWeightOpinionTrait(Dictionary<TraitDef, float> traitCommonalityPairs)
         {
             float sumOfKeys = 0;
