@@ -1,4 +1,5 @@
 ﻿using RimRound.Comps;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -168,6 +169,8 @@ namespace RimRound.Utilities
         private static Dictionary<String, int> lastPlayedFootstepTick = new Dictionary<String, int>();
         public static SoundDef GetFootStepSoundsByWeightAndMovement(FullnessAndDietStats_ThingComp fndComp)
         {
+            BodyTypeDef minimumBodyTypeForBreathing = Defs.BodyTypeDefOf.F_020_Corpulent;
+
             if (fndComp == null)
             {
                 Log.Error($"fndComp was null in {nameof(GetFootStepSoundsByWeightAndMovement)}");
@@ -177,7 +180,7 @@ namespace RimRound.Utilities
             if (fndComp.parent.AsPawn().Downed || 
                 fndComp?.parent?.AsPawn()?.pather == null || 
                 !fndComp.parent.AsPawn().pather.MovingNow || 
-                !BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_020_Corpulent))
+                !BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), minimumBodyTypeForBreathing))
                 return null;
 
             string pawnID = fndComp.parent.ThingID;
@@ -185,8 +188,8 @@ namespace RimRound.Utilities
             if (!playFootStepSound1.ContainsKey(pawnID)) { playFootStepSound1.Add(pawnID, true); }
             if (!lastPlayedFootstepTick.ContainsKey(pawnID)) { lastPlayedFootstepTick.Add(pawnID, -1); }
 
-            float speedMultiplier = 3;
-            float ticksBetweenStepsForThisPawn = fndComp.parent.AsPawn().TicksPerMoveCardinal * speedMultiplier;
+            float waitMultiplier = 1;
+            float ticksBetweenStepsForThisPawn = fndComp.parent.AsPawn().TicksPerMoveCardinal * waitMultiplier;
 
             if (lastPlayedFootstepTick[pawnID] + ticksBetweenStepsForThisPawn > Find.TickManager.TicksAbs) 
                 return null;
@@ -313,30 +316,32 @@ namespace RimRound.Utilities
             {
                 const float TICKS_PER_SECOND = 60;
                 
-                float clipDurationSeconds;
+                float clipDurationSeconds = GetAverageGrainDuration(sound);
 
-                var instance = sound.subSounds[0]; // Only chooses first subsound for this check. If using more than one subsound, make sure they are of similar lengths or the longest is first
-                var resolvedGrains = (List<ResolvedGrain>)resolvedGrainsFI.GetValue(instance);
-
-                if (resolvedGrains.Count > 1)
-                {
-                    float maxDuration = 0;
-
-                    foreach (var resGrain in resolvedGrains)
-                    {
-                        maxDuration = Math.Max(maxDuration, resGrain.duration);
-                    }
-
-                    clipDurationSeconds = maxDuration;
-                }
-                else
-                {
-                    clipDurationSeconds = resolvedGrains[0].duration;
-                }
-
-                Log.Message("Making new sound");
                 sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(pawn)));
                 pawnSoundDefNextMinStartTick[pawnID][sound.defName] = Find.TickManager.TicksAbs + ((clipDurationSeconds + secondsDelayBetweenPlays) * TICKS_PER_SECOND);
+            }
+        }
+
+        public static float GetAverageGrainDuration(SoundDef sound) 
+        {
+            var instance = sound.subSounds[0]; // Only chooses first subsound for this check. If using more than one subsound, make sure they are of similar lengths or the longest is first
+            var resolvedGrains = (List<ResolvedGrain>)resolvedGrainsFI.GetValue(instance);
+
+            if (resolvedGrains.Count > 1)
+            {
+                float maxDuration = 0;
+
+                foreach (var resGrain in resolvedGrains)
+                {
+                    maxDuration = Math.Max(maxDuration, resGrain.duration);
+                }
+
+                return maxDuration;
+            }
+            else
+            {
+                return resolvedGrains[0].duration;
             }
         }
     }

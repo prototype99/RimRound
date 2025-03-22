@@ -252,7 +252,7 @@ namespace RimRound.Comps
                 DoBreathingSounds();
             }
 
-            //DoFootstepSounds();
+            DoFootstepSounds();
             //DoSloshingSounds();
             DoEmptyStomachSounds();
             DoGurgleSounds();
