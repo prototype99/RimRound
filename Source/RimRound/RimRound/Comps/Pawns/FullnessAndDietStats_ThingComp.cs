@@ -488,8 +488,16 @@ namespace RimRound.Comps
                  gainRequest.useMultipliers);
 
             var pbtThingComp = parent.TryGetComp<PawnBodyType_ThingComp>();
-            if (pbtThingComp != null)
-                BodyTypeUtility.UpdatePawnSprite(parent.AsPawn(), pbtThingComp.PersonallyExempt, pbtThingComp.CategoricallyExempt);
+            if (pbtThingComp != null) 
+            {
+                var bodyUpdated = BodyTypeUtility.UpdatePawnSprite(parent.AsPawn(), pbtThingComp.PersonallyExempt, pbtThingComp.CategoricallyExempt);
+
+                if (bodyUpdated)
+                {
+                    SoundDef bwomfSound = Utilities.SoundUtility.GetBwomfSoundByWeight(parent.AsPawn());
+                    bwomfSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(this.parent)));
+                }
+            }
 
             return actualGainedSeverity;
         }

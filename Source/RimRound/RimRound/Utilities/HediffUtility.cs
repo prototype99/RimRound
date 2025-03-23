@@ -130,7 +130,6 @@ namespace RimRound.Utilities
                 realSeverityApplied = LoseWeight(hediff, pawn, amount, useWeightMultipliers);
             }
 
-            MakeSoundsIfAppropriate();
             ThrowValueText(pawn, realSeverityApplied, 1, GlobalSettings.minWeightChangeForNumberText.threshold / 1000f);
 
 
@@ -140,10 +139,6 @@ namespace RimRound.Utilities
             return realSeverityApplied;
         }
 
-        private static void MakeSoundsIfAppropriate() 
-        {
-            
-        }
 
         /// <summary>
         /// 

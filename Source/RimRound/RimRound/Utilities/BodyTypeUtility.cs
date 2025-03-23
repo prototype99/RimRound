@@ -315,15 +315,24 @@ namespace RimRound.Utilities
             return result;
         }
 
-        public static void UpdatePawnSprite(Pawn pawn, bool personallyExempt = false, bool categoricallyExempt = false, bool forceUpdate = false, bool BodyCheck = true)
+
+        /// <summary>
+        /// Returns true if the pawn did update, false otherwise.
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <param name="personallyExempt"></param>
+        /// <param name="categoricallyExempt"></param>
+        /// <param name="forceUpdate"></param>
+        /// <param name="BodyCheck"></param>
+        public static bool UpdatePawnSprite(Pawn pawn, bool personallyExempt = false, bool categoricallyExempt = false, bool forceUpdate = false, bool BodyCheck = true)
         {
             if (!(pawn?.RaceProps?.Humanlike is bool isHumanlike && isHumanlike))
-                return;
+                return false;
 
             var comp = pawn.TryGetComp<PawnBodyType_ThingComp>();
 
             if (comp is null)
-                return;
+                return false;
 
             comp.ticksSinceLastBodyChange = 0;
 
@@ -331,13 +340,14 @@ namespace RimRound.Utilities
             {
                 pawn.story.bodyType = b;
                 RedrawPawn(pawn);
-                return;
+                return true;
             }
             else if (forceUpdate)
             {
                 RedrawPawn(pawn);
-                return;
             }
+
+            return false;
         }
 
         private static bool ValidatePawnShouldBeRedrawn(Pawn pawn)

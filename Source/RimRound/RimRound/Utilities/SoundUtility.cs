@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.Sound;
 using static RimRound.Utilities.Perks;
@@ -188,8 +189,11 @@ namespace RimRound.Utilities
             if (!playFootStepSound1.ContainsKey(pawnID)) { playFootStepSound1.Add(pawnID, true); }
             if (!lastPlayedFootstepTick.ContainsKey(pawnID)) { lastPlayedFootstepTick.Add(pawnID, -1); }
 
+            const float TICKS_PER_SECOND = 60;
             float waitMultiplier = 1;
             float ticksBetweenStepsForThisPawn = fndComp.parent.AsPawn().TicksPerMoveCardinal * waitMultiplier;
+            ticksBetweenStepsForThisPawn = Mathf.Clamp(ticksBetweenStepsForThisPawn, 1 * TICKS_PER_SECOND, 4 * TICKS_PER_SECOND);
+
 
             if (lastPlayedFootstepTick[pawnID] + ticksBetweenStepsForThisPawn > Find.TickManager.TicksAbs) 
                 return null;
