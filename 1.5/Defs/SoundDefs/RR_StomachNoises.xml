@@ -150,6 +150,7 @@
 	<!-- Slosh Sounds -->
 	<SoundDef ParentName="StomachSounds">
 		<defName>RR_Slosh_Light</defName>
+		<sustain>True</sustain>
 		<subSounds>
 			<li>
 				<muteWhenPaused>True</muteWhenPaused>
@@ -158,15 +159,17 @@
 						<clipFolderPath>Organic/Stomach/Slosh/Light</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>100~100</volumeRange>
 				<distRange>10~30</distRange>
-				<sustainLoop>False</sustainLoop>
+				<sustainLoop>True</sustainLoop>
+				<sustainLoopDurationRange>2~6</sustainLoopDurationRange>
 			</li>
 		</subSounds>
 	</SoundDef>
 	
 	<SoundDef ParentName="StomachSounds">
 		<defName>RR_Slosh_Medium</defName>
+		<sustain>True</sustain>
 		<subSounds>
 			<li>
 				<muteWhenPaused>True</muteWhenPaused>
@@ -175,15 +178,17 @@
 						<clipFolderPath>Organic/Stomach/Slosh/Medium</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>100~100</volumeRange>
 				<distRange>10~30</distRange>
-				<sustainLoop>False</sustainLoop>
+				<sustainLoop>True</sustainLoop>
+				<sustainLoopDurationRange>2~6</sustainLoopDurationRange>
 			</li>
 		</subSounds>
 	</SoundDef>
 	
 	<SoundDef ParentName="StomachSounds">
 		<defName>RR_Slosh_Heavy</defName>
+		<sustain>True</sustain>
 		<subSounds>
 			<li>
 				<muteWhenPaused>True</muteWhenPaused>
@@ -192,15 +197,17 @@
 						<clipFolderPath>Organic/Stomach/Slosh/Heavy</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>100~100</volumeRange>
 				<distRange>10~30</distRange>
-				<sustainLoop>False</sustainLoop>
+				<sustainLoop>True</sustainLoop>
+				<sustainLoopDurationRange>2~6</sustainLoopDurationRange>
 			</li>
 		</subSounds>
 	</SoundDef>
 	
 	<SoundDef ParentName="StomachSounds">
 		<defName>RR_Slosh_SuperHeavy</defName>
+		<sustain>True</sustain>
 		<subSounds>
 			<li>
 				<muteWhenPaused>True</muteWhenPaused>
@@ -209,9 +216,10 @@
 						<clipFolderPath>Organic/Stomach/Slosh/SuperHeavy</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>100~100</volumeRange>
 				<distRange>10~30</distRange>
-				<sustainLoop>False</sustainLoop>
+				<sustainLoop>True</sustainLoop>
+				<sustainLoopDurationRange>2~6</sustainLoopDurationRange>
 			</li>
 		</subSounds>
 	</SoundDef>

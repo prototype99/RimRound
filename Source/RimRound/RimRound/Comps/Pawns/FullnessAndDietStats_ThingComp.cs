@@ -253,25 +253,20 @@ namespace RimRound.Comps
             }
 
             DoFootstepSounds();
-            //DoSloshingSounds();
             DoEmptyStomachSounds();
             DoGurgleSounds();
             DoStomachStretchSounds();
+
+            DoSloshSounds();
         }
 
         private void DespawnSustainers() 
         {
-            gurgleSound?.End();
-            emptyStomachSound?.End();
             sloshSound?.End();
             breathSound?.End();
-            stretchSound?.End();
 
-            gurgleSound = null;
-            emptyStomachSound = null;
             sloshSound = null;
             breathSound = null;
-            stretchSound = null;
         }
 
         private void DoStomachStretchSounds()
@@ -305,6 +300,31 @@ namespace RimRound.Comps
             }
         }
 
+        private void DoSloshSounds() 
+        {
+            const int TICKS_PER_SECOND = 60;
+            if (SloshDurationSeconds <= 0) 
+            {
+                return;
+            }
+
+            if (SloshStartTick + (SloshDurationSeconds * TICKS_PER_SECOND) <= Find.TickManager.TicksAbs) 
+            {
+                SloshStartTick = 0;
+                SloshDurationSeconds = 0;
+                sloshSound?.End();
+                sloshSound = null;
+                return;
+            }
+
+            if (sloshSound == null) 
+            {
+                SoundDef sound = SoundUtility.GetStomachSloshByWeight(this);
+                sloshSound = sound.TrySpawnSustainer(SoundInfo.InMap(parent.AsPawn()));
+            }
+        }
+
+
         private void DoGurgleSounds()
         {
             const float SECONDS_BETWEEN_GURGLE_SOUNDS = 10;
@@ -317,11 +337,6 @@ namespace RimRound.Comps
             const float SECONDS_BETWEEN_EMPTY_SOUND = 10;
             SoundDef soundDef = SoundUtility.GetEmptyStomachSoundsByWeight(this);
             SoundUtility.PlayOneShotForPawnIfNotWaiting(parent.AsPawn(), soundDef, SECONDS_BETWEEN_EMPTY_SOUND);
-        }
-
-        private void DoSloshingSounds()
-        {
-            //throw new NotImplementedException();
         }
 
         private void DoFootstepSounds()
@@ -996,6 +1011,11 @@ namespace RimRound.Comps
             }
         }
 
+
+        public float SloshDurationSeconds { get; set; }
+        public float SloshStartTick { get; set; }
+
+
         private float consumedNutrition = 0;
         private int _perkLevelsToSpendForSaving = 0;
         private int _currentLevelForSaving = 0;
@@ -1025,13 +1045,8 @@ namespace RimRound.Comps
         public const float severityUntilImmunity = 400;
         public const float immunitySeverityDecay = 0.5f;
 
-
-
-        private Sustainer gurgleSound;
-        private Sustainer emptyStomachSound;
         private Sustainer sloshSound;
         private Sustainer breathSound;
-        private Sustainer stretchSound;
     }
 
     public class PerkLevels

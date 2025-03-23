@@ -411,8 +411,7 @@ namespace RimRound.FeedingTube
             command_Action.action = delegate ()
             {
                 ResetForcedTarget();
-                CurrentMode = AutoFeederMode.off;
-                CachedFNDComp = null;
+                
                 SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
             };
 
@@ -448,6 +447,9 @@ namespace RimRound.FeedingTube
                             onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
                         }
                         SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
+
+                        this.CachedFNDComp.SloshDurationSeconds = 0;
+                        this.CachedFNDComp.SloshStartTick = 0;
 
                         return;
                     },
@@ -490,6 +492,9 @@ namespace RimRound.FeedingTube
             onSound = null;
             drinkingSustainer.End();
             drinkingSustainer = null;
+            
+            this.CachedFNDComp.SloshDurationSeconds = 60;
+            this.CachedFNDComp.SloshStartTick = Find.TickManager.TicksAbs;
 
             this.forcedTarget = LocalTargetInfo.Invalid;
             this.CurrentPawn.health.RemoveHediff(
@@ -498,7 +503,10 @@ namespace RimRound.FeedingTube
                 where h.def.defName == Defs.HediffDefOf.RimRound_UsingFeedingTube.defName
                 select h).FirstOrDefault()
                 );
+
             this.CurrentPawn = null;
+            this.CachedFNDComp = null;
+            CurrentMode = AutoFeederMode.off;
         }
 
         private Sustainer onSound;

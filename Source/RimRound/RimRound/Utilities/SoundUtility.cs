@@ -220,32 +220,24 @@ namespace RimRound.Utilities
             return GetStomachSloshByWeight(fndComp);
         }
 
+
+        // Returns sound based on weight, not whether the sound should play.
         public static SoundDef GetStomachSloshByWeight(FullnessAndDietStats_ThingComp fndComp) 
         {
-            throw new NotImplementedException();
-
             if (fndComp == null)
             {
                 Log.Error($"fndComp was null in {nameof(GetStomachSloshByWeight)}");
                 return null;
             }
 
-            
-            if (fndComp.CurrentFullness > 0.05f)
-            {
-                return null;
-            }
-
             if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_090_Titanic))
-                return Defs.SoundDefOf.RR_StomachEmpty_SuperHeavy;
+                return Defs.SoundDefOf.RR_Slosh_SuperHeavy;
             else if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_060_Lardy))
-                return Defs.SoundDefOf.RR_StomachEmpty_Heavy;
+                return Defs.SoundDefOf.RR_Slosh_Heavy;
             else if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_020_Corpulent))
-                return Defs.SoundDefOf.RR_StomachEmpty_Medium;
+                return Defs.SoundDefOf.RR_Slosh_Medium;
 
-            return Defs.SoundDefOf.RR_StomachEmpty_Light;
-
-            return null;
+            return Defs.SoundDefOf.RR_Slosh_Light;
         }
 
         public static SoundDef GetEmptyStomachSoundsByWeight(Pawn pawn)
@@ -282,6 +274,7 @@ namespace RimRound.Utilities
         private static Dictionary<String, Dictionary<String, float>> pawnSoundDefNextMinStartTick = new Dictionary<string, Dictionary<string, float>>();
 
         private static FieldInfo resolvedGrainsFI;
+        
         public static void PlayOneShotForPawnIfNotWaiting(Pawn pawn, SoundDef sound, float secondsDelayBetweenPlays) 
         {
             // This often is the case if the sound is not supposed to play due to restrictions

@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 6d341c1a081dee35f306a1d4160ae0d557580ff9
+Commit Hash: b7e11d40a87c6c2ff257f4b0cc81775bba3abb8a
+Author: Niwatori401
+Date: Sun Mar 23 00:20:10 2025
+
+Add sloshing after drinking beer or leaving the feeding machine
+
+==================================================
+Commit Hash: 757a1e8304df2f3a61c7a530fdfc6811eadb054f
 Author: Niwatori401
 Date: Sat Mar 22 21:24:30 2025
 
