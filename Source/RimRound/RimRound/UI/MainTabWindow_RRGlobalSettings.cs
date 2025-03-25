@@ -134,20 +134,26 @@ namespace RimRound.UI
             Text.Font = GameFont.Small;
             int numericFieldCount = 0;
 
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundMalesGlobalMult, numericFieldCount++, "RR_soundSettings_soundMales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundMalesGlobalMultiplier");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_soundSettings_soundFemales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier");
 
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFeedingMachine", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachine");
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachineSwallow, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow");
 
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRegularBreath, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundRegularBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRegularBreath");
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundPleasureBreath, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundPleasureBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundPleasureBreath");
 
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFootsteps, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundFootsteps", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFootsteps");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_soundSettings_soundFeedingMachine", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachine");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachineSwallow, numericFieldCount++, "RR_soundSettings_soundFeedingMachineSwallow", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow");
 
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachGurgles, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundStomachGurgles", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachGurgles");
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachStretch, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundStomachStretch", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachStretch");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRegularBreath, numericFieldCount++, "RR_soundSettings_soundRegularBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRegularBreath");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundPleasureBreath, numericFieldCount++, "RR_soundSettings_soundPleasureBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundPleasureBreath");
 
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundZenithOrb, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundZenithOrb", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundZenithOrb");
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRapidWeightGain, numericFieldCount++, "RR_Nhs_HediffNumericSettings_soundRapidWeightGain", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRapidWeightGain");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFootsteps, numericFieldCount++, "RR_soundSettings_soundFootsteps", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFootsteps");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachGurgles, numericFieldCount++, "RR_soundSettings_soundStomachGurgles", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachGurgles");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachStretch, numericFieldCount++, "RR_soundSettings_soundStomachStretch", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachStretch");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachEmpty, numericFieldCount++, "RR_soundSettings_soundStomachEmpty", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachEmpty");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachSlosh, numericFieldCount++, "RR_soundSettings_soundStomachSlosh", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachSlosh");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundZenithOrb, numericFieldCount++, "RR_soundSettings_soundZenithOrb", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundZenithOrb");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRapidWeightGain, numericFieldCount++, "RR_soundSettings_soundRapidWeightGain", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRapidWeightGain");
 
             soundSettingsFieldRect.height = numericFieldCount * spaceBetweenNumberFields;
 
@@ -968,7 +974,7 @@ namespace RimRound.UI
                 new Rect(boundingRect.xMax - bufferForNumberFields, boundingRect.y, bufferForNumberFields, Text.LineHeight),
                 ref numericFieldData.threshold,
                 ref numericFieldData.stringBuffer,
-                Prefs.DevMode ? 0 : numericFieldData.min,
+                Prefs.DevMode ? int.MinValue : numericFieldData.min,
                 Prefs.DevMode ? int.MaxValue : numericFieldData.max);
 
             T newVal = numericFieldData.threshold;

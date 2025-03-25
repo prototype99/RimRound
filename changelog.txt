@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 2a03f87b1b3d00befbf6d0f2b87918dc5489ab20
+Commit Hash: 658d20d0d9ac781044734b0e9cdd83d01ca16529
+Author: Niwatori401
+Date: Tue Mar 25 00:10:11 2025
+
+Implement volume adjustment settings
+
+==================================================
+Commit Hash: 498222839c58ac31e87322accc18339ed5103547
 Author: Niwatori401
 Date: Sun Mar 23 02:01:06 2025
 

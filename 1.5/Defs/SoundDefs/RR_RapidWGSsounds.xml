@@ -20,6 +20,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -36,6 +42,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -52,6 +64,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -68,6 +86,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -84,6 +108,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -100,6 +130,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_RapidWeightGain" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>

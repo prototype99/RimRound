@@ -21,6 +21,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -37,6 +47,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -53,6 +73,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -69,6 +99,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -85,6 +125,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -101,6 +151,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -117,6 +177,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -133,6 +203,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_FemaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -150,6 +230,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -166,6 +256,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -182,6 +282,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -198,6 +308,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -214,6 +334,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -230,6 +360,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -246,6 +386,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>
@@ -262,6 +412,16 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_MaleGlobal" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>		
 	</SoundDef>

@@ -20,6 +20,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -37,6 +43,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -54,6 +66,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -71,6 +89,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -88,6 +112,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -105,6 +135,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -122,6 +158,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -139,6 +181,12 @@
 				<volumeRange>20~20</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 	</SoundDef>

@@ -41,15 +41,20 @@
 	
 	<!-- Sound Settings Window -->
 	<RR_Nhs_SoundSettingsTitle>Sound Settings</RR_Nhs_SoundSettingsTitle>
-	<RR_Nhs_HediffNumericSettings_soundFeedingMachine>Feeding Machine Operation</RR_Nhs_HediffNumericSettings_soundFeedingMachine>
-	<RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow>Feeding Machine Swallowing</RR_Nhs_HediffNumericSettings_soundFeedingMachineSwallow>
-	<RR_Nhs_HediffNumericSettings_soundRegularBreath>Regular Breathing</RR_Nhs_HediffNumericSettings_soundRegularBreath>
-	<RR_Nhs_HediffNumericSettings_soundPleasureBreath>Pleasured Breathing</RR_Nhs_HediffNumericSettings_soundPleasureBreath>
-	<RR_Nhs_HediffNumericSettings_soundFootsteps>Footsteps</RR_Nhs_HediffNumericSettings_soundFootsteps>
-	<RR_Nhs_HediffNumericSettings_soundStomachGurgles>Stomach Gurgles</RR_Nhs_HediffNumericSettings_soundStomachGurgles>
-	<RR_Nhs_HediffNumericSettings_soundStomachStretch>Stomach Stretching</RR_Nhs_HediffNumericSettings_soundStomachStretch>
-	<RR_Nhs_HediffNumericSettings_soundZenithOrb>Zenith Orb Operation</RR_Nhs_HediffNumericSettings_soundZenithOrb>
-	<RR_Nhs_HediffNumericSettings_soundRapidWeightGain>Rapid Weight Gain</RR_Nhs_HediffNumericSettings_soundRapidWeightGain>
+	<RR_soundSettings_soundMales>Male Global Sound Multiplier</RR_soundSettings_soundMales>
+	<RR_soundSettings_soundFemales>Female Global Sound Multiplier</RR_soundSettings_soundFemales>
+	
+	<RR_soundSettings_soundFeedingMachine>Feeding Machine Operation</RR_soundSettings_soundFeedingMachine>
+	<RR_soundSettings_soundFeedingMachineSwallow>Feeding Machine Swallowing</RR_soundSettings_soundFeedingMachineSwallow>
+	<RR_soundSettings_soundRegularBreath>Regular Breathing</RR_soundSettings_soundRegularBreath>
+	<RR_soundSettings_soundPleasureBreath>Pleasured Breathing</RR_soundSettings_soundPleasureBreath>
+	<RR_soundSettings_soundFootsteps>Footsteps</RR_soundSettings_soundFootsteps>
+	<RR_soundSettings_soundStomachGurgles>Stomach Gurgles</RR_soundSettings_soundStomachGurgles>
+	<RR_soundSettings_soundStomachStretch>Stomach Stretching</RR_soundSettings_soundStomachStretch>
+	<RR_soundSettings_soundStomachEmpty>Stomach Empty Sounds</RR_soundSettings_soundStomachEmpty>
+	<RR_soundSettings_soundStomachSlosh>Stomach Sloshing</RR_soundSettings_soundStomachSlosh>
+	<RR_soundSettings_soundZenithOrb>Zenith Orb Operation</RR_soundSettings_soundZenithOrb>
+	<RR_soundSettings_soundRapidWeightGain>Rapid Weight Gain</RR_soundSettings_soundRapidWeightGain>
 	
 	<!--Main Tab Window-->
 	<RR_Mtw_Title>RimRound Control Panel</RR_Mtw_Title>
@@ -212,6 +217,9 @@
 	<RR_ToolTip_NumericPreferences_MinWeightChangeForThrowingText>When a pawn gains (or loses) a substantial amount of weight, the amount they gained is thrown as text. This can be annoying for pawns who are gaining rapidly over a long period of time. You can increase this value to raise how large the gain has to be to throw text.</RR_ToolTip_NumericPreferences_MinWeightChangeForThrowingText>
 	<RR_ToolTip_ThirdPartyModPreferences_MilkMultiplierByWeight>Multplier for how much weight impacts breast milk yield.</RR_ToolTip_ThirdPartyModPreferences_MilkMultiplierByWeight>
 		
+	<RR_ToolTip_SoundSettings_SoundMalesGlobalMultiplier>All male-specific sounds are multiplied by this value. 0 Disables male-specific sounds.</RR_ToolTip_SoundSettings_SoundMalesGlobalMultiplier>
+	<RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier>All female-specific sounds are multiplied by this value. 0 Disables female-specific sounds.</RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier>
+	
 	<RR_ToolTip_SoundSettings_SoundFeedingMachine>The sound the feeding machine makes while on</RR_ToolTip_SoundSettings_SoundFeedingMachine>
 	<RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow>The sound made by pawns when using the feeding machine</RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow>
 	<RR_ToolTip_SoundSettings_SoundRegularBreath>Breathing noises made when heavy pawns are exerting themselves</RR_ToolTip_SoundSettings_SoundRegularBreath>
@@ -219,6 +227,8 @@
 	<RR_ToolTip_SoundSettings_SoundFootsteps>Sounds made when heavy pawns move</RR_ToolTip_SoundSettings_SoundFootsteps>
 	<RR_ToolTip_SoundSettings_SoundStomachGurgles>Sounds made when a pawn has an empty stomach</RR_ToolTip_SoundSettings_SoundStomachGurgles>
 	<RR_ToolTip_SoundSettings_SoundStomachStretch>Sounds made when a pawn is at or near max fullness</RR_ToolTip_SoundSettings_SoundStomachStretch>
+	<RR_ToolTip_SoundSettings_SoundStomachEmpty>Sounds made when a pawn has an empty stomach</RR_ToolTip_SoundSettings_SoundStomachEmpty>
+	<RR_ToolTip_SoundSettings_SoundStomachSlosh>Sounds made when a pawn leaves a feeding machine or drinks other fluids</RR_ToolTip_SoundSettings_SoundStomachSlosh>
 	<RR_ToolTip_SoundSettings_SoundZenithOrb>The sound the zenith orb makes while on</RR_ToolTip_SoundSettings_SoundZenithOrb>
 	<RR_ToolTip_SoundSettings_SoundRapidWeightGain>Sounds made when a pawn is made to gain weight quickly either through artificial/temporary means or otherwise</RR_ToolTip_SoundSettings_SoundRapidWeightGain>
 

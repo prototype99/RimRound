@@ -24,6 +24,12 @@
 				</grains>
 				<volumeRange>70~70</volumeRange>
 				<distRange>10~50</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_ZenithOrb" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>
@@ -45,6 +51,12 @@
 				</grains>
 				<volumeRange>60~60</volumeRange>
 				<distRange>10~30</distRange>
+				<paramMappings>
+					<li>
+						<inParam Class="RimRound.Sound.SoundParamSource_ZenithOrb" />
+						<outParam Class="SoundParamTarget_Volume" />
+					</li>
+				</paramMappings>
 			</li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>		
@@ -70,6 +82,12 @@
 			</grains>
 			<volumeRange>70~70</volumeRange>
 			<distRange>10~50</distRange>
+			<paramMappings>
+				<li>
+					<inParam Class="RimRound.Sound.SoundParamSource_ZenithOrb" />
+					<outParam Class="SoundParamTarget_Volume" />
+				</li>
+			</paramMappings>
 		  </li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>
@@ -105,6 +123,12 @@
 			</grains>
 			<volumeRange>60~60</volumeRange>
 			<distRange>10~30</distRange>
+			<paramMappings>
+				<li>
+					<inParam Class="RimRound.Sound.SoundParamSource_ZenithOrb" />
+					<outParam Class="SoundParamTarget_Volume" />
+				</li>
+			</paramMappings>
 		  </li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>
@@ -126,6 +150,12 @@
 			</grains>
 			<volumeRange>30</volumeRange>
 			<distRange>10~40</distRange>
+			<paramMappings>
+				<li>
+					<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineOn" />
+					<outParam Class="SoundParamTarget_Volume" />
+				</li>
+			</paramMappings>
 		  </li>
 		</subSounds>
 		<priorityMode>PrioritizeNearest</priorityMode>
@@ -144,6 +174,12 @@
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
         <volumeRange>50</volumeRange>
         <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
       </li>
     </subSounds>
   </SoundDef>
@@ -161,6 +197,12 @@
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
         <volumeRange>50</volumeRange>
         <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
       </li>
     </subSounds>
   </SoundDef>
@@ -178,6 +220,12 @@
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
         <volumeRange>50</volumeRange>
         <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
       </li>
     </subSounds>
   </SoundDef>
