@@ -513,7 +513,8 @@ GS_Bear_Brown,BW
 GS_Bear_Polar,BW
 GS_Bear_Panda,BW
 GS_Bear_Luna,BW
-GS_Bear_Cave,BW</RR_TextureData>
+GS_Bear_Cave,BW
+RAZ_Mal0Race,BW</RR_TextureData>
 
 <RR_RaceData>AFoxbold,set070
 Alien_Avali,set070
@@ -600,6 +601,7 @@ O21_FR_Chitine,defaultSet
 Rabbie,rabbieSet
 Ratkin,ratkinSet
 Ratkin_Su,ratkinSet
+RAZ_Mal0Race,maloSet
 ReviaRaceAlien,defaultSet
 RE_Asari,defaultSet
 Stick_Stickman,defaultSet

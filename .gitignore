@@ -14,10 +14,12 @@
 *.xlsx#
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+*.csv#
+*.ods#
 RESULT_HASH.txt
 Thumbs.db:encryptable
 Thumbs.db
+Thumbs.db_encryptable
 
 1.5/Assemblies/0Harmony.dll
 1.5/Assemblies/AlienRace.dll

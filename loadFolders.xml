@@ -50,5 +50,6 @@
 		<li IfModActive="TrahsPanda.Lucario">1.5/ExternalMods/LucarioRaceSupport</li>
 		<li IfModActive="Barsimmon.OriginalByVagabond.FantasyGoblins">1.5/ExternalMods/GoblinRaceSupport</li>
 		<li IfModActive="zal.ursine">1.5/ExternalMods/UrsineOfTheRimSupport</li>
+		<li IfModActive="Razar1.Mal0Race">1.5/ExternalMods/MaloRaceSupport</li>
 	</v1.5>	
 </loadFolders>

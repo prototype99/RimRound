@@ -53,6 +53,7 @@ namespace RimRound.Patch
             { "Ratkin",           new Vector2(0, -0.09f )},
             { "Ratkin_Su",        new Vector2(0, -0.09f )},
             { "Rabbie",           new Vector2(0, -0.05f)},
+            { "RAZ_Mal0Race",     new Vector2(0, 0.100f)}
         };
 
     }

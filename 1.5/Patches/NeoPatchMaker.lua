@@ -180,6 +180,7 @@ function make_all_patches_for_patch_data(patchData, basePath)
   local csvFileLocation = basePath .. "Patches/PatchMaker/" .. patchData[2] .. ".csv"
   local templateFileLocation = basePath .. "Patches/PatchMaker/" .. patchData[1] .. ".~xml"
 
+  print("Working on:" .. patchData[2] .. ".csv | " .. patchData[1] .. ".~xml")
   local unsortedTokens = read_tokens_from_file(csvFileLocation)
   local valuesToReplace = unsortedTokens[1]
   local csvTokensByMod = group_csv_patches_by_mod(unsortedTokens)
