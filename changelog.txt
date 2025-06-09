@@ -1,5 +1,18 @@
 ==================================================
-Commit Hash: 759be0ab98e330c9ef533b71fd5ed7ccb98c3abc
+Commit Hash: f6eca7d487bc2d61f3f52862e6f675ad148b63cd
+Author: Niwatori401
+Date: Mon Jun 9 00:12:12 2025
+
+Add new clothing
+- Capes for standard and apple female (courtesy Tight-Fit)
+- FlakVest for standard female (courtesy croncron)
+- BasicShirt for new male (courtesy gosuke)
+- TribalA for standard female (courtesy croncron)
+
+Fix RR settings being clipped at the bottom
+
+==================================================
+Commit Hash: f7d186a9548c64c37a0ee0b1c8b4c1aa4795ff46
 Author: Niwatori401
 Date: Sun Jun 8 23:07:58 2025
 

@@ -237,7 +237,7 @@ namespace RimRound.UI
             Rect exemptionSettingsGroup = new Rect(0.33333f * inRect.width, titleRect.yMax, 0.33333f * inRect.width, 200);
             DoExemptionSettingsGroup(exemptionSettingsGroup);
 
-            Rect generalSettingsRect = new Rect(exemptionSettingsGroup.x, exemptionSettingsGroup.yMax, exemptionSettingsGroup.width, exemptionSettingsGroup.height + 200);
+            Rect generalSettingsRect = new Rect(exemptionSettingsGroup.x, exemptionSettingsGroup.yMax, exemptionSettingsGroup.width, exemptionSettingsGroup.height + 500);
             DoGeneralSettingsGroup(generalSettingsRect);
 
             Rect gizmoSettingsGroupRect = new Rect(0.66666f * inRect.width, titleRect.yMax, 0.33333f * inRect.width, inRect.height - titleRect.height);
