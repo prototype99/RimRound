@@ -191,6 +191,7 @@
     <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetSleepingSlotPos_AdjustForRRBed.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_SleepingSlotsCount_AdjustForRRBed.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\GraphicalPatches\PawnRenderNodeWorker-Body_CanDrawNow_AdjustForShowBlanketSetting.cs" />
+    <Compile Include="RimRound\Patch\RimWorldPatches\HediffComp-Lactating_AddedNutritionPerDay_ChangeByBodyWeight.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\HistoryAutoRecorderGroup\HistoryAutoRecorderGroup_DrawGraph_CallChildMethod.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\HistoryAutoRecorderGroup\HistoryAutoRecorderGroup_ExposeData_CallChildMethods.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\HistoryAutoRecorderGroup\HistoryAutoRecorderGroup_GetMaxDay_CallChildMethod.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="RimRound\UI\Gizmos\MakeGeneratorGizmo.cs" />
     <Compile Include="RimRound\UI\Gizmos\MakeRecreationSpotGizmo.cs" />
     <Compile Include="RimRound\Utilities\BlobBedUtility.cs" />
+    <Compile Include="RimRound\Utilities\BodyResourceUtility.cs" />
     <Compile Include="RimRound\Utilities\CaravanPatchUtility.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\Caravan\CaravanMaker_MakeCaravan_ChangeDietMode.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\Caravan\Caravan_RemoveAllPawns_ChangeDietMode.cs" />

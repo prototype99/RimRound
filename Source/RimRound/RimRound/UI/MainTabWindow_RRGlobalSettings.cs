@@ -709,15 +709,8 @@ namespace RimRound.UI
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.nutritionPerPerkLevel, numericFieldCount++, "RR_Mtw_nutritionPerLevel", GameFont.Small, null, "RR_ToolTip_NumericPreferences_NutritionPerPerkLevel");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.levelsGainedPerLevel, numericFieldCount++, "RR_Mtw_levelsGainedPerLevel", GameFont.Small, null, "RR_ToolTip_NumericPreferences_LevelsGainedPerLevel");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.minWeightChangeForNumberText, numericFieldCount++, "RR_Mtw_minWeightToThrowText", GameFont.Small, null, "RR_ToolTip_NumericPreferences_MinWeightChangeForThrowingText");
-
-
-            if (cachedMilkableColonistsActive is null)
-            {
-                cachedMilkableColonistsActive = cachedMilkableColonistsActive = (from mod in ModsConfig.ActiveModsInLoadOrder where mod.Name == "RimJobWorld - Milkable Colonists" select mod).Any();
-            }
-
-            if ((bool)cachedMilkableColonistsActive)
-                NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.milkMultiplierForWeight, numericFieldCount++, "RR_Mtw_milkMultiplierForWeight");
+            NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.milkMultiplierForWeight, numericFieldCount++, "RR_Mtw_milkMultiplierForWeight", GameFont.Small, null, "RR_Mtw_milkMultiplierForWeightDesc");
+            NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.maxMilkMultiplier, numericFieldCount++, "RR_Mtw_maxMilkMultiplier", GameFont.Small, null, "RR_Mtw_maxMilkMultiplierDesc");
 
 
             /**/
@@ -726,7 +719,6 @@ namespace RimRound.UI
             GUI.EndGroup();
         }
 
-        bool? cachedMilkableColonistsActive = null;
 
         private void DoMainSettingsTitleGroup(Rect titleRect)
         {

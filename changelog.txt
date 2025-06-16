@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: f6eca7d487bc2d61f3f52862e6f675ad148b63cd
+Commit Hash: 98eea4e04478ea6a022a08b938776fcf911e6c0f
+Author: Niwatori401
+Date: Mon Jun 16 05:16:41 2025
+
+Add lactation multiplier for weight
+Add two new settings for this change
+
+==================================================
+Commit Hash: 0e28032cd28a2ff3196cdbf8ddb9fb68ede88ed6
 Author: Niwatori401
 Date: Mon Jun 9 00:12:12 2025
 

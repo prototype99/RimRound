@@ -106,11 +106,9 @@ namespace RimRound.Utilities
         public static NumericFieldData<int> nutritionPerPerkLevel = new NumericFieldData<int>(15, 5, 30);
         public static NumericFieldData<int> levelsGainedPerLevel = new NumericFieldData<int>(1, 1, 10);
         public static NumericFieldData<float> minWeightChangeForNumberText = new NumericFieldData<float>(0.5f, 0.01f, float.MaxValue);
-        
-        
-        
-        //Mod specific multipliers
-        public static NumericFieldData<float> milkMultiplierForWeight = new NumericFieldData<float>(1, 0, 100);
+        public static NumericFieldData<float> milkMultiplierForWeight = new NumericFieldData<float>(1, 0, 10);
+        public static NumericFieldData<float> maxMilkMultiplier = new NumericFieldData<float>(15, 0, 100);
+
 
         #endregion
     }
