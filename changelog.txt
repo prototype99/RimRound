@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 98eea4e04478ea6a022a08b938776fcf911e6c0f
+Commit Hash: c6dd3c9aaa07cc691b05c1b0f26881bf754475f0
+Author: Niwatori401
+Date: Mon Jun 16 05:27:50 2025
+
+Add TribalA clothing set for alternate new male sprites
+
+==================================================
+Commit Hash: c61669406e9d7fadd6326f88495e8f79964693da
 Author: Niwatori401
 Date: Mon Jun 16 05:16:41 2025
 
