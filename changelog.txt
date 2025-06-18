@@ -1,9 +1,19 @@
 ==================================================
-Commit Hash: c6dd3c9aaa07cc691b05c1b0f26881bf754475f0
+Commit Hash: 6da78c87ef9700126bed3d73b1bef45db424d4e6
+Author: Niwatori401
+Date: Wed Jun 18 23:36:06 2025
+
+Add plate armor sprites for new male set (Courtesy gosuke)
+Add button-up shirt sprites for new male set (Courtesy gosuke)
+Add pants sprites for new male set (Courtesy gosuke)
+Add apparel support tracking document
+
+==================================================
+Commit Hash: 8df7a0507a60238fde9d5c14ea9a46dae28ef704
 Author: Niwatori401
 Date: Mon Jun 16 05:27:50 2025
 
-Add TribalA clothing set for alternate new male sprites
+Add TribalA clothing set for alternate new male sprites (Courtesy Gosuke)
 
 ==================================================
 Commit Hash: c61669406e9d7fadd6326f88495e8f79964693da
