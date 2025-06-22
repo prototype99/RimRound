@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 6da78c87ef9700126bed3d73b1bef45db424d4e6
+Commit Hash: 6254b5fa671f2cc5e6a733e73c8dcbb93c30d01f
+Author: Niwatori401
+Date: Sun Jun 22 03:50:20 2025
+
+Add Recon Armor sprites for Apple Female and Male bodies (Courtesy Toggle)
+
+==================================================
+Commit Hash: 70e29db8fef8730b964c0645ff8de48f690c3710
 Author: Niwatori401
 Date: Wed Jun 18 23:36:06 2025
 
