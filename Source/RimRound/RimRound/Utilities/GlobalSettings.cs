@@ -13,29 +13,30 @@ namespace RimRound.Utilities
     public static class GlobalSettings
     {
         #region Sound Settings
-        public static NumericFieldData<float> soundMalesGlobalMult = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundFemalesGlobalMult = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundMalesGlobalMult = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundFemalesGlobalMult = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundFeedingMachine = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundFeedingMachineSwallow = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundFeedingMachine = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundFeedingMachineSwallow = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundRegularBreath = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundPleasureBreath = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundRegularBreath = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundPleasureBreath = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundFootsteps = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundFootsteps = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundStomachGurgles = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundStomachStretch = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundStomachEmpty = new NumericFieldData<float>(100, 0, 400);
-        public static NumericFieldData<float> soundStomachSlosh = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundStomachGurgles = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachStretch = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachEmpty = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachSlosh = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundRapidWeightGain = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundRapidWeightGain = new NumericFieldData<float>(50, 0, 100);
 
-        public static NumericFieldData<float> soundZenithOrb = new NumericFieldData<float>(100, 0, 400);
+        public static NumericFieldData<float> soundZenithOrb = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundBurp = new NumericFieldData<float>(50, 0, 100);
+        
+        public static NumericFieldData<float> soundBurpDelaySeconds = new NumericFieldData<float>(20, 1, float.MaxValue);
 
         #endregion
-
-
 
         #region Hediff Settings
 

@@ -55,6 +55,8 @@
 	<RR_soundSettings_soundStomachSlosh>Stomach Sloshing</RR_soundSettings_soundStomachSlosh>
 	<RR_soundSettings_soundZenithOrb>Zenith Orb Operation</RR_soundSettings_soundZenithOrb>
 	<RR_soundSettings_soundRapidWeightGain>Rapid Weight Gain</RR_soundSettings_soundRapidWeightGain>
+	<RR_soundSettings_soundBurp>Burps</RR_soundSettings_soundBurp>
+	<RR_soundSettings_soundBurpDelaySeconds>Burp Delay Seconds</RR_soundSettings_soundBurpDelaySeconds>
 	
 	<!--Main Tab Window-->
 	<RR_Mtw_Title>RimRound Control Panel</RR_Mtw_Title>
@@ -225,13 +227,14 @@
 	<RR_ToolTip_SoundSettings_SoundRegularBreath>Breathing noises made when heavy pawns are exerting themselves</RR_ToolTip_SoundSettings_SoundRegularBreath>
 	<RR_ToolTip_SoundSettings_SoundPleasureBreath>Pawns with weight opinion “like” or “fanatical” will emit moans of pleasure while their stomach is full and they are gaining weight</RR_ToolTip_SoundSettings_SoundPleasureBreath>
 	<RR_ToolTip_SoundSettings_SoundFootsteps>Sounds made when heavy pawns move</RR_ToolTip_SoundSettings_SoundFootsteps>
-	<RR_ToolTip_SoundSettings_SoundStomachGurgles>Sounds made when a pawn has an empty stomach</RR_ToolTip_SoundSettings_SoundStomachGurgles>
+	<RR_ToolTip_SoundSettings_SoundStomachGurgles>Sounds made when a pawn is digesting</RR_ToolTip_SoundSettings_SoundStomachGurgles>
 	<RR_ToolTip_SoundSettings_SoundStomachStretch>Sounds made when a pawn is at or near max fullness</RR_ToolTip_SoundSettings_SoundStomachStretch>
 	<RR_ToolTip_SoundSettings_SoundStomachEmpty>Sounds made when a pawn has an empty stomach</RR_ToolTip_SoundSettings_SoundStomachEmpty>
 	<RR_ToolTip_SoundSettings_SoundStomachSlosh>Sounds made when a pawn leaves a feeding machine or drinks other fluids</RR_ToolTip_SoundSettings_SoundStomachSlosh>
 	<RR_ToolTip_SoundSettings_SoundZenithOrb>The sound the zenith orb makes while on</RR_ToolTip_SoundSettings_SoundZenithOrb>
 	<RR_ToolTip_SoundSettings_SoundRapidWeightGain>Sounds made when a pawn is made to gain weight quickly either through artificial/temporary means or otherwise</RR_ToolTip_SoundSettings_SoundRapidWeightGain>
-
+	<RR_ToolTip_SoundSettings_SoundBurp>Burp sounds made when a pawn is digesting food</RR_ToolTip_SoundSettings_SoundBurp>
+	<RR_ToolTip_SoundSettings_SoundBurpDelaySeconds>Delay in seconds between burps when full</RR_ToolTip_SoundSettings_SoundBurpDelaySeconds>
 	
 	<FloatMenuCantConsumeTooBig>Can't consume {1_labelShort}: Too big</FloatMenuCantConsumeTooBig>
 	
@@ -511,6 +514,10 @@ Art, Sprite work, UI
 - Ultranova
 - Whiteglove
 
+Sound
+- mrmoto
+
+Additional sounds are from CC-BY sources as specified in the ATTRIBUTION file.
 
 Writing, flavor text
 - Ultranova

@@ -135,9 +135,7 @@ namespace RimRound.UI
             int numericFieldCount = 0;
 
             NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundMalesGlobalMult, numericFieldCount++, "RR_soundSettings_soundMales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundMalesGlobalMultiplier");
-            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_soundSettings_soundFemales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier");
-
-
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFemalesGlobalMult, numericFieldCount++, "RR_soundSettings_soundFemales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier");
 
             NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_soundSettings_soundFeedingMachine", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachine");
             NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachineSwallow, numericFieldCount++, "RR_soundSettings_soundFeedingMachineSwallow", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow");
@@ -154,6 +152,8 @@ namespace RimRound.UI
 
             NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundZenithOrb, numericFieldCount++, "RR_soundSettings_soundZenithOrb", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundZenithOrb");
             NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRapidWeightGain, numericFieldCount++, "RR_soundSettings_soundRapidWeightGain", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRapidWeightGain");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundBurp, numericFieldCount++, "RR_soundSettings_soundBurp", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundBurp");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundBurpDelaySeconds, numericFieldCount++, "RR_soundSettings_soundBurpDelaySeconds", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundBurpDelaySeconds");
 
             soundSettingsFieldRect.height = numericFieldCount * spaceBetweenNumberFields;
 

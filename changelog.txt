@@ -1,5 +1,23 @@
 ==================================================
-Commit Hash: 658d20d0d9ac781044734b0e9cdd83d01ca16529
+Commit Hash: efe2f517967a049e4f9ea7167a13b305a054774a
+Author: Niwatori401
+Date: Fri Jun 27 17:22:09 2025
+
+Add burp sounds + settings
+Sounds now only play for pawns non-exempted pawns
+Add male/female specific swallowing sounds
+Replace sounds with new versions
+Fix bug in description for stomach gurgle sound setting
+Update credits
+Fix bug with autofeeder causing it to be unable to disconnect
+Pawns no longer breathe or burp when connected to feeding machine
+Add ATTRIBUTION for new sounds and update README
+Tweak volumes
+Fix bug where female global volume did not apply
+Sound settings now caps at 100, due to vanilla limitations
+
+==================================================
+Commit Hash: 59cbc7dac49200837effb19283236fe93932614e
 Author: Niwatori401
 Date: Tue Mar 25 00:10:11 2025
 

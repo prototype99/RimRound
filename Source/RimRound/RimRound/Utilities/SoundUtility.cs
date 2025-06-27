@@ -1,4 +1,5 @@
 ﻿using RimRound.Comps;
+using RimRound.FeedingTube;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,67 @@ namespace RimRound.Utilities
 {
     public static class SoundUtility
     {
+        public static bool PawnShouldPlaySound(Pawn pawn) 
+        {
+            return pawn.RaceProps.Humanlike &&
+                pawn.TryGetComp<PawnBodyType_ThingComp>() is PawnBodyType_ThingComp comp &&
+                comp != null &&
+                !comp.CategoricallyExempt &&
+                !comp.PersonallyExempt;
+        }
+
+
+        public static SoundDef GetSwallowSoundByWeightOpinionAndGender(Pawn pawn, AutoFeederMode mode) 
+        {
+            if (pawn == null || !PawnShouldPlaySound(pawn)) 
+            {
+                return null;
+            }
+
+            switch (mode)
+            {
+                case AutoFeederMode.off:
+                    break;
+                case AutoFeederMode.lose:
+                    break;
+                case AutoFeederMode.maintain:
+                    return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Easy;
+                case AutoFeederMode.gain:
+                    return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Normal;
+                case AutoFeederMode.maxgain:
+                    if (pawn.gender == Gender.Male) 
+                    {
+                        if (WeightOpinionUtility.IsPawnBelowWeightOpinion(pawn, WeightOpinion.Fanatical)) 
+                        {
+                            return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Labored_Male;
+                        }
+
+                        return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Labored_Male_Pleasure;
+                    }
+                    else
+                    {
+                        if (WeightOpinionUtility.IsPawnBelowWeightOpinion(pawn, WeightOpinion.Fanatical))
+                        {
+                            return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Labored_Female;
+                        }
+
+                        return RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Labored_Female_Pleasure;
+                    }
+                default:
+                    return null;
+            }
+
+            return null;
+        }
+
+
         public static SoundDef GetBreathingSoundByWeightOpinionAndGender(Pawn pawn) 
         {
+            if (pawn == null || !PawnShouldPlaySound(pawn))
+            {
+                return null;
+            }
+
             bool isMale = pawn.gender == Gender.Male;
 
             if (BodyTypeUtility.PawnIsOverWeightThreshold(pawn, Defs.BodyTypeDefOf.F_090_Titanic))
@@ -77,16 +137,13 @@ namespace RimRound.Utilities
 
         public static SoundDef GetStomachStretchingSoundByFullness(FullnessAndDietStats_ThingComp fndComp)
         {
-            if (fndComp == null) {
-                Log.Error($"fndComp was null in {nameof(GetStomachStretchingSoundByFullness)}");
-                return null;
-            }
-
-            if (fndComp.fullnessbar.CurrentFullnessAsPercentOfSoftLimit < 1.0f) 
+            if (fndComp == null || 
+                fndComp.parent.AsPawn() == null || 
+                !PawnShouldPlaySound(fndComp.parent.AsPawn()) || 
+                fndComp.fullnessbar.CurrentFullnessAsPercentOfSoftLimit < 1.0f)
             {
                 return null;
             }
-
 
             if (fndComp.CurrentFullness >= 6)
             {
@@ -119,13 +176,10 @@ namespace RimRound.Utilities
 
         public static SoundDef GetStomachGurgleSoundsByWeight(FullnessAndDietStats_ThingComp fndComp) // Digesting
         {
-            if (fndComp == null)
-            {
-                Log.Error($"fndComp was null in {nameof(GetStomachGurgleSoundsByWeight)}");
-                return null;
-            }
-
-            if (fndComp.CurrentFullness <= 0.05f) // Arbitrarily low number above zero
+            if (fndComp == null ||
+                fndComp.parent.AsPawn() == null ||
+                !PawnShouldPlaySound(fndComp.parent.AsPawn()) ||
+                fndComp.CurrentFullness <= 0.05f) // Arbitrarily low number above zero
             {
                 return null;
             }
@@ -139,7 +193,34 @@ namespace RimRound.Utilities
 
             return Defs.SoundDefOf.RR_StomachGurgles_Light;
         }
-        
+
+
+        public static SoundDef GetBurpSoundsByWeight(Pawn pawn) // Digesting
+        {
+            var fndComp = pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
+            return GetBurpSoundsByWeight(fndComp);
+        }
+
+        public static SoundDef GetBurpSoundsByWeight(FullnessAndDietStats_ThingComp fndComp) // Digesting
+        {
+            if (fndComp == null ||
+                fndComp.parent.AsPawn() == null ||
+                !PawnShouldPlaySound(fndComp.parent.AsPawn()) ||
+                fndComp.CurrentFullness <= 0.05f) // Arbitrarily low number above zero
+            {
+                return null;
+            }
+
+            if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_090_Titanic))
+                return Defs.SoundDefOf.RR_StomachBurp_SuperHeavy;
+            else if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_060_Lardy))
+                return Defs.SoundDefOf.RR_StomachBurp_Heavy;
+            else if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_020_Corpulent))
+                return Defs.SoundDefOf.RR_StomachBurp_Medium;
+
+            return Defs.SoundDefOf.RR_StomachBurp_Light;
+        }
+
 
         // Call just before pawn changes body type. Does not check for if the sound should be playing, just which sound is appropriate for the current weight.
         public static SoundDef GetBwomfSoundByWeight(Pawn pawn)
@@ -170,13 +251,14 @@ namespace RimRound.Utilities
         private static Dictionary<String, int> lastPlayedFootstepTick = new Dictionary<String, int>();
         public static SoundDef GetFootStepSoundsByWeightAndMovement(FullnessAndDietStats_ThingComp fndComp)
         {
-            BodyTypeDef minimumBodyTypeForBreathing = Defs.BodyTypeDefOf.F_020_Corpulent;
-
-            if (fndComp == null)
+            if (fndComp == null ||
+                fndComp.parent.AsPawn() == null ||
+                !PawnShouldPlaySound(fndComp.parent.AsPawn()))
             {
-                Log.Error($"fndComp was null in {nameof(GetFootStepSoundsByWeightAndMovement)}");
                 return null;
             }
+
+            BodyTypeDef minimumBodyTypeForBreathing = Defs.BodyTypeDefOf.F_020_Corpulent;
 
             if (fndComp.parent.AsPawn().Downed || 
                 fndComp?.parent?.AsPawn()?.pather == null || 
@@ -228,6 +310,7 @@ namespace RimRound.Utilities
         // Returns sound based on weight, not whether the sound should play.
         public static SoundDef GetStomachSloshByWeight(FullnessAndDietStats_ThingComp fndComp) 
         {
+
             if (fndComp == null)
             {
                 Log.Error($"fndComp was null in {nameof(GetStomachSloshByWeight)}");
@@ -252,16 +335,14 @@ namespace RimRound.Utilities
 
         public static SoundDef GetEmptyStomachSoundsByWeight(FullnessAndDietStats_ThingComp fndComp)
         {
-            if (fndComp == null)
+            if (fndComp == null ||
+                fndComp.parent.AsPawn() == null ||
+                !PawnShouldPlaySound(fndComp.parent.AsPawn()) ||
+                fndComp.CurrentFullness > 0.05f)  // Arbitrarily low number above zero
             {
-                Log.Error($"fndComp was null in {nameof(GetEmptyStomachSoundsByWeight)}");
                 return null;
             }
 
-            if (fndComp.CurrentFullness > 0.05f) // Arbitrarily low number above zero
-            {
-                return null;
-            }
 
             if (BodyTypeUtility.PawnIsOverWeightThreshold(fndComp.parent.AsPawn(), Defs.BodyTypeDefOf.F_090_Titanic))
                 return Defs.SoundDefOf.RR_StomachEmpty_SuperHeavy;

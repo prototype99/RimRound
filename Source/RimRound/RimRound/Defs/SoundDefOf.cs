@@ -17,7 +17,10 @@ namespace RimRound.Defs
         // Swallow sound play during use of the feeding machine. Intensity of swallowing depends on the machine setting. No sound plays for lose weight setting
         public static SoundDef RR_FeedingMachine_Swallow_Easy;
         public static SoundDef RR_FeedingMachine_Swallow_Normal;
-        public static SoundDef RR_FeedingMachine_Swallow_Labored;
+        public static SoundDef RR_FeedingMachine_Swallow_Labored_Female;
+        public static SoundDef RR_FeedingMachine_Swallow_Labored_Female_Pleasure;
+        public static SoundDef RR_FeedingMachine_Swallow_Labored_Male;
+        public static SoundDef RR_FeedingMachine_Swallow_Labored_Male_Pleasure;
 
         // Zenith Orb
         public static SoundDef RR_ZenithOrbOnSound;
@@ -33,6 +36,12 @@ namespace RimRound.Defs
         public static SoundDef RR_Bwomf_4; // Enormous - Gigantic II
         public static SoundDef RR_Bwomf_5; // Titanic I - Gelatinous I
         public static SoundDef RR_Bwomf_6; // Gelatinous II+
+
+        // Burp sounds
+        public static SoundDef RR_StomachBurp_Light; // Thick - corpulent
+        public static SoundDef RR_StomachBurp_Medium; // Fat - Lardy I
+        public static SoundDef RR_StomachBurp_Heavy; // Lardy II - Titanic II
+        public static SoundDef RR_StomachBurp_SuperHeavy; // Gelatinous+
 
 
         // Stomach SFX

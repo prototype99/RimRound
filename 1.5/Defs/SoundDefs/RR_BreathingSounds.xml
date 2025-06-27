@@ -19,7 +19,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -45,7 +45,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -71,7 +71,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -97,7 +97,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -123,7 +123,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -149,7 +149,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -175,7 +175,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -201,7 +201,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -228,7 +228,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_M_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -254,7 +254,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_M_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -280,7 +280,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_M_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -306,7 +306,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_M_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -332,7 +332,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_M_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -358,7 +358,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_M_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -384,7 +384,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_M_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -410,7 +410,7 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_M_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
+				<volumeRange>20~20</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>

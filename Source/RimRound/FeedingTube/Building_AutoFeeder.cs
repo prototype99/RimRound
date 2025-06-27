@@ -31,23 +31,14 @@ namespace RimRound.FeedingTube
 
         private void UpdatePawnDrinkingSounds() {
             drinkingSustainer?.End();
-            switch (CurrentMode) {
-                case AutoFeederMode.off:
-                    drinkingSustainer = null;
-                    break;
-                case AutoFeederMode.lose:
-                    drinkingSustainer = null;
-                    break;
-                case AutoFeederMode.maintain:
-                    drinkingSustainer = RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Easy.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
-                    break;
-                case AutoFeederMode.gain:
-                    drinkingSustainer = RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Normal.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
-                    break;
-                case AutoFeederMode.maxgain:
-                    drinkingSustainer = RimRound.Defs.SoundDefOf.RR_FeedingMachine_Swallow_Labored.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
-                    break;
+            SoundDef sound = SoundUtility.GetSwallowSoundByWeightOpinionAndGender(CurrentPawn, CurrentMode);
+
+            if (sound == null) 
+            {
+                return;
             }
+
+            sound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
         }
 
         Pawn _currentPawn;
@@ -124,6 +115,8 @@ namespace RimRound.FeedingTube
 
             drinkingSustainer.End();
             drinkingSustainer = null;
+        
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
@@ -134,6 +127,8 @@ namespace RimRound.FeedingTube
 
             drinkingSustainer.End();
             drinkingSustainer = null;
+
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
         }
 
         public override void Discard(bool silentlyRemoveReferences = false)
@@ -144,6 +139,8 @@ namespace RimRound.FeedingTube
             
             drinkingSustainer.End();
             drinkingSustainer = null;
+
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
         }
 
         public override void Tick()
@@ -448,6 +445,7 @@ namespace RimRound.FeedingTube
                         }
                         SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
 
+                        this.CachedFNDComp.IsConnectedToFeedingMachine = true;
                         this.CachedFNDComp.SloshDurationSeconds = 0;
                         this.CachedFNDComp.SloshStartTick = 0;
 
@@ -488,13 +486,15 @@ namespace RimRound.FeedingTube
 
         private void ResetForcedTarget()
         {
-            onSound.End();
+            onSound?.End();
             onSound = null;
-            drinkingSustainer.End();
+            drinkingSustainer?.End();
             drinkingSustainer = null;
             
             this.CachedFNDComp.SloshDurationSeconds = 60;
             this.CachedFNDComp.SloshStartTick = Find.TickManager.TicksAbs;
+            this.CachedFNDComp.IsConnectedToFeedingMachine = false;
+
 
             this.forcedTarget = LocalTargetInfo.Invalid;
             this.CurrentPawn.health.RemoveHediff(

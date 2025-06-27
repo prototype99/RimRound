@@ -248,6 +248,7 @@
     <Compile Include="RimRound\Patch\VehicleFramework\VehicleFramework_VehiclePawn_TrySatisfyFood_AccountForFullness.cs" />
     <Compile Include="RimRound\Sound\SoundParamSource_BreathingNormal.cs" />
     <Compile Include="RimRound\Sound\SoundParamSource_BreathingPleasure.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_Burp.cs" />
     <Compile Include="RimRound\Sound\SoundParamSource_FeedingMachineOn.cs" />
     <Compile Include="RimRound\Sound\SoundParamSource_FeedingMachineSwallowing.cs" />
     <Compile Include="RimRound\Sound\SoundParamSource_FemaleGlobal.cs" />

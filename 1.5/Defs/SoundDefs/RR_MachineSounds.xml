@@ -149,7 +149,7 @@
 			  </li>
 			</grains>
 			<volumeRange>30</volumeRange>
-			<distRange>10~40</distRange>
+			<distRange>10~30</distRange>
 			<paramMappings>
 				<li>
 					<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineOn" />
@@ -172,7 +172,7 @@
           </li>
         </grains>
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
-        <volumeRange>50</volumeRange>
+        <volumeRange>25</volumeRange>
         <distRange>10~30</distRange>
 		<paramMappings>
 			<li>
@@ -195,7 +195,7 @@
           </li>
         </grains>
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
-        <volumeRange>50</volumeRange>
+        <volumeRange>25</volumeRange>
         <distRange>10~30</distRange>
 		<paramMappings>
 			<li>
@@ -208,17 +208,86 @@
   </SoundDef>
   
   <SoundDef ParentName="SwallowingSounds">
-    <defName>RR_FeedingMachine_Swallow_Labored</defName>
+    <defName>RR_FeedingMachine_Swallow_Labored_Male</defName>
     <subSounds>
       <li>
         <muteWhenPaused>True</muteWhenPaused>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Organic/Swallow/SwallowLabored</clipPath>
+            <clipPath>Organic/Swallow/SwallowLaboredMale</clipPath>
           </li>
         </grains>
 		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
-        <volumeRange>50</volumeRange>
+        <volumeRange>25</volumeRange>
+        <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef ParentName="SwallowingSounds">
+    <defName>RR_FeedingMachine_Swallow_Labored_Female</defName>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Organic/Swallow/SwallowLaboredFemale</clipPath>
+          </li>
+        </grains>
+		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
+        <volumeRange>25</volumeRange>
+        <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef ParentName="SwallowingSounds">
+    <defName>RR_FeedingMachine_Swallow_Labored_Male_Pleasure</defName>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Organic/Swallow/SwallowLaboredMalePleasure</clipPath>
+          </li>
+        </grains>
+		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
+        <volumeRange>25</volumeRange>
+        <distRange>10~30</distRange>
+		<paramMappings>
+			<li>
+				<inParam Class="RimRound.Sound.SoundParamSource_FeedingMachineSwallowing" />
+				<outParam Class="SoundParamTarget_Volume" />
+			</li>
+		</paramMappings>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef ParentName="SwallowingSounds">
+    <defName>RR_FeedingMachine_Swallow_Labored_Female_Pleasure</defName>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Organic/Swallow/SwallowLaboredFemalePleasure</clipPath>
+          </li>
+        </grains>
+		<tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
+        <volumeRange>25</volumeRange>
         <distRange>10~30</distRange>
 		<paramMappings>
 			<li>
