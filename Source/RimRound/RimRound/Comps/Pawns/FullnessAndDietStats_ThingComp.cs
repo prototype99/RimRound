@@ -250,23 +250,27 @@ namespace RimRound.Comps
             if (parent.IsHashIntervalTick(60))
                 CumulativeSeverityKilosGained -= immunitySeverityDecay;
 
-            if (!IsConnectedToFeedingMachine && parent.IsHashIntervalTick(TICK_CHECK_INTERVAL_FOR_BREATHING)) 
+
+            if (parent.Spawned) 
             {
-                DoBreathingSounds();
+                DoFootstepSounds();
+                DoEmptyStomachSounds();
+                DoGurgleSounds();
+
+                if (!IsConnectedToFeedingMachine)
+                {
+                    DoBurpSounds();
+                }
+
+                DoStomachStretchSounds();
+
+                DoSloshSounds();
+
+                if (!IsConnectedToFeedingMachine && parent.IsHashIntervalTick(TICK_CHECK_INTERVAL_FOR_BREATHING))
+                {
+                    DoBreathingSounds();
+                }
             }
-
-            DoFootstepSounds();
-            DoEmptyStomachSounds();
-            DoGurgleSounds();
-            
-            if (!IsConnectedToFeedingMachine) 
-            {
-                DoBurpSounds();
-            }
-
-            DoStomachStretchSounds();
-
-            DoSloshSounds();
         }
 
         private void DespawnSustainers() 
@@ -304,8 +308,8 @@ namespace RimRound.Comps
             BodyTypeDef thresholdForBreathingAllTheTime = Defs.BodyTypeDefOf.F_050_MorbidlyObese;
             float fullnessPercentForBreathing = 1f; // As percent of soft limit
 
-            if (!IsConnectedToFeedingMachine && ((parent.AsPawn()?.pather.Moving ?? false) ||
-                fullnessbar.CurrentFullnessAsPercentOfSoftLimit >= fullnessPercentForBreathing ||
+            if (!IsConnectedToFeedingMachine && ((parent?.AsPawn()?.pather?.Moving ?? false) ||
+                (fullnessbar?.CurrentFullnessAsPercentOfSoftLimit ?? 0) >= fullnessPercentForBreathing ||
                 BodyTypeUtility.PawnIsOverWeightThreshold(parent.AsPawn(), thresholdForBreathingAllTheTime)))
             {
                 if (breathSound == null || breathSound.Ended)
@@ -323,6 +327,11 @@ namespace RimRound.Comps
 
         private void DoSloshSounds() 
         {
+            if (!parent.Spawned)
+            { 
+                return; 
+            }
+
             const int TICKS_PER_SECOND = 60;
             if (SloshDurationSeconds <= 0) 
             {

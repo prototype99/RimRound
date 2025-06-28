@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: 794c014f17d648155efd040051aa540e8aa255c8
+Commit Hash: b732187f6c934cf1fb2681e85593a1cd33e539b3
+Author: Niwatori401
+Date: Sat Jun 28 20:32:58 2025
+
+Personal Exemption settings now save
+Fix pawns in caravans causing errors due to sound
+
+==================================================
+Commit Hash: effd2641617888f3fd94018d425d81ff0b1a4b53
 Author: Niwatori401
 Date: Sat Jun 28 03:41:33 2025
 

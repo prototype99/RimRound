@@ -363,7 +363,7 @@ namespace RimRound.Utilities
         public static void PlayOneShotForPawnIfNotWaiting(Pawn pawn, SoundDef sound, float secondsDelayBetweenPlays) 
         {
             // This often is the case if the sound is not supposed to play due to restrictions
-            if (sound == null) 
+            if (sound == null || !pawn.Spawned) 
             {
                 return; 
             }

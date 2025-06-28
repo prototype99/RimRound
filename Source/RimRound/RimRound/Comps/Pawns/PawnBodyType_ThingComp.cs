@@ -23,6 +23,7 @@ namespace RimRound.Comps
         {
             base.PostExposeData();
             Scribe_Values.Look<BodyArchetype>(ref _bodyarchetype, "_bodyarchetype", BodyArchetype.none, false);
+            Scribe_Values.Look<string>(ref personallyExempt.reason, "personallyExempt", null);
             Scribe_Values.Look<string>(ref bodyTypeDictNameString, "bodyTypeDictNameString", null, false);
         }
 
@@ -43,7 +44,7 @@ namespace RimRound.Comps
             {
                 BodyTypeUtility.AssignPersonalCategoricalExemptions(this);
 
-                if (BodyTypeUtility.GetBodyTypeBasedOnWeightSeverity(((Pawn)parent), personallyExempt, categoricallyExempt) is BodyTypeDef b && b != ((Pawn)parent).story.bodyType)
+                if (BodyTypeUtility.GetBodyTypeBasedOnWeightSeverity(((Pawn)parent), PersonallyExempt, categoricallyExempt) is BodyTypeDef b && b != ((Pawn)parent).story.bodyType)
                 {
                     ((Pawn)parent).story.bodyType = b;
                 }
@@ -59,7 +60,7 @@ namespace RimRound.Comps
                 ticksSinceLastBodyChange += 250;
                 if (ticksSinceLastBodyChange >= numberOfTicksCooldownPerChange)
                 {
-                    BodyTypeUtility.UpdatePawnSprite((Pawn)parent, personallyExempt, categoricallyExempt, false, true);
+                    BodyTypeUtility.UpdatePawnSprite((Pawn)parent, PersonallyExempt, categoricallyExempt, false, true);
                 }
             }
         }
@@ -96,14 +97,14 @@ namespace RimRound.Comps
 
 
 
-        ExemptionReason personallyExempt = false;
+        ExemptionReason personallyExempt = new ExemptionReason();
         public ExemptionReason PersonallyExempt 
         { 
             get => personallyExempt; 
             set 
             {
                 personallyExempt = value;
-                BodyTypeUtility.UpdatePawnSprite((Pawn)parent, personallyExempt, categoricallyExempt, true, true);
+                BodyTypeUtility.UpdatePawnSprite((Pawn)parent, PersonallyExempt, categoricallyExempt, true, true);
             } 
         }
 
@@ -140,9 +141,14 @@ namespace RimRound.Comps
     }
 
     // Converts to true if pawn is exempt. This is inddicated by there being a given reason that they are exempt.
-    public struct ExemptionReason
+    public class ExemptionReason
     {
-        public ExemptionReason(string reason = null) 
+        public ExemptionReason() 
+        {
+            this.reason = null;
+        }
+
+        public ExemptionReason(string reason) 
         {
             this.reason = reason;
         }
