@@ -23,6 +23,15 @@ namespace RimRound.Utilities
             return false;
         }
 
+        public static bool IsPawnBelowWeightOpinion(Pawn pawn, WeightOpinion wo) 
+        {
+            WeightOpinion pawnOpinion = pawn.TryGetComp<ThingComp_PawnAttitude>()?.weightOpinion ?? WeightOpinion.None;
+            return pawnOpinion < wo;
+        }
+
+
+
+
         public static TraitDef GetWeightedRandWeightOpinionTrait(Dictionary<TraitDef, float> traitCommonalityPairs)
         {
             float sumOfKeys = 0;
@@ -103,10 +112,13 @@ namespace RimRound.Utilities
 
         public static bool ShouldHaveThisKindOfThought(ThoughtWorker thoughtWorker, Pawn p, WeightOpinion opinion)
         {
-            if (!GlobalSettings.moodletsForWeightOpinions)
+            if (!GlobalSettings.moodletsForWeightOpinions || !p.RaceProps.Humanlike) 
+            {
                 return false;
-            
-            if (!p.RaceProps.Humanlike)
+            }
+
+            var pbtComp = p.TryGetComp<PawnBodyType_ThingComp>();
+            if (pbtComp != null && (pbtComp.PersonallyExempt || pbtComp.CategoricallyExempt)) 
             {
                 return false;
             }

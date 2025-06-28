@@ -49,6 +49,7 @@ namespace RimRound.UI
             mainSettings,
             alienBodySettings,
             hediffSettings,
+            soundSettings,
         };
 
         TabKind curTab = TabKind.mainSettings;
@@ -61,6 +62,11 @@ namespace RimRound.UI
                 "Main Settings",
                 delegate () { this.curTab = TabKind.mainSettings; },
                 () => this.curTab == TabKind.mainSettings));
+
+            this.tabs.Add(new TabRecord(
+                "Sound Settings",
+                delegate () { this.curTab = TabKind.soundSettings; },
+                () => this.curTab == TabKind.soundSettings));
 
             this.tabs.Add(new TabRecord(
                 "Alien Body Settings",
@@ -102,6 +108,9 @@ namespace RimRound.UI
                 case TabKind.hediffSettings:
                     DoHediffSettingsWindow(inRect);
                     return;
+                case TabKind.soundSettings:
+                    DoSoundSettingsWindow(inRect);
+                    return;
                 default:
                     return;
             }
@@ -112,6 +121,46 @@ namespace RimRound.UI
             public Gender gender;
             public String race;
         };
+
+        private void DoSoundSettingsWindow(Rect inRect) 
+        {
+            GUI.BeginGroup(inRect);
+            Text.Font = GameFont.Medium;
+            Rect soundSettingsTitleRect = new Rect(0, 50, 450, Text.LineHeight);
+            Widgets.Label(soundSettingsTitleRect, "RR_Nhs_SoundSettingsTitle".Translate());
+
+            Rect soundSettingsFieldRect = new Rect(0, soundSettingsTitleRect.yMax, soundSettingsTitleRect.width, 800);
+
+            Text.Font = GameFont.Small;
+            int numericFieldCount = 0;
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundMalesGlobalMult, numericFieldCount++, "RR_soundSettings_soundMales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundMalesGlobalMultiplier");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFemalesGlobalMult, numericFieldCount++, "RR_soundSettings_soundFemales", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFemalesGlobalMultiplier");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachine, numericFieldCount++, "RR_soundSettings_soundFeedingMachine", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachine");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFeedingMachineSwallow, numericFieldCount++, "RR_soundSettings_soundFeedingMachineSwallow", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFeedingMachineSwallow");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRegularBreath, numericFieldCount++, "RR_soundSettings_soundRegularBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRegularBreath");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundPleasureBreath, numericFieldCount++, "RR_soundSettings_soundPleasureBreath", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundPleasureBreath");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundFootsteps, numericFieldCount++, "RR_soundSettings_soundFootsteps", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundFootsteps");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachGurgles, numericFieldCount++, "RR_soundSettings_soundStomachGurgles", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachGurgles");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachStretch, numericFieldCount++, "RR_soundSettings_soundStomachStretch", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachStretch");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachEmpty, numericFieldCount++, "RR_soundSettings_soundStomachEmpty", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachEmpty");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundStomachSlosh, numericFieldCount++, "RR_soundSettings_soundStomachSlosh", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundStomachSlosh");
+
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundZenithOrb, numericFieldCount++, "RR_soundSettings_soundZenithOrb", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundZenithOrb");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundRapidWeightGain, numericFieldCount++, "RR_soundSettings_soundRapidWeightGain", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundRapidWeightGain");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundBurp, numericFieldCount++, "RR_soundSettings_soundBurp", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundBurp");
+            NumberFieldLabeledWithRect(soundSettingsFieldRect, ref GlobalSettings.soundBurpDelaySeconds, numericFieldCount++, "RR_soundSettings_soundBurpDelaySeconds", GameFont.Small, null, "RR_ToolTip_SoundSettings_SoundBurpDelaySeconds");
+
+            soundSettingsFieldRect.height = numericFieldCount * spaceBetweenNumberFields;
+
+            GUI.EndGroup();
+        }
+
+
 
         private void DoHediffSettingsWindow(Rect inRect) 
         {
@@ -685,6 +734,7 @@ namespace RimRound.UI
 
 
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.minimumAgeForCustomBody, numericFieldCount++, "RR_Mtw_MinimumAgeForCustomBody", GameFont.Small, () => { BodyTypeUtility.AssignBodyTypeCategoricalExemptions(true); }, "RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody");
+            NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.maximumAgeForCustomBody, numericFieldCount++, "RR_Mtw_MaximumAgeForCustomBody", GameFont.Small, () => { BodyTypeUtility.AssignBodyTypeCategoricalExemptions(true); }, "RR_ToolTip_NumericPreferences_MaximumAgeForCustomBody");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplier, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitle", GameFont.Small, null, "RR_ToolTip_NumericPreferences_GlobalWGModifier");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplierFemale, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitleFemale", GameFont.Small, null, "RR_ToolTip_NumericPreferences_FemaleWGModifier");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplierMale, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitleMale", GameFont.Small, null, "RR_ToolTip_NumericPreferences_MaleWGModifier");
@@ -917,7 +967,7 @@ namespace RimRound.UI
                 new Rect(boundingRect.xMax - bufferForNumberFields, boundingRect.y, bufferForNumberFields, Text.LineHeight),
                 ref numericFieldData.threshold,
                 ref numericFieldData.stringBuffer,
-                Prefs.DevMode ? 0 : numericFieldData.min,
+                Prefs.DevMode ? int.MinValue : numericFieldData.min,
                 Prefs.DevMode ? int.MaxValue : numericFieldData.max);
 
             T newVal = numericFieldData.threshold;

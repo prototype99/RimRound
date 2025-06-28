@@ -4,14 +4,14 @@
   <ThingDef ParentName="BaseBullet">
     <defName>RR_DefatteningBullet</defName>
 	<thingClass>RimRound.Things.FatteningBullet</thingClass>
-    <label>fattening round</label>
+    <label>defattening round</label>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>0</damageAmountBase>
+      <damageDef>RR_BelittlerBulletDamage</damageDef>
+      <damageAmountBase>2</damageAmountBase>
       <stoppingPower>2</stoppingPower>
       <speed>55</speed>
     </projectile>
@@ -70,7 +70,7 @@
         <defaultProjectile>RR_DefatteningBullet</defaultProjectile>
         <warmupTime>0.2</warmupTime>
         <range>28</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RR_BelittlerShootSound</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
       </li>

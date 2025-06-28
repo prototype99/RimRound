@@ -30,3 +30,7 @@ https://discord.com/invite/WJfcpF3Feu
 
 If you are unfamiliar with installing manual mods please follow the instructions here:
 https://rimworldwiki.com/wiki/Installing_mods
+
+# License
+
+This project is, unless otherwise specified, licensed under the Unlicense. Specific assets may be licensed under CC-BY. Those assets are specified in the ATTRIBUTION file. You can read the CC-BY license [here](https://creativecommons.org/licenses/by/4.0/).

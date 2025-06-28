@@ -175,6 +175,7 @@
     <Compile Include="RimRound\Defs\InteractionDefOf.cs" />
     <Compile Include="RimRound\Defs\ME_ExtraProductPlantYield.cs" />
     <Compile Include="RimRound\Defs\PawnCapacityDefOf.cs" />
+    <Compile Include="RimRound\Defs\SoundDefOf.cs" />
     <Compile Include="RimRound\Hediffs\Hediff_AIEncouragementChip.cs" />
     <Compile Include="RimRound\Hediffs\Hediff_BionicMetabolizer.cs" />
     <Compile Include="RimRound\Hediffs\Hediff_ArchotechMetabolizer.cs" />
@@ -246,6 +247,20 @@
     <Compile Include="RimRound\Patch\VanillaExpanded\VENutrientPaste_Building_Dripper_FixForRR.cs" />
     <Compile Include="RimRound\Patch\VehicleFramework\VehicleFramework_CaravanHelper_MakeVehicleCaravan_ChangeDietMode.cs" />
     <Compile Include="RimRound\Patch\VehicleFramework\VehicleFramework_VehiclePawn_TrySatisfyFood_AccountForFullness.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_BreathingNormal.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_BreathingPleasure.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_Burp.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_FeedingMachineOn.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_FeedingMachineSwallowing.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_FemaleGlobal.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_Footsteps.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_MaleGlobal.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_RapidWeightGain.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_StomachEmpty.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_StomachGurgles.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_StomachSlosh.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_StomachStretch.cs" />
+    <Compile Include="RimRound\Sound\SoundParamSource_ZenithOrb.cs" />
     <Compile Include="RimRound\Things\Building_BlobBed.cs" />
     <Compile Include="RimRound\Things\Building_ZenithOrb.cs" />
     <Compile Include="RimRound\UI\CustomBodySelectDropdown.cs" />
@@ -295,6 +310,7 @@
     <Compile Include="RimRound\Utilities\PrisonerUtility.cs" />
     <Compile Include="RimRound\Utilities\Resources.cs" />
     <Compile Include="RimRound\Utilities\RRGasType.cs" />
+    <Compile Include="RimRound\Utilities\SoundUtility.cs" />
     <Compile Include="RimRound\Utilities\StatChangeUtility.cs" />
     <Compile Include="RimRound\Utilities\WeightOpinionUtility.cs" />
     <None Include="app.config" />

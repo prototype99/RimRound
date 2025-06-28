@@ -1,5 +1,40 @@
 ==================================================
-Commit Hash: 6254b5fa671f2cc5e6a733e73c8dcbb93c30d01f
+Commit Hash: 794c014f17d648155efd040051aa540e8aa255c8
+Author: Niwatori401
+Date: Sat Jun 28 03:41:33 2025
+
+Merge branch 'sound' into gt-dev
+
+==================================================
+Commit Hash: 14d9890166e8495d3ee42f5f7e5ca36c6d555b11
+Author: Niwatori401
+Date: Sat Jun 28 03:27:48 2025
+
+Add new setting for max age for RR features to be active
+Clarify function of exemption options
+Exemption options now block moodlets
+Personal Exemption Gizmo is now default visible
+
+==================================================
+Commit Hash: 07f9699f58ff7465da2fccc6c6665372a0a81b42
+Author: Niwatori401
+Date: Fri Jun 27 17:22:09 2025
+
+Add burp sounds + settings
+Sounds now only play for pawns non-exempted pawns
+Add male/female specific swallowing sounds
+Replace sounds with new versions
+Fix bug in description for stomach gurgle sound setting
+Update credits
+Fix bug with autofeeder causing it to be unable to disconnect
+Pawns no longer breathe or burp when connected to feeding machine
+Add ATTRIBUTION for new sounds and update README
+Tweak volumes
+Fix bug where female global volume did not apply
+Sound settings now caps at 100, due to vanilla limitations
+
+==================================================
+Commit Hash: 20d4454a702b0ddd8a21377e32551e30cf8f1ca6
 Author: Niwatori401
 Date: Sun Jun 22 03:50:20 2025
 
@@ -49,6 +84,73 @@ Author: Niwatori401
 Date: Sun Jun 8 23:07:58 2025
 
 Add Mal0 race support
+
+==================================================
+Commit Hash: 59cbc7dac49200837effb19283236fe93932614e
+Author: Niwatori401
+Date: Tue Mar 25 00:10:11 2025
+
+Implement volume adjustment settings
+
+==================================================
+Commit Hash: 498222839c58ac31e87322accc18339ed5103547
+Author: Niwatori401
+Date: Sun Mar 23 02:01:06 2025
+
+Add rapid WG sounds
+
+==================================================
+Commit Hash: f1911d5ca93e24b6c15e1c947006119ff1f8a1f8
+Author: Niwatori401
+Date: Sun Mar 23 00:20:10 2025
+
+Add sloshing after drinking beer or leaving the feeding machine
+
+==================================================
+Commit Hash: 757a1e8304df2f3a61c7a530fdfc6811eadb054f
+Author: Niwatori401
+Date: Sat Mar 22 21:24:30 2025
+
+Enable footstep sounds
+
+==================================================
+Commit Hash: 2c38c55a01b3281f3b03f9d4381d5a163d2d0ae3
+Author: Niwatori401
+Date: Thu Mar 20 05:36:17 2025
+
+Implement stomach digestion, stomach empty and breathing sounds
+Add sounds defs for footsteps, breathing and stomach sounds
+Remove redundant code and rename files
+
+==================================================
+Commit Hash: 7da6cac46f911fe1c3e6e839ecb4064361037b4a
+Author: Niwatori401
+Date: Sat Feb 8 04:49:17 2025
+
+Add drinking sounds for pawns using auto feeder
+
+==================================================
+Commit Hash: 854be470dc854c2baabea43dc1c6c6160680319f
+Author: Niwatori401
+Date: Sat Feb 8 04:14:02 2025
+
+Add feeding machine "on" sound
+
+==================================================
+Commit Hash: 274f3c3d57a4eb60642968464d4718c617483a4b
+Author: Niwatori401
+Date: Sat Feb 8 01:45:41 2025
+
+Add sounds to RR weapons
+
+==================================================
+Commit Hash: 60a0bff1d07613f58b336f10399a8f382006c56a
+Author: Niwatori401
+Date: Fri Feb 7 05:34:45 2025
+
+Add sound files
+Add Zenith orb sound functionality
+Add settings for sound volume
 
 ==================================================
 Commit Hash: efa24ce7e1e3091be01a930eeb85ea13e564f288

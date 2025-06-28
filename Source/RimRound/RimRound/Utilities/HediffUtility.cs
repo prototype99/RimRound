@@ -130,7 +130,6 @@ namespace RimRound.Utilities
                 realSeverityApplied = LoseWeight(hediff, pawn, amount, useWeightMultipliers);
             }
 
-
             ThrowValueText(pawn, realSeverityApplied, 1, GlobalSettings.minWeightChangeForNumberText.threshold / 1000f);
 
 
@@ -139,6 +138,7 @@ namespace RimRound.Utilities
 
             return realSeverityApplied;
         }
+
 
         /// <summary>
         /// 

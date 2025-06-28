@@ -21,10 +21,24 @@ namespace RimRound.Patch
             FullnessAndDietStats_ThingComp comp = __0?.TryGetComp<FullnessAndDietStats_ThingComp>();
             if (GeneralUtility.IsNotNull(comp)) 
             {
+                PlaySloshIfBeer(__instance, comp);
                 Thing_Ingested_AddFullness.Postfix(__instance, __0, ref __result, comp);
                 Thing_Ingested_StomachBurstCheck.Postfix(comp);
             }
 
+        }
+
+        private static void PlaySloshIfBeer(Thing ingestedItem, FullnessAndDietStats_ThingComp comp) 
+        {
+            if (ingestedItem.def.defName == ThingDefOf.Beer.defName)
+            {
+                const float SECONDS_OF_SLOSHING_PER_BEER = 15;
+                comp.SloshDurationSeconds += SECONDS_OF_SLOSHING_PER_BEER;
+                if (comp.SloshStartTick == 0) 
+                {
+                    comp.SloshStartTick = Find.TickManager.TicksAbs;
+                }
+            }
         }
     }
 }

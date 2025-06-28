@@ -88,11 +88,6 @@ namespace RimRound.Utilities
             return humanlikePawns;
         }
 
-        public static bool IsHashIntervalTick(int interval) 
-        {
-            return Find.TickManager.TicksGame % interval == 0;
-        }
-
         public static string GetRaceName(Pawn p) 
         {
             if (p.def is AlienRace.ThingDef_AlienRace race)

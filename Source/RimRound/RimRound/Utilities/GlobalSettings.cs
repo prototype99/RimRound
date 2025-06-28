@@ -12,6 +12,32 @@ namespace RimRound.Utilities
     //All fields in this class are saved in WorldComp_SaveValues.cs. Do not add reference type fields without adding exceptions to saving code
     public static class GlobalSettings
     {
+        #region Sound Settings
+        public static NumericFieldData<float> soundMalesGlobalMult = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundFemalesGlobalMult = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundFeedingMachine = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundFeedingMachineSwallow = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundRegularBreath = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundPleasureBreath = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundFootsteps = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundStomachGurgles = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachStretch = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachEmpty = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundStomachSlosh = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundRapidWeightGain = new NumericFieldData<float>(50, 0, 100);
+
+        public static NumericFieldData<float> soundZenithOrb = new NumericFieldData<float>(50, 0, 100);
+        public static NumericFieldData<float> soundBurp = new NumericFieldData<float>(50, 0, 100);
+        
+        public static NumericFieldData<float> soundBurpDelaySeconds = new NumericFieldData<float>(20, 1, float.MaxValue);
+
+        #endregion
+
         #region Hediff Settings
 
         public static NumericFieldData<float> weightHediffManipulationPenaltyMult = new NumericFieldData<float>(1, 0, 100);
@@ -34,7 +60,7 @@ namespace RimRound.Utilities
         public static bool showPawnDietManagementGizmo = true;
         public static bool showSleepPostureManagementGizmo = true;
         public static bool showBlanketManagementGizmo = true;
-        public static bool showExemptionGizmo = false;
+        public static bool showExemptionGizmo = true;
         public static bool showBlobIntobedGizmo = true;
         public static bool largeDietGizmo = false;
         public static bool showDescriptionTab = true;
@@ -42,7 +68,7 @@ namespace RimRound.Utilities
 
         #endregion
 
-        #region Body Change Exemption Settings
+        #region Exemption Settings
 
         public static bool bodyChangeMale = false;
         public static bool bodyChangeFemale = true;
@@ -58,8 +84,6 @@ namespace RimRound.Utilities
 
         public static bool showBodyTatoosForCustomSprites = false;
         public static bool burstingEnabled = false;
-        public static bool haveWeightHediffMale = true;
-        public static bool haveWeightHediffFemale = true;
         public static bool preferDefaultOutfitOverNaked = true;
         public static bool alternateNorthHeadPositionForRRBodytypes = false;
         public static bool moodletsForWeightOpinions = true;
@@ -77,7 +101,8 @@ namespace RimRound.Utilities
 
         #region Value Settings
 
-        public static NumericFieldData<int> minimumAgeForCustomBody = new NumericFieldData<int>(20, 0, 1000);
+        public static NumericFieldData<int> minimumAgeForCustomBody = new NumericFieldData<int>(20, 0, int.MaxValue);
+        public static NumericFieldData<int> maximumAgeForCustomBody = new NumericFieldData<int>(50, 0, int.MaxValue);
         public static NumericFieldData<float> minForCapableMovement = new NumericFieldData<float>(0.01f, 0, 1);
         public static NumericFieldData<float> diabetes = new NumericFieldData<float>(1, 0, 1);
         public static NumericFieldData<float> aFLD = new NumericFieldData<float>(1, 0, 1);

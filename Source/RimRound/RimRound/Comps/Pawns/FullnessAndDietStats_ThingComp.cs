@@ -24,7 +24,7 @@ namespace RimRound.Comps
         private bool? disabled = null;
 
         public bool Disabled {
-            get { 
+            get {
                 if (disabled == null) {
                     disabled = this.parent.AsPawn()?.needs?.food == null;
                 }
@@ -34,7 +34,19 @@ namespace RimRound.Comps
 
         public FullnessAndDietStats_ThingComp()
         {
-            
+
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            DespawnSustainers();
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            DespawnSustainers();
         }
 
         public override void PostExposeData()
@@ -49,6 +61,8 @@ namespace RimRound.Comps
             }
 
             Scribe_Values.Look<bool>(ref defaultBodyTypeForced, "defaultBodyTypeForced", false);
+            Scribe_Values.Look<bool>(ref _isConnectedToFeedingMachine, "isConnectedToFeedingMachine", false);
+
             Scribe_Values.Look<float>(ref cachedSliderVal1, "cachedSliderPos1", -1);
             Scribe_Values.Look<float>(ref cachedSliderVal2, "cachedSliderPos2", -1);
 
@@ -59,6 +73,7 @@ namespace RimRound.Comps
             Scribe_Values.Look<float>(ref currentFullnessToNutritionRatio, "currentFullnessToNutritionRatio", defaultFullnessToNutritionRatio);
             Scribe_Values.Look<float>(ref consumedNutrition, "consumedNutrition", 0f);
             Scribe_Values.Look<float>(ref cumulativeSeverityGained, "suddenWGCumSeverity");
+            
             ExposeStatBonuses();
             ExposePerkLevels();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -199,7 +214,7 @@ namespace RimRound.Comps
                 if (!_loadedDietBars)
                 {
                     SetRangesByValue(cachedSliderVal1, cachedSliderVal2);
-                    _loadedDietBars=true;
+                    _loadedDietBars = true;
                 }
 
                 HistoryAutoRecorderGroupWeight.Instance().AddHistoryRecorders(this.parent.AsPawn());
@@ -232,11 +247,136 @@ namespace RimRound.Comps
                     RuptureStomachCheckTick();
             }
 
-            if (parent?.IsHashIntervalTick(60) ?? false)
+            if (parent.IsHashIntervalTick(60))
                 CumulativeSeverityKilosGained -= immunitySeverityDecay;
 
+            if (!IsConnectedToFeedingMachine && parent.IsHashIntervalTick(TICK_CHECK_INTERVAL_FOR_BREATHING)) 
+            {
+                DoBreathingSounds();
+            }
+
+            DoFootstepSounds();
+            DoEmptyStomachSounds();
+            DoGurgleSounds();
+            
+            if (!IsConnectedToFeedingMachine) 
+            {
+                DoBurpSounds();
+            }
+
+            DoStomachStretchSounds();
+
+            DoSloshSounds();
         }
 
+        private void DespawnSustainers() 
+        {
+            sloshSound?.End();
+            breathSound?.End();
+
+            sloshSound = null;
+            breathSound = null;
+        }
+
+        private void DoStomachStretchSounds()
+        {
+            const float SECONDS_BETWEEN_STRETCH_SOUNDS = 4;
+            SoundDef soundDef = SoundUtility.GetStomachStretchingSoundByFullness(this);
+            SoundUtility.PlayOneShotForPawnIfNotWaiting(parent.AsPawn(), soundDef, SECONDS_BETWEEN_STRETCH_SOUNDS);
+        }
+
+        private bool _isConnectedToFeedingMachine = false;
+        public bool IsConnectedToFeedingMachine 
+        {
+            get 
+            {
+                return _isConnectedToFeedingMachine;
+            }
+            set 
+            {
+                _isConnectedToFeedingMachine = value;
+            }
+        }
+
+        const int TICK_CHECK_INTERVAL_FOR_BREATHING = 60 * 3;
+        private void DoBreathingSounds()
+        {
+            BodyTypeDef thresholdForBreathingAllTheTime = Defs.BodyTypeDefOf.F_050_MorbidlyObese;
+            float fullnessPercentForBreathing = 1f; // As percent of soft limit
+
+            if (!IsConnectedToFeedingMachine && ((parent.AsPawn()?.pather.Moving ?? false) ||
+                fullnessbar.CurrentFullnessAsPercentOfSoftLimit >= fullnessPercentForBreathing ||
+                BodyTypeUtility.PawnIsOverWeightThreshold(parent.AsPawn(), thresholdForBreathingAllTheTime)))
+            {
+                if (breathSound == null || breathSound.Ended)
+                {
+                    var soundDef = SoundUtility.GetBreathingSoundByWeightOpinionAndGender(parent.AsPawn());
+                    breathSound = soundDef.TrySpawnSustainer(SoundInfo.InMap(parent.AsPawn()));
+                }
+            }
+            else
+            {
+                breathSound?.End();
+                breathSound = null;
+            }
+        }
+
+        private void DoSloshSounds() 
+        {
+            const int TICKS_PER_SECOND = 60;
+            if (SloshDurationSeconds <= 0) 
+            {
+                return;
+            }
+
+            if (SloshStartTick + (SloshDurationSeconds * TICKS_PER_SECOND) <= Find.TickManager.TicksAbs) 
+            {
+                SloshStartTick = 0;
+                SloshDurationSeconds = 0;
+                sloshSound?.End();
+                sloshSound = null;
+                return;
+            }
+
+            if (sloshSound == null)
+            {
+                SoundDef sound = SoundUtility.GetStomachSloshByWeight(this);
+                if (sound != null && SoundUtility.PawnShouldPlaySound(parent.AsPawn()))
+                {
+                    sloshSound = sound.TrySpawnSustainer(SoundInfo.InMap(parent.AsPawn()));
+                }
+            }
+        }
+
+
+        private void DoGurgleSounds()
+        {
+            const float SECONDS_BETWEEN_GURGLE_SOUNDS = 10;
+            SoundDef soundDef = SoundUtility.GetStomachGurgleSoundsByWeight(this);
+            SoundUtility.PlayOneShotForPawnIfNotWaiting(parent.AsPawn(), soundDef, SECONDS_BETWEEN_GURGLE_SOUNDS);
+        }
+
+        private void DoBurpSounds() 
+        {
+            const float PERCENT_VARIATION = 0.4f;
+            float randomDelay = (1 + ((float)Values.random.NextDouble() - 0.5f) * PERCENT_VARIATION) * GlobalSettings.soundBurpDelaySeconds.threshold;
+            SoundDef soundDef = SoundUtility.GetBurpSoundsByWeight(this);
+            SoundUtility.PlayOneShotForPawnIfNotWaiting(parent.AsPawn(), soundDef, randomDelay);
+        }
+
+        private void DoEmptyStomachSounds()
+        {
+            const float SECONDS_BETWEEN_EMPTY_SOUND = 10;
+            SoundDef soundDef = SoundUtility.GetEmptyStomachSoundsByWeight(this);
+            SoundUtility.PlayOneShotForPawnIfNotWaiting(parent.AsPawn(), soundDef, SECONDS_BETWEEN_EMPTY_SOUND);
+        }
+
+        private void DoFootstepSounds()
+        {
+            SoundDef footstepSound = SoundUtility.GetFootStepSoundsByWeightAndMovement(this);
+            if (footstepSound == null) { return; }
+            footstepSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(this.parent)));
+        }
 
         private List<string> _perkNamesForSaving = new List<string>();
         private List<int> _perkLevelValuesForSaving = new List<int>();
@@ -324,7 +464,7 @@ namespace RimRound.Comps
 
         public void ProcessWeightLossRequests(int ticksBetweenChecks)
         {
-            if (!GeneralUtility.IsHashIntervalTick(ticksBetweenChecks))
+            if (!parent.IsHashIntervalTick(ticksBetweenChecks))
                 return;
 
             if (this.activeWeightLossRequests.Count > 0)
@@ -343,7 +483,7 @@ namespace RimRound.Comps
 
         public void ProcessWeightGainRequests(int ticksBetweenChecks)
         {
-            if (!GeneralUtility.IsHashIntervalTick(ticksBetweenChecks))
+            if (!parent.IsHashIntervalTick(ticksBetweenChecks))
                 return;
 
             if (this.activeWeightGainRequests.Count > 0)
@@ -380,8 +520,19 @@ namespace RimRound.Comps
                  gainRequest.useMultipliers);
 
             var pbtThingComp = parent.TryGetComp<PawnBodyType_ThingComp>();
-            if (pbtThingComp != null)
-                BodyTypeUtility.UpdatePawnSprite(parent.AsPawn(), pbtThingComp.PersonallyExempt, pbtThingComp.CategoricallyExempt);
+            if (pbtThingComp != null) 
+            {
+                var bodyUpdated = BodyTypeUtility.UpdatePawnSprite(parent.AsPawn(), pbtThingComp.PersonallyExempt, pbtThingComp.CategoricallyExempt);
+
+                if (bodyUpdated)
+                {
+                    SoundDef bwomfSound = Utilities.SoundUtility.GetBwomfSoundByWeight(parent.AsPawn());
+                    if (SoundUtility.PawnShouldPlaySound(parent.AsPawn())) 
+                    {
+                        bwomfSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(this.parent)));
+                    }
+                }
+            }
 
             return actualGainedSeverity;
         }
@@ -903,6 +1054,11 @@ namespace RimRound.Comps
             }
         }
 
+
+        public float SloshDurationSeconds { get; set; }
+        public float SloshStartTick { get; set; }
+
+
         private float consumedNutrition = 0;
         private int _perkLevelsToSpendForSaving = 0;
         private int _currentLevelForSaving = 0;
@@ -932,6 +1088,8 @@ namespace RimRound.Comps
         public const float severityUntilImmunity = 400;
         public const float immunitySeverityDecay = 0.5f;
 
+        private Sustainer sloshSound;
+        private Sustainer breathSound;
     }
 
     public class PerkLevels
@@ -940,10 +1098,6 @@ namespace RimRound.Comps
         public int availablePoints = 0;
         public Dictionary<string, int> PerkToLevels;
     }
-
-
-
-
 
     public struct WeightGainRequest
     {

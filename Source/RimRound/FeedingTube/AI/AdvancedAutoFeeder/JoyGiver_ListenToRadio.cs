@@ -24,13 +24,8 @@ namespace RimRound.FeedingTube.AI
             {
                 advancedAutoFeederCandidates.AddRange(pawn?.Map?.listerThings?.ThingsMatching(ThingRequest.ForDef(Defs.ThingDefOf.RR_AdvancedAutoFeeder))?.Where(delegate (Thing thing)
                 {
-                    if (!(thing is Building_AdvancedAutoFeeder autoFeeder))
-                        return false;
+                    return thing is Building_AdvancedAutoFeeder autoFeeder && autoFeeder.CurrentPawn != null && autoFeeder.CurrentPawn.Name == pawn.Name;
 
-                    if (autoFeeder.CurrentPawn.Name == pawn.Name)
-                        return true;
-                    else
-                        return false;
                 }));
 
                 if (advancedAutoFeederCandidates.Count() >= 1)

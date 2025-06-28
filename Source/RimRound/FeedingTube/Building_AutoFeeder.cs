@@ -17,7 +17,30 @@ namespace RimRound.FeedingTube
     public class Building_AutoFeeder : Building
     {
         int tickCheckInterval = 200;
-        AutoFeederMode currentMode = AutoFeederMode.off;
+        AutoFeederMode currentModeInternal = AutoFeederMode.off;
+        AutoFeederMode CurrentMode 
+        {
+            get {
+                return currentModeInternal;
+            }
+            set { 
+                currentModeInternal = value;
+                UpdatePawnDrinkingSounds();
+            }
+        }
+
+        private void UpdatePawnDrinkingSounds() {
+            drinkingSustainer?.End();
+            SoundDef sound = SoundUtility.GetSwallowSoundByWeightOpinionAndGender(CurrentPawn, CurrentMode);
+
+            if (sound == null) 
+            {
+                return;
+            }
+
+            sound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
+        }
+
         Pawn _currentPawn;
         public Pawn CurrentPawn 
         {
@@ -70,22 +93,63 @@ namespace RimRound.FeedingTube
         {
             base.ExposeData();
             Scribe_TargetInfo.Look(ref forcedTarget, "autofeederForcedTarget");
-            Scribe_Values.Look<AutoFeederMode>(ref currentMode, "CurrentAutoFeederMode", AutoFeederMode.off);
+            Scribe_Values.Look<AutoFeederMode>(ref currentModeInternal, "CurrentAutoFeederMode", AutoFeederMode.off);
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            if (onSound == null && forcedTarget.Pawn != null) {
+                onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+            }
+            if (drinkingSustainer == null && forcedTarget.Pawn != null) { 
+                UpdatePawnDrinkingSounds();
+            }
+        }
 
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.Destroy(mode);
+            onSound.End();
+            onSound = null;
+
+            drinkingSustainer.End();
+            drinkingSustainer = null;
+        
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.DeSpawn(mode);
+            onSound.End();
+            onSound = null;
+
+            drinkingSustainer.End();
+            drinkingSustainer = null;
+
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
+        }
+
+        public override void Discard(bool silentlyRemoveReferences = false)
+        {
+            base.Discard(silentlyRemoveReferences);
+            onSound.End();
+            onSound = null;
+            
+            drinkingSustainer.End();
+            drinkingSustainer = null;
+
+            CachedFNDComp.IsConnectedToFeedingMachine = false;
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (GeneralUtility.IsHashIntervalTick(tickCheckInterval) && CurrentPawn != null)
+            if (CurrentPawn != null && CurrentPawn.IsHashIntervalTick(tickCheckInterval))
             {
                 float currentNutritionPercent = CurrentPawn.needs.food.CurLevelPercentage;
-                switch (currentMode)
+                switch (CurrentMode)
                 {
                     case AutoFeederMode.off:
                         break;
@@ -255,7 +319,7 @@ namespace RimRound.FeedingTube
         {
             Command_Action command_Action = new Command_Action();
 
-            switch (currentMode) 
+            switch (CurrentMode) 
             {
                 case AutoFeederMode.off:
                     command_Action.defaultLabel = "FeedingTubeModeLabel_off".Translate();
@@ -263,7 +327,7 @@ namespace RimRound.FeedingTube
                     command_Action.icon = offIcon;
                     command_Action.action = delegate ()
                     {
-                        currentMode = AutoFeederMode.lose;
+                        CurrentMode = AutoFeederMode.lose;
                         SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     };
 
@@ -275,7 +339,7 @@ namespace RimRound.FeedingTube
                     command_Action.icon = loseIcon;
                     command_Action.action = delegate ()
                     {
-                        currentMode = AutoFeederMode.maintain;
+                        CurrentMode = AutoFeederMode.maintain;
                         SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     };
 
@@ -286,7 +350,7 @@ namespace RimRound.FeedingTube
                     command_Action.icon = maintainIcon;
                     command_Action.action = delegate ()
                     {
-                        currentMode = AutoFeederMode.gain;
+                        CurrentMode = AutoFeederMode.gain;
                         SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     };
 
@@ -297,7 +361,7 @@ namespace RimRound.FeedingTube
                     command_Action.icon = gainIcon;
                     command_Action.action = delegate ()
                     {
-                        currentMode = AutoFeederMode.maxgain;
+                        CurrentMode = AutoFeederMode.maxgain;
                         SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     };
 
@@ -308,7 +372,7 @@ namespace RimRound.FeedingTube
                     command_Action.icon = forceGainIcon;
                     command_Action.action = delegate ()
                     {
-                        currentMode = AutoFeederMode.off;
+                        CurrentMode = AutoFeederMode.off;
                         SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     };
 
@@ -344,8 +408,7 @@ namespace RimRound.FeedingTube
             command_Action.action = delegate ()
             {
                 ResetForcedTarget();
-                currentMode = AutoFeederMode.off;
-                CachedFNDComp = null;
+                
                 SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
             };
 
@@ -373,10 +436,18 @@ namespace RimRound.FeedingTube
                         }
                         this.CurrentPawn = t.Pawn;
                         this.CachedFNDComp = t.Pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
-                        Log.Message($"Targeted Pawn! {this.CurrentPawn.Name}");
                         this.CurrentPawn.health.AddHediff(Defs.HediffDefOf.RimRound_UsingFeedingTube);
                         forcedTarget = t;
+                        
+                        if (onSound == null)
+                        {
+                            onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+                        }
                         SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
+
+                        this.CachedFNDComp.IsConnectedToFeedingMachine = true;
+                        this.CachedFNDComp.SloshDurationSeconds = 0;
+                        this.CachedFNDComp.SloshStartTick = 0;
 
                         return;
                     },
@@ -415,6 +486,16 @@ namespace RimRound.FeedingTube
 
         private void ResetForcedTarget()
         {
+            onSound?.End();
+            onSound = null;
+            drinkingSustainer?.End();
+            drinkingSustainer = null;
+            
+            this.CachedFNDComp.SloshDurationSeconds = 60;
+            this.CachedFNDComp.SloshStartTick = Find.TickManager.TicksAbs;
+            this.CachedFNDComp.IsConnectedToFeedingMachine = false;
+
+
             this.forcedTarget = LocalTargetInfo.Invalid;
             this.CurrentPawn.health.RemoveHediff(
                 (from h
@@ -422,9 +503,14 @@ namespace RimRound.FeedingTube
                 where h.def.defName == Defs.HediffDefOf.RimRound_UsingFeedingTube.defName
                 select h).FirstOrDefault()
                 );
+
             this.CurrentPawn = null;
+            this.CachedFNDComp = null;
+            CurrentMode = AutoFeederMode.off;
         }
 
+        private Sustainer onSound;
+        private Sustainer drinkingSustainer;
 
         private static readonly Material feedingTubeMat = MaterialPool.MatFrom("Things/Building/Production/FeedingTubePipeThickMat", ShaderDatabase.Transparent, Color.white);
         private static readonly Texture2D offIcon = ContentFinder<Texture2D>.Get("UI/AutoFeeder/Modes/Off", true);
