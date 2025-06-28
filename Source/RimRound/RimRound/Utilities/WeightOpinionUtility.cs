@@ -112,10 +112,13 @@ namespace RimRound.Utilities
 
         public static bool ShouldHaveThisKindOfThought(ThoughtWorker thoughtWorker, Pawn p, WeightOpinion opinion)
         {
-            if (!GlobalSettings.moodletsForWeightOpinions)
+            if (!GlobalSettings.moodletsForWeightOpinions || !p.RaceProps.Humanlike) 
+            {
                 return false;
-            
-            if (!p.RaceProps.Humanlike)
+            }
+
+            var pbtComp = p.TryGetComp<PawnBodyType_ThingComp>();
+            if (pbtComp != null && (pbtComp.PersonallyExempt || pbtComp.CategoricallyExempt)) 
             {
                 return false;
             }

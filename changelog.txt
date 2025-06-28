@@ -1,5 +1,15 @@
 ==================================================
-Commit Hash: efe2f517967a049e4f9ea7167a13b305a054774a
+Commit Hash: 4163210dafefb86d58fc67f87a9ae0c3020d1638
+Author: Niwatori401
+Date: Sat Jun 28 03:27:48 2025
+
+Add new setting for max age for RR features to be active
+Clarify function of exemption options
+Exemption options now block moodlets
+Personal Exemption Gizmo is now default visible
+
+==================================================
+Commit Hash: 07f9699f58ff7465da2fccc6c6665372a0a81b42
 Author: Niwatori401
 Date: Fri Jun 27 17:22:09 2025
 

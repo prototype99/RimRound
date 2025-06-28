@@ -39,6 +39,13 @@
 	<FullnessDeathWarningTitle>Confirm your choice.</FullnessDeathWarningTitle>
 	<FullnessDeathWarningExplanation>This target fullness is too much for {0} and, if they eat this much, their stomach will likely rupture. This will inflict serious, possibly lethal wounds. Are you sure you want to set their target fullness to this value?</FullnessDeathWarningExplanation>
 	
+	
+	<!--Personal Exemption Gizmo-->
+	<RR_PersonalDynamicBodyGizmoLabel>Personal Exemption</RR_PersonalDynamicBodyGizmoLabel>
+	<RR_PersonalDynamicBodyGizmoDesc>When enabled, this prevents this pawn from using RR bodies, sounds and moodlets. This overrides the global rule.</RR_PersonalDynamicBodyGizmoDesc>
+	
+	
+	
 	<!-- Sound Settings Window -->
 	<RR_Nhs_SoundSettingsTitle>Sound Settings</RR_Nhs_SoundSettingsTitle>
 	<RR_soundSettings_soundMales>Male Global Sound Multiplier</RR_soundSettings_soundMales>
@@ -100,15 +107,16 @@
 	<RR_Mtw_nutritionPerLevel>Nutrition required per level</RR_Mtw_nutritionPerLevel>
 	<RR_Mtw_levelsGainedPerLevel>Levels gained on level up</RR_Mtw_levelsGainedPerLevel>
 	<RR_Mtw_MinimumAgeForCustomBody>Min. age for RR bodies</RR_Mtw_MinimumAgeForCustomBody>
+	<RR_Mtw_MaximumAgeForCustomBody>Max age for RR bodies</RR_Mtw_MaximumAgeForCustomBody>
 	<RR_Mtw_minWeightToThrowText>Min. weight gain to throw text</RR_Mtw_minWeightToThrowText>
 
-	<RR_Mtw_BodyChangeExemptionSettingsTitle>Body Change Settings</RR_Mtw_BodyChangeExemptionSettingsTitle>
-	<RR_Mtw_BodyChangeExemptionSettings_Male>Dynamic bodies for Males</RR_Mtw_BodyChangeExemptionSettings_Male>
-	<RR_Mtw_BodyChangeExemptionSettings_Female>Dynamic bodies for Females</RR_Mtw_BodyChangeExemptionSettings_Female>
-	<RR_Mtw_BodyChangeExemptionSettings_HostileNPC>Dynamic bodies for Hostile NPCs</RR_Mtw_BodyChangeExemptionSettings_HostileNPC>
-	<RR_Mtw_BodyChangeExemptionSettings_FriendlyNPC>Dynamic bodies for Friendly NPCs</RR_Mtw_BodyChangeExemptionSettings_FriendlyNPC>
-	<RR_Mtw_BodyChangeExemptionSettings_Prisoner>Dynamic bodies for Prisoners</RR_Mtw_BodyChangeExemptionSettings_Prisoner>
-	<RR_Mtw_BodyChangeExemptionSettings_Slave>Dynamic bodies for Slaves</RR_Mtw_BodyChangeExemptionSettings_Slave>
+	<RR_Mtw_BodyChangeExemptionSettingsTitle>Exemption Settings</RR_Mtw_BodyChangeExemptionSettingsTitle>
+	<RR_Mtw_BodyChangeExemptionSettings_Male>Enable RR features for Males</RR_Mtw_BodyChangeExemptionSettings_Male>
+	<RR_Mtw_BodyChangeExemptionSettings_Female>Enable RR features for Females</RR_Mtw_BodyChangeExemptionSettings_Female>
+	<RR_Mtw_BodyChangeExemptionSettings_HostileNPC>Enable RR features for Hostile NPCs</RR_Mtw_BodyChangeExemptionSettings_HostileNPC>
+	<RR_Mtw_BodyChangeExemptionSettings_FriendlyNPC>Enable RR features for Friendly NPCs</RR_Mtw_BodyChangeExemptionSettings_FriendlyNPC>
+	<RR_Mtw_BodyChangeExemptionSettings_Prisoner>Enable RR features for Prisoners</RR_Mtw_BodyChangeExemptionSettings_Prisoner>
+	<RR_Mtw_BodyChangeExemptionSettings_Slave>Enable RR features for Slaves</RR_Mtw_BodyChangeExemptionSettings_Slave>
 	
 	<RR_Mtw_GeneralSettings_Title>General Settings</RR_Mtw_GeneralSettings_Title>
 	<RR_Mtw_GeneralSettings_BurstingEnabled>Bursting enabled</RR_Mtw_GeneralSettings_BurstingEnabled>
@@ -167,12 +175,12 @@
 	<RR_ToolTip_Preferences_ShowBlobIntoBedGizmo>Show 'blob bed' button, if elligible. Disabling this will not change their current setting.</RR_ToolTip_Preferences_ShowBlobIntoBedGizmo>
 	<RR_ToolTip_Preferences_ShowLegacyDietGizmo>Use legacy diet gizmo rather than the new, slimmer one.</RR_ToolTip_Preferences_ShowLegacyDietGizmo>
 
-	<RR_ToolTip_Preferences_DynamicBodiesFor_Males>Enable use of RimRound sprites for males. This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Males>
-	<RR_ToolTip_Preferences_DynamicBodiesFor_Females>Enable use of RimRound sprites for females. This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Females>
-	<RR_ToolTip_Preferences_DynamicBodiesFor_FriendlyNPCS>Enable use of RimRound sprites for friendly NPCs (e.g. traders). This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_FriendlyNPCS>
-	<RR_ToolTip_Preferences_DynamicBodiesFor_HostileNPCS>Enable use of RimRound sprites for hostile NPCs (e.g. raiders). This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_HostileNPCS>
-	<RR_ToolTip_Preferences_DynamicBodiesFor_Prisoners>Enable use of RimRound sprites for prisoners. This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Prisoners>
-	<RR_ToolTip_Preferences_DynamicBodiesFor_Slaves>Enable use of RimRound sprites for slaves. This only affects visuals, not mechanics. To disable sprites for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Slaves>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_Males>Enable use of RimRound sprites, sounds and moodlets for males. To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Males>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_Females>Enable use of RimRound sprites, sounds and moodlets for females. To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Females>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_FriendlyNPCS>Enable use of RimRound sprites, sounds and moodlets for friendly NPCs (e.g. traders). To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_FriendlyNPCS>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_HostileNPCS>Enable use of RimRound sprites, sounds and moodlets for hostile NPCs (e.g. raiders). To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_HostileNPCS>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_Prisoners>Enable use of RimRound sprites, sounds and moodlets for prisoners. To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Prisoners>
+	<RR_ToolTip_Preferences_DynamicBodiesFor_Slaves>Enable use of RimRound sprites, sounds and moodlets for slaves. To disable these features for a specific pawn, use the 'Personal Exemption Gizmo'.</RR_ToolTip_Preferences_DynamicBodiesFor_Slaves>
 
 	<RR_ToolTip_Preferences_ShowSpecialDebugSettings>Show debug settings used for debugging and racial support. Not recommended for most users.</RR_ToolTip_Preferences_ShowSpecialDebugSettings>
 	<RR_ToolTip_Preferences_ShowTattoosOnRRBodies>Use tattoos with RimRound sprites. The RimWorld's tattoos do not scale nicely and in general can look bad on RimRound body sprites. Recommended: Off</RR_ToolTip_Preferences_ShowTattoosOnRRBodies>
@@ -192,7 +200,8 @@
 	<RR_ToolTip_Preferences_UsePoundsWherePossible>Use pounds instead of kilograms in certain displays. RimWorld uses metric for it's measurements, so stats such as 'mass' will remain unaffected.</RR_ToolTip_Preferences_UsePoundsWherePossible>
 	<RR_ToolTip_Preferences_ShowAllPerks>Show perks that this pawn will never be elligible to purchase. (E.g. race-specific perks)</RR_ToolTip_Preferences_ShowAllPerks>
 
-	<RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody>The age after which pawns will use RimRound bodies. Pawns below this age will still gain/lose weight but will not use custom bodies.</RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody>
+	<RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody>The age after which pawns will use RimRound bodies, sounds and moodlets. Pawns below this age will still gain/lose weight but will not use these features.</RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody>
+	<RR_ToolTip_NumericPreferences_MaximumAgeForCustomBody>The age after which pawns will no longer use RimRound bodies, sounds and moodlets. Pawns above this age will still gain/lose weight but will not use these features.</RR_ToolTip_NumericPreferences_MaximumAgeForCustomBody>
 	<RR_ToolTip_NumericPreferences_GlobalWGModifier>Any and all gained weight is multiplied by this value. A '2' here would mean double the rate of weight gain across the board.</RR_ToolTip_NumericPreferences_GlobalWGModifier>
 	<RR_ToolTip_NumericPreferences_GlobalWLModifier>All non-surgical weight loss is multiplied by this value. A '2' here would mean double the rate of ambient weight loss.</RR_ToolTip_NumericPreferences_GlobalWLModifier>
 	<RR_ToolTip_NumericPreferences_FemaleWGModifier>Works the same as the global modifier, but only affects female pawns.</RR_ToolTip_NumericPreferences_FemaleWGModifier>

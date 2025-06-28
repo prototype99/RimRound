@@ -312,7 +312,6 @@ namespace RimRound.Comps
                 {
                     var soundDef = SoundUtility.GetBreathingSoundByWeightOpinionAndGender(parent.AsPawn());
                     breathSound = soundDef.TrySpawnSustainer(SoundInfo.InMap(parent.AsPawn()));
-                    
                 }
             }
             else

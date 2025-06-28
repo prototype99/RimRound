@@ -734,6 +734,7 @@ namespace RimRound.UI
 
 
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.minimumAgeForCustomBody, numericFieldCount++, "RR_Mtw_MinimumAgeForCustomBody", GameFont.Small, () => { BodyTypeUtility.AssignBodyTypeCategoricalExemptions(true); }, "RR_ToolTip_NumericPreferences_MinimumAgeForCustomBody");
+            NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.maximumAgeForCustomBody, numericFieldCount++, "RR_Mtw_MaximumAgeForCustomBody", GameFont.Small, () => { BodyTypeUtility.AssignBodyTypeCategoricalExemptions(true); }, "RR_ToolTip_NumericPreferences_MaximumAgeForCustomBody");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplier, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitle", GameFont.Small, null, "RR_ToolTip_NumericPreferences_GlobalWGModifier");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplierFemale, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitleFemale", GameFont.Small, null, "RR_ToolTip_NumericPreferences_FemaleWGModifier");
             NumberFieldLabeledWithRect(globalMultipliersSettingsFieldRect, ref GlobalSettings.weightGainMultiplierMale, numericFieldCount++, "RR_Mtw_GlobalWeightGainMultiplierTitleMale", GameFont.Small, null, "RR_ToolTip_NumericPreferences_MaleWGModifier");

@@ -17,8 +17,8 @@ namespace RimRound.UI
         public PersonalDynamicBodyGizmo(PawnBodyType_ThingComp comp) 
         {
             this.comp = comp;
-            defaultLabel = "Exempt Pawn - Dynamic Bodies Rule";
-            defaultDesc = "Whether this pawn personally should obey global rules allowing dynamic bodies. When on, global rules are followed. When off, this pawn will never have a dynamic body regardless of the global rule.";
+            defaultLabel = "RR_PersonalDynamicBodyGizmoLabel".Translate();
+            defaultDesc = "RR_PersonalDynamicBodyGizmoDesc".Translate();
             icon = Utilities.Resources.FILLER_TEXTURE;
             isActive = () => comp.PersonallyExempt;
             toggleAction = () => { ToggleAction(); };

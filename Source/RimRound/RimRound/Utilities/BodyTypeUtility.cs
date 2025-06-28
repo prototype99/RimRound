@@ -428,7 +428,7 @@ namespace RimRound.Utilities
                 return new ExemptionReason("RR_ExemptionReason_PrisonerDisabled".Translate());
             else if (GlobalSettings.bodyChangeSlaves is false && p.IsSlaveOfColony)
                 return new ExemptionReason("RR_ExemptionReason_SlaveDisabled".Translate());
-            else if (GlobalSettings.minimumAgeForCustomBody.threshold > (p?.ageTracker?.AgeBiologicalYears ?? 0))
+            else if (GlobalSettings.minimumAgeForCustomBody.threshold > (p?.ageTracker?.AgeBiologicalYears ?? 0) || GlobalSettings.maximumAgeForCustomBody.threshold < (p?.ageTracker?.AgeBiologicalYears ?? 0))
                 return new ExemptionReason("RR_ExemptionReason_AgeDisabled".Translate());
             else
                 return false;

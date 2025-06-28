@@ -60,7 +60,7 @@ namespace RimRound.Utilities
         public static bool showPawnDietManagementGizmo = true;
         public static bool showSleepPostureManagementGizmo = true;
         public static bool showBlanketManagementGizmo = true;
-        public static bool showExemptionGizmo = false;
+        public static bool showExemptionGizmo = true;
         public static bool showBlobIntobedGizmo = true;
         public static bool largeDietGizmo = false;
         public static bool showDescriptionTab = true;
@@ -68,7 +68,7 @@ namespace RimRound.Utilities
 
         #endregion
 
-        #region Body Change Exemption Settings
+        #region Exemption Settings
 
         public static bool bodyChangeMale = false;
         public static bool bodyChangeFemale = true;
@@ -84,8 +84,6 @@ namespace RimRound.Utilities
 
         public static bool showBodyTatoosForCustomSprites = false;
         public static bool burstingEnabled = false;
-        public static bool haveWeightHediffMale = true;
-        public static bool haveWeightHediffFemale = true;
         public static bool preferDefaultOutfitOverNaked = true;
         public static bool alternateNorthHeadPositionForRRBodytypes = false;
         public static bool moodletsForWeightOpinions = true;
@@ -103,7 +101,8 @@ namespace RimRound.Utilities
 
         #region Value Settings
 
-        public static NumericFieldData<int> minimumAgeForCustomBody = new NumericFieldData<int>(20, 0, 1000);
+        public static NumericFieldData<int> minimumAgeForCustomBody = new NumericFieldData<int>(20, 0, int.MaxValue);
+        public static NumericFieldData<int> maximumAgeForCustomBody = new NumericFieldData<int>(50, 0, int.MaxValue);
         public static NumericFieldData<float> minForCapableMovement = new NumericFieldData<float>(0.01f, 0, 1);
         public static NumericFieldData<float> diabetes = new NumericFieldData<float>(1, 0, 1);
         public static NumericFieldData<float> aFLD = new NumericFieldData<float>(1, 0, 1);
