@@ -19,8 +19,8 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>40~50</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
@@ -45,8 +45,8 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>40~50</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
@@ -71,8 +71,8 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>40~50</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingNormal" />
@@ -97,7 +97,7 @@
 						<clipPath>Organic/Breath/Regular/Breathing_F_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~50</volumeRange>
 				<distRange>10~30</distRange>
 				<paramMappings>
 					<li>
@@ -123,8 +123,8 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Light</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>80~100</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
@@ -149,8 +149,8 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Medium</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>80~100</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
@@ -175,8 +175,8 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_Heavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>80~100</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />
@@ -201,8 +201,8 @@
 						<clipPath>Organic/Breath/Pleasure/PleasureBreathing_F_SuperHeavy</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>40~50</volumeRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_BreathingPleasure" />

@@ -309,8 +309,8 @@
 						<clipPath>Organic/Stomach/Stretch/Stretch_1</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>50~50</volumeRange>
+				<distRange>3~30</distRange>
 				<sustainLoop>False</sustainLoop>
 				<paramMappings>
 					<li>
@@ -332,8 +332,8 @@
 						<clipPath>Organic/Stomach/Stretch/Stretch_2</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>50~50</volumeRange>
+				<distRange>3~30</distRange>
 				<sustainLoop>False</sustainLoop>
 				<paramMappings>
 					<li>
@@ -355,8 +355,8 @@
 						<clipPath>Organic/Stomach/Stretch/Stretch_3</clipPath>
 					</li>
 				</grains>
-				<volumeRange>70~70</volumeRange>
-				<distRange>10~30</distRange>
+				<volumeRange>60~60</volumeRange>
+				<distRange>3~30</distRange>
 				<sustainLoop>False</sustainLoop>
 				<paramMappings>
 					<li>
@@ -379,7 +379,7 @@
 					</li>
 				</grains>
 				<volumeRange>70~70</volumeRange>
-				<distRange>10~30</distRange>
+				<distRange>3~30</distRange>
 				<sustainLoop>False</sustainLoop>
 				<paramMappings>
 					<li>
@@ -402,7 +402,7 @@
 					</li>
 				</grains>
 				<volumeRange>70~70</volumeRange>
-				<distRange>10~30</distRange>
+				<distRange>3~30</distRange>
 				<sustainLoop>False</sustainLoop>
 				<paramMappings>
 					<li>

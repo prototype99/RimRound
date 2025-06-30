@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: b732187f6c934cf1fb2681e85593a1cd33e539b3
+Commit Hash: e805bcfed059a053edf3bca14c27757fa3b9e852
+Author: Niwatori401
+Date: Mon Jun 30 00:50:58 2025
+
+Update sound volumes and fade in/out distances (Courtesy mrmoto)
+
+==================================================
+Commit Hash: ad64048cb234bcae6b75537fd1a27ad6df10a3ea
 Author: Niwatori401
 Date: Sat Jun 28 20:32:58 2025
 

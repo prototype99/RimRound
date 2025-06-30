@@ -17,9 +17,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Fat_1</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -40,9 +40,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Fat_2</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -63,9 +63,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Obese_1</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -86,9 +86,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Obese_2</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -109,9 +109,9 @@
 						<clipFolderPath>Organic/Footstep/RR_Footstep_MorbidlyObese_1</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -132,9 +132,9 @@
 						<clipFolderPath>Organic/Footstep/RR_Footstep_MorbidlyObese_2</clipFolderPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>40~40</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>3~30</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -155,9 +155,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Lardy_1</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>60~60</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>5~40</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
@@ -178,9 +178,9 @@
 						<clipPath>Organic/Footstep/RR_Footstep_Lardy_2</clipPath>
 					</li>
 				</grains>
-				<volumeRange>20~20</volumeRange>
+				<volumeRange>60~60</volumeRange>
 				<pitchRange>0.9~1.1</pitchRange>
-				<distRange>10~50</distRange>
+				<distRange>5~40</distRange>
 				<paramMappings>
 					<li>
 						<inParam Class="RimRound.Sound.SoundParamSource_Footsteps" />
