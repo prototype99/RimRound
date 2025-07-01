@@ -340,6 +340,7 @@ namespace RimRound.Utilities
             {
                 pawn.story.bodyType = b;
                 RedrawPawn(pawn);
+                NotifyWeightChanged(pawn);
                 return true;
             }
             else if (forceUpdate)
@@ -348,6 +349,13 @@ namespace RimRound.Utilities
             }
 
             return false;
+        }
+
+        private static void NotifyWeightChanged(Pawn pawn)
+        {
+            var pbtComp = pawn.TryGetComp<PawnBodyType_ThingComp>();
+            pbtComp.NotifyWeightStageListeners();
+            
         }
 
         private static bool ValidatePawnShouldBeRedrawn(Pawn pawn)

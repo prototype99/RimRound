@@ -187,6 +187,7 @@
     <Compile Include="RimRound\AI\HistoryAutoRecorderGroupWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWeight.cs" />
     <Compile Include="RimRound\AI\HistoryAutoRecorderWorker_PawnWeight.cs" />
+    <Compile Include="RimRound\IWeightStageChangedListener.cs" />
     <Compile Include="RimRound\Patch\HumanoidAlienRacesPatches\AlienRenderTreePatches_BodyGraphicForPrefix_ChangeSpritePath.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetFootSlotPos_AdjustForRRBed.cs" />
     <Compile Include="RimRound\Patch\RimWorldPatches\BedFixPatches\Building-Bed_GetSleepingSlotPos_AdjustForRRBed.cs" />

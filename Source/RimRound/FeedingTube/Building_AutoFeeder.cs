@@ -23,7 +23,7 @@ namespace RimRound.FeedingTube
             get {
                 return currentModeInternal;
             }
-            set { 
+            set {
                 currentModeInternal = value;
                 UpdatePawnDrinkingSounds();
             }
@@ -31,6 +31,13 @@ namespace RimRound.FeedingTube
 
         private void UpdatePawnDrinkingSounds() {
             drinkingSustainer?.End();
+            drinkingSustainer = null;
+
+            if (CurrentMode == AutoFeederMode.off) 
+            {
+                return;
+            }
+
             SoundDef sound = SoundUtility.GetSwallowSoundByWeightOpinionAndGender(CurrentPawn, CurrentMode);
 
             if (sound == null) 
@@ -38,7 +45,7 @@ namespace RimRound.FeedingTube
                 return;
             }
 
-            sound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
+            drinkingSustainer = sound.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
         }
 
         Pawn _currentPawn;
@@ -96,58 +103,72 @@ namespace RimRound.FeedingTube
             Scribe_Values.Look<AutoFeederMode>(ref currentModeInternal, "CurrentAutoFeederMode", AutoFeederMode.off);
         }
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            if (onSound == null && forcedTarget.Pawn != null) {
-                onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
-            }
-            if (drinkingSustainer == null && forcedTarget.Pawn != null) { 
-                UpdatePawnDrinkingSounds();
-            }
-        }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             base.Destroy(mode);
-            onSound.End();
-            onSound = null;
-
-            drinkingSustainer.End();
-            drinkingSustainer = null;
-        
-            CachedFNDComp.IsConnectedToFeedingMachine = false;
+            HandleDestruction();
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             base.DeSpawn(mode);
-            onSound.End();
-            onSound = null;
-
-            drinkingSustainer.End();
-            drinkingSustainer = null;
-
-            CachedFNDComp.IsConnectedToFeedingMachine = false;
+            HandleDestruction();
         }
 
         public override void Discard(bool silentlyRemoveReferences = false)
         {
             base.Discard(silentlyRemoveReferences);
-            onSound.End();
+            HandleDestruction();
+        }
+
+        private void HandleDestruction() 
+        {
+            onSound?.End();
             onSound = null;
-            
-            drinkingSustainer.End();
+
+            drinkingSustainer?.End();
             drinkingSustainer = null;
 
-            CachedFNDComp.IsConnectedToFeedingMachine = false;
+            if (CurrentPawn != null) 
+            {
+                this.CurrentPawn.health.RemoveHediff(
+                    (from h
+                    in this.CurrentPawn.health.hediffSet.hediffs
+                     where h.def.defName == Defs.HediffDefOf.RimRound_UsingFeedingTube.defName
+                     select h).FirstOrDefault()
+                    );
+
+                CurrentPawn = null;
+            }
+
+            this.CachedFNDComp.SloshDurationSeconds = 60;
+            this.CachedFNDComp.SloshStartTick = Find.TickManager.TicksAbs;
+            this.CachedFNDComp.IsConnectedToFeedingMachine = false;
+            this.CachedFNDComp = null;
+
+
+            this.forcedTarget = LocalTargetInfo.Invalid;
+            
+            CurrentMode = AutoFeederMode.off;
         }
+
 
         public override void Tick()
         {
             base.Tick();
             if (CurrentPawn != null && CurrentPawn.IsHashIntervalTick(tickCheckInterval))
             {
+                if (onSound == null)
+                {
+                    onSound = RimRound.Defs.SoundDefOf.RR_FeedingTube_On.TrySpawnSustainer(SoundInfo.InMap(new TargetInfo(this)));
+                }
+
+                if (drinkingSustainer == null)
+                {
+                    UpdatePawnDrinkingSounds();
+                }
+
                 float currentNutritionPercent = CurrentPawn.needs.food.CurLevelPercentage;
                 switch (CurrentMode)
                 {
@@ -486,28 +507,9 @@ namespace RimRound.FeedingTube
 
         private void ResetForcedTarget()
         {
-            onSound?.End();
-            onSound = null;
-            drinkingSustainer?.End();
-            drinkingSustainer = null;
-            
-            this.CachedFNDComp.SloshDurationSeconds = 60;
-            this.CachedFNDComp.SloshStartTick = Find.TickManager.TicksAbs;
-            this.CachedFNDComp.IsConnectedToFeedingMachine = false;
-
-
-            this.forcedTarget = LocalTargetInfo.Invalid;
-            this.CurrentPawn.health.RemoveHediff(
-                (from h
-                in this.CurrentPawn.health.hediffSet.hediffs
-                where h.def.defName == Defs.HediffDefOf.RimRound_UsingFeedingTube.defName
-                select h).FirstOrDefault()
-                );
-
-            this.CurrentPawn = null;
-            this.CachedFNDComp = null;
-            CurrentMode = AutoFeederMode.off;
+            HandleDestruction();
         }
+
 
         private Sustainer onSound;
         private Sustainer drinkingSustainer;

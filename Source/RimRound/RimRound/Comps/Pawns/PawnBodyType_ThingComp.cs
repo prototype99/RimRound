@@ -80,6 +80,33 @@ namespace RimRound.Comps
             } 
         }
 
+
+        public void RegisterListener(IWeightStageChangedListener listener) 
+        {
+            _weightStageListeners.Add(listener);
+        }
+
+        public void RemoveListener(IWeightStageChangedListener listener) 
+        {
+            bool success = _weightStageListeners.Remove(listener);
+
+            if (!success) 
+            {
+                Log.Warning($"Tried to remove listener from {this.parent.AsPawn().Name.ToStringFull} but it wasn't registered!");
+            }
+        }
+
+
+        public void NotifyWeightStageListeners() 
+        {
+            foreach (var listener in _weightStageListeners) 
+            {
+                listener.OnWeightStageChanged();
+            }
+        }
+
+        private List<IWeightStageChangedListener> _weightStageListeners = new List<IWeightStageChangedListener>();
+
         public string bodyTypeDictNameString = null;
 
         public int ticksSinceLastBodyChange = 0;
