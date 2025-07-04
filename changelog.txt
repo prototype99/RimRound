@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: 14195586dc4cd674c4ee5da45122868774284a1b
+Commit Hash: f85a7416d71567308614b19c60210f70f0a7c1e6
+Author: Niwatori401
+Date: Fri Jul 4 22:01:03 2025
+
+Change access modifier for SetWeightOpinion function
+
+==================================================
+Commit Hash: a8a7fb641a9ab54a08bf05f5c014a1c645695654
 Author: Niwatori401
 Date: Tue Jul 1 07:17:10 2025
 

@@ -143,7 +143,7 @@ namespace RimRound.Comps
             return weightOpinion;
         }
 
-        void SetWeightOpinion(WeightOpinion weightOpinion) 
+        public void SetWeightOpinion(WeightOpinion weightOpinion) 
         {
             this.weightOpinion = weightOpinion;
 
