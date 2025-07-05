@@ -306,6 +306,106 @@ namespace RimRound.Comps
                     }
                 };
 
+                yield return new Command_Action 
+                {
+                    defaultLabel = positivity == 1 ? $"Fill Stomach {offsetAmounts[offsetAmountsIndex]}L" : $"Empty Stomach {offsetAmounts[offsetAmountsIndex]}L",
+                    icon = positivity == 1 ? Resources.FILL_STOMACH_ICON : Resources.EMPTY_STOMACH_ICON,
+                    action = delegate ()
+                    {
+                        FullnessAndDietStats_ThingComp fndComp = parent.AsPawn().TryGetComp<FullnessAndDietStats_ThingComp>();
+                        if (fndComp is null) 
+                        {
+                            Log.Error("fndComp was null in stomach gizmo in debug comp");
+                            return;
+                        }
+
+                        Resources.gizmoClick.PlayOneShotOnCamera(null);
+
+                        if (positivity == 1)
+                        {
+                            fndComp.CurrentFullness += offsetAmounts[offsetAmountsIndex];
+                        }
+                        else 
+                        {
+                            if (fndComp.CurrentFullness - offsetAmounts[offsetAmountsIndex] <= 0) 
+                            {
+                                fndComp.CurrentFullness = 0;
+                                return;
+                            }
+
+                            fndComp.CurrentFullness -= offsetAmounts[offsetAmountsIndex];
+                        }
+                    }
+
+                };
+
+                yield return new Command_Action
+                {
+                    defaultLabel = positivity == 1 ? $"Increase Nutrition {offsetAmounts[offsetAmountsIndex]}" : $"Decrease Nutrition {offsetAmounts[offsetAmountsIndex]}",
+                    icon = positivity == 1 ? Resources.FILL_STOMACH_ICON : Resources.EMPTY_STOMACH_ICON,
+                    action = delegate ()
+                    {
+                        FullnessAndDietStats_ThingComp fndComp = parent.AsPawn().TryGetComp<FullnessAndDietStats_ThingComp>();
+                        if (fndComp is null)
+                        {
+                            Log.Error("fndComp was null in nutrition gizmo in debug comp");
+                            return;
+                        }
+
+                        Resources.gizmoClick.PlayOneShotOnCamera(null);
+                        Need_Food nf = this.parent.AsPawn().needs.food;
+                        
+                        if (positivity == 1)
+                        {
+                            nf.CurLevel += offsetAmounts[offsetAmountsIndex];
+                        }
+                        else
+                        {
+                            if (nf.CurLevel - offsetAmounts[offsetAmountsIndex] <= 0)
+                            {
+                                nf.CurLevel = 0;
+                                return;
+                            }
+
+                            nf.CurLevel -= offsetAmounts[offsetAmountsIndex];
+                        }
+                    }
+
+                };
+
+                yield return new Command_Action
+                {
+                    defaultLabel = positivity == 1 ? $"Increase Stomach Capacity {offsetAmounts[offsetAmountsIndex]}L" : $"Decrease Stomach Capacity {offsetAmounts[offsetAmountsIndex]}L",
+                    icon = positivity == 1 ? Resources.FILL_STOMACH_ICON : Resources.EMPTY_STOMACH_ICON,
+                    action = delegate ()
+                    {
+                        FullnessAndDietStats_ThingComp fndComp = parent.AsPawn().TryGetComp<FullnessAndDietStats_ThingComp>();
+                        if (fndComp is null)
+                        {
+                            Log.Error("fndComp was null in stomach cap gizmo in debug comp");
+                            return;
+                        }
+
+                        Resources.gizmoClick.PlayOneShotOnCamera(null);
+
+                        if (positivity == 1)
+                        {
+                            fndComp.debugSoftLimitDelta += offsetAmounts[offsetAmountsIndex];
+                        }
+                        else
+                        {
+                            if (fndComp.debugSoftLimitDelta - offsetAmounts[offsetAmountsIndex] <= 0)
+                            {
+                                fndComp.debugSoftLimitDelta = 0;
+                                return;
+                            }
+
+                            fndComp.debugSoftLimitDelta -= offsetAmounts[offsetAmountsIndex];
+                        }
+                    }
+
+                };
+
                 if (GlobalSettings.showSpecialDebugSettings)
                 {
                     yield return new Command_Action

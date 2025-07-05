@@ -73,7 +73,9 @@ namespace RimRound.Comps
             Scribe_Values.Look<float>(ref currentFullnessToNutritionRatio, "currentFullnessToNutritionRatio", defaultFullnessToNutritionRatio);
             Scribe_Values.Look<float>(ref consumedNutrition, "consumedNutrition", 0f);
             Scribe_Values.Look<float>(ref cumulativeSeverityGained, "suddenWGCumSeverity");
-            
+
+            Scribe_Values.Look<float>(ref debugSoftLimitDelta, "debugSoftLimitDelta");
+
             ExposeStatBonuses();
             ExposePerkLevels();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -142,55 +144,6 @@ namespace RimRound.Comps
 
             if (GlobalSettings.showPawnDietManagementGizmo && ShouldShowWeightGizmo())
                 yield return this.weightGizmo;
-
-            if (Prefs.DevMode && GlobalSettings.showSpecialDebugSettings)
-            {
-                yield return new Command_Action
-                {
-                    defaultLabel = "Fill stomach",
-                    icon = Resources.FILL_STOMACH_ICON,
-                    action = delegate ()
-                    {
-                        Resources.gizmoClick.PlayOneShotOnCamera(null);
-                        this.CurrentFullness = this.HardLimit - Values.MinRQ;
-                    }
-                };
-
-                yield return new Command_Action
-                {
-                    defaultLabel = "Empty stomach",
-                    icon = Resources.EMPTY_STOMACH_ICON,
-                    action = delegate ()
-                    {
-                        Resources.gizmoClick.PlayOneShotOnCamera(null);
-                        this.CurrentFullness = 0;
-                    }
-                };
-
-                yield return new Command_Action
-                {
-                    defaultLabel = "Fill nutrition",
-                    icon = Resources.FILL_STOMACH_ICON,
-                    action = delegate ()
-                    {
-                        Resources.gizmoClick.PlayOneShotOnCamera(null);
-                        Need_Food nf = this.parent.AsPawn().needs.food;
-                        nf.CurLevelPercentage = 1;
-                    }
-                };
-
-                yield return new Command_Action
-                {
-                    defaultLabel = "Empty nutrition",
-                    icon = Resources.EMPTY_STOMACH_ICON,
-                    action = delegate ()
-                    {
-                        Resources.gizmoClick.PlayOneShotOnCamera(null);
-                        Need_Food nf = this.parent.AsPawn().needs.food;
-                        nf.CurLevelPercentage = 0;
-                    }
-                };
-            }
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -849,7 +802,7 @@ namespace RimRound.Comps
 
 
         //-------------------
-
+        public float debugSoftLimitDelta = 0;
         //In liters. represents threshold of stoach capacity. Initial value at pawn spawn.
         private float softLimitPersonal = defaultSoftLimit + Values.RandomFloat(softLimitVariation.x, softLimitVariation.y);
         public float SoftLimit
@@ -858,12 +811,13 @@ namespace RimRound.Comps
             {
                 float blackHolePerkBonus = 50f * (perkLevels.PerkToLevels?["RR_BlackHole_Title"] ?? 0);
                 float oneMoreBitePerkBonus = 1f * (perkLevels.PerkToLevels?["RR_OneMoreBite_Title"] ?? 0);
+                float debugIncrease = debugSoftLimitDelta;
 
                 return
                     Mathf.Clamp(softLimitPersonal *
                     (GlobalSettings.softLimitMuliplier.threshold *
                     (1 + statBonuses.softLimitMultiplier)) +
-                    statBonuses.softLimitFlatBonus + blackHolePerkBonus + oneMoreBitePerkBonus, 0, float.MaxValue);
+                    statBonuses.softLimitFlatBonus + blackHolePerkBonus + oneMoreBitePerkBonus + debugIncrease, 0, float.MaxValue);
             }
         }
 

@@ -1,5 +1,13 @@
 ==================================================
-Commit Hash: f85a7416d71567308614b19c60210f70f0a7c1e6
+Commit Hash: 362489f094b843b6d955529d89d6624c670924da
+Author: Niwatori401
+Date: Sat Jul 5 16:59:48 2025
+
+Add gizmo to adjust pawn stomach capacity
+Refine gizmos for fill/empty nutrition/fullness
+
+==================================================
+Commit Hash: 18b4572216c4f80688094e3951f0ec4ffbc8c837
 Author: Niwatori401
 Date: Fri Jul 4 22:01:03 2025
 
