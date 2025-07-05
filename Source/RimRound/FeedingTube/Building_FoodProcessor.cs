@@ -34,7 +34,7 @@ namespace RimRound.FeedingTube
             };
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             ProcessFood();

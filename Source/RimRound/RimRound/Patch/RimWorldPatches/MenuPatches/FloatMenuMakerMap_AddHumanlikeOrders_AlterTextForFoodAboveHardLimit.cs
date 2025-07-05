@@ -12,41 +12,37 @@ using Verse;
 
 namespace RimRound.Patch
 {
-    [HarmonyPatch(typeof(FloatMenuMakerMap))]
-    [HarmonyPatch("AddHumanlikeOrders")]
+    [HarmonyPatch(typeof(FloatMenuOptionProvider_Ingest))]
+    [HarmonyPatch("GetSingleOptionFor")]
     public class FloatMenuMakerMap_AddHumanlikeOrders_AlterTextForFoodAboveHardLimit
     {
-        public static void Postfix(Vector3 __0, Pawn __1, List<FloatMenuOption> __2) 
+        public static void Postfix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            IntVec3 c = IntVec3.FromVector3(__0);
-            List<Thing> things = new List<Thing>();
-            FloatMenuOption garbageFMO = new FloatMenuOption("", null);
+            
+            Pawn selectedPawn = context.FirstSelectedPawn;
 
-            foreach (Thing t in c.GetThingList(__1.Map)) 
+            if (selectedPawn == null || !selectedPawn.RaceProps.Humanlike) 
             {
-                foreach (FloatMenuOption fmo in __2)
-                {
-                    garbageFMO.Label = "ConsumeThing".Translate(t.LabelShort, t);
-                    if (fmo.Label.Contains(garbageFMO.Label))
-                    {
-                        float fullnessToNutritionRatio = 
-                            t.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ?? 
-                            FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
+                return;
+            }
 
-                        if (__1.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp && 
-                            t.def.ingestible.CachedNutrition * fullnessToNutritionRatio >= FnDStatsComp.RemainingFullnessUntil(FnDStatsComp.HardLimit)) 
-                        {
-                            if (!FnDStatsComp.fullnessbar.peaceForeverHeld) 
-                            {
-                                fmo.Label = "FloatMenuCantConsumeTooBig".Translate(t.LabelShort, t);
-                                fmo.action = null;
-                            }
-                        }
+            string targetLabel = "ConsumeThing".Translate(clickedThing.LabelShort, clickedThing);
+            if (__result.Label.Contains(targetLabel))
+            {
+                float fullnessToNutritionRatio =
+                    clickedThing.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ??
+                    FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
+
+                if (selectedPawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp &&
+                    clickedThing.def.ingestible.CachedNutrition * fullnessToNutritionRatio >= FnDStatsComp.RemainingFullnessUntil(FnDStatsComp.HardLimit))
+                {
+                    if (!FnDStatsComp.fullnessbar.peaceForeverHeld)
+                    {
+                        __result.Label = "FloatMenuCantConsumeTooBig".Translate(clickedThing.LabelShort, clickedThing);
+                        __result.action = null;
                     }
                 }
             }
-            
-
         }
     }
 }

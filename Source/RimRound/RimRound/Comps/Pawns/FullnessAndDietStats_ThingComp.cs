@@ -37,9 +37,9 @@ namespace RimRound.Comps
 
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode)
         {
-            base.PostDeSpawn(map);
+            base.PostDeSpawn(map, mode);
             DespawnSustainers();
         }
 

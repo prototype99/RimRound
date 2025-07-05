@@ -27,9 +27,9 @@ namespace RimRound.Comps
 
         }
 
-        public override void FinalizeInit()
+        public override void FinalizeInit(bool fromLoad)
         {
-            base.FinalizeInit();
+            base.FinalizeInit(fromLoad);
 
             //BodyTypeUtility.RefreshBodyTypeGraphicLocations();
 

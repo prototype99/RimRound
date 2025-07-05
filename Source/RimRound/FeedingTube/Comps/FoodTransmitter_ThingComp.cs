@@ -36,9 +36,9 @@ namespace RimRound.FeedingTube.Comps
             }
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode)
         {
-            base.PostDeSpawn(map);
+            base.PostDeSpawn(map, mode);
             FoodTransmitter_NetManager.For(map).Notify_ConnectorRemoved();
         }
 

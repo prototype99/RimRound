@@ -22,7 +22,7 @@ namespace RimRound.FeedingTube
             this.trader = base.GetComp<FoodNetTrader_ThingComp>();
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             ProcessFood();

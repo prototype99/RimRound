@@ -1,5 +1,12 @@
 ==================================================
-Commit Hash: a26ad80b08c3cdde9293bf807456e79012da820b
+Commit Hash: 25bb25c205cf32bc7edb635df9c4b788233214a8
+Author: Niwatori401
+Date: Sat Jul 5 19:51:50 2025
+
+Add prelimiary 1.6 support
+
+==================================================
+Commit Hash: f3d093021655d35d227d463bb4a3baf7957edfe3
 Author: Niwatori401
 Date: Thu Jan 23 01:38:54 2025
 

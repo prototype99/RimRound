@@ -59,7 +59,6 @@ namespace RimRound.Comps
 
         public MapComp_RRGasGrid(Map map) : base(map)
         {
-            this.map = map;
             this.gasDensity = new int[map.cellIndices.NumGridCells];
             this.cardinalDirections = new List<IntVec3>();
             this.cardinalDirections.AddRange(GenAdj.CardinalDirections);
@@ -494,7 +493,7 @@ namespace RimRound.Comps
             Scribe_Values.Look<int>(ref this.cycleIndexDissipation, "RR_cycleIndexDissipation", 0, false);
         }
 
-        [DebugAction("General", "Add RR gas...", false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 100)]
+        [DebugAction("General", "Add RR gas...", false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 100)]
         public static void AddGas()
         {
             IntVec3 cell = Verse.UI.MouseCell();

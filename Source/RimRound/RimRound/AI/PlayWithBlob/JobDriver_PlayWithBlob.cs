@@ -28,7 +28,7 @@ namespace RimRound.AI
             {
                 this.job.locomotionUrgency = LocomotionUrgency.Walk;
             };
-            toil.tickAction = delegate ()
+            toil.tickIntervalAction = delegate (int delta)
             {
                 this.pawn.rotationTracker.FaceCell(base.TargetA.Thing.OccupiedRect().ClosestCellTo(this.pawn.Position));
 
@@ -37,7 +37,7 @@ namespace RimRound.AI
                     base.EndJobWith(JobCondition.Succeeded);
                     return;
                 }
-                JoyUtility.JoyTickCheckEnd(this.pawn, JoyTickFullJoyAction.EndJob, 1f, (Building)base.TargetThingA);
+                JoyUtility.JoyTickCheckEnd(this.pawn, delta, JoyTickFullJoyAction.EndJob, 1f, (Building)base.TargetThingA);
             };
             toil.handlingFacing = true;
             toil.socialMode = RandomSocialMode.SuperActive;

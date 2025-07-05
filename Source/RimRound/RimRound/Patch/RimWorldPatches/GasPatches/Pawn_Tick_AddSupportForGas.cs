@@ -15,7 +15,7 @@ namespace RimRound.Patch
     /// This patch actually applies the gas effects to pawns in the gas.
     /// </summary>
     [HarmonyPatch(typeof(Verse.Pawn))]
-    [HarmonyPatch(nameof(Verse.Pawn.Tick))]
+    [HarmonyPatch("Tick")]
     public static class Pawn_Tick_AddSupportForGas
     {
         public static void Postfix(Pawn __instance) 
