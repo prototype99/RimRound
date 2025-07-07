@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e7ed13d-6233-465e-b286-be2d9cdb3f90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RimRound.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2s9FKdQSHBVjme1bQdLzskEkdsr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,8 +34,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/seirra/Documents/src/coffees-rjw-ideology-addons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,9 +52,13 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -58,6 +71,9 @@
       <option name="presentableId" value="Default" />
       <updated>1737859826727</updated>
       <workItem from="1737859830135" duration="867000" />
+      <workItem from="1750563162845" duration="617000" />
+      <workItem from="1750563787962" duration="203000" />
+      <workItem from="1750625503917" duration="394000" />
     </task>
     <servers />
   </component>
@@ -70,5 +86,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
