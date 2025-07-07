@@ -20,6 +20,8 @@ namespace RimRound.Patch
 
         private static bool ShouldntEat(Pawn pawn)
         {
+            if (!pawn.RaceProps.Humanlike) { return true; }
+            
             bool shouldEat = false;
             if (pawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp fullnessComp && pawn.needs?.food != null)
             {

@@ -12,6 +12,21 @@ namespace RimRound.Comps
     //This comp works with RimRound.Patches.PawnRenderer_GetBodyPos_HideBlankets
     public class HideCovers_ThingComp : ThingComp
     {
+
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
+
         public HideCovers_ThingComp() : base()
         {
             hideCoversGizmo = new HideCoversGizmo(this);
@@ -20,7 +35,7 @@ namespace RimRound.Comps
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!this.parent.AsPawn().IsColonist && !this.parent.AsPawn().IsPrisonerOfColony && !Prefs.DevMode)
+            if (Disabled || (!this.parent.AsPawn().IsColonist && !this.parent.AsPawn().IsPrisonerOfColony && !Prefs.DevMode))
                 yield break;
 
             if (GlobalSettings.showBlanketManagementGizmo)
@@ -31,6 +46,7 @@ namespace RimRound.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+            if (Disabled) { return; }
             Scribe_Values.Look<bool>(ref this.hideCovers, "coversHidden", false, false);
         }
 

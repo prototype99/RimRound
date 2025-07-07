@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimRound.Comps;
 using RimRound.Utilities;
 using RimWorld;
@@ -18,10 +18,10 @@ namespace RimRound.Patch
     {
         public static void Postfix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            
+
             Pawn selectedPawn = context.FirstSelectedPawn;
 
-            if (selectedPawn == null || !selectedPawn.RaceProps.Humanlike) 
+            if (selectedPawn == null || !selectedPawn.RaceProps.Humanlike)
             {
                 return;
             }
@@ -33,7 +33,7 @@ namespace RimRound.Patch
                     clickedThing.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ??
                     FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
 
-                if (selectedPawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp &&
+                if (selectedPawn.RaceProps.Humanlike && selectedPawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp &&
                     clickedThing.def.ingestible.CachedNutrition * fullnessToNutritionRatio >= FnDStatsComp.RemainingFullnessUntil(FnDStatsComp.HardLimit))
                 {
                     if (!FnDStatsComp.fullnessbar.peaceForeverHeld)
