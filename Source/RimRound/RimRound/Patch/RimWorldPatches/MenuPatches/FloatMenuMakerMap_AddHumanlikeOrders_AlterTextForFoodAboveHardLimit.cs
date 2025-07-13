@@ -18,8 +18,12 @@ namespace RimRound.Patch
     {
         public static void Postfix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
+            if (context is null) 
+            {
+                return;
+            }
             
-            Pawn selectedPawn = context.FirstSelectedPawn;
+            Pawn selectedPawn = context?.FirstSelectedPawn;
 
             if (selectedPawn == null || !selectedPawn.RaceProps.Humanlike) 
             {
@@ -27,7 +31,7 @@ namespace RimRound.Patch
             }
 
             string targetLabel = "ConsumeThing".Translate(clickedThing.LabelShort, clickedThing);
-            if (__result.Label.Contains(targetLabel))
+            if (__result?.Label.Contains(targetLabel) ?? false)
             {
                 float fullnessToNutritionRatio =
                     clickedThing.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ??
