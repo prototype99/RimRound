@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e7ed13d-6233-465e-b286-be2d9cdb3f90" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RimRound.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" afterDir="false" />
-    </list>
+    <list default="true" id="0e7ed13d-6233-465e-b286-be2d9cdb3f90" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +34,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -74,6 +66,7 @@
       <workItem from="1750563162845" duration="617000" />
       <workItem from="1750563787962" duration="203000" />
       <workItem from="1750625503917" duration="394000" />
+      <workItem from="1752457929855" duration="129000" />
     </task>
     <servers />
   </component>
