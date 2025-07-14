@@ -148,7 +148,7 @@ namespace RimRound.Patch
             {
                 Pawn pawn = diffSet?.pawn;
 
-                if (pawn is null)
+                if (pawn is null || !pawn.RaceProps.Humanlike)
                     return;
 
                 int heavyRevianLevel = pawn.TryGetComp<FullnessAndDietStats_ThingComp>()?.perkLevels?.PerkToLevels?["RR_HeavyRevian_Title"] ?? 0;

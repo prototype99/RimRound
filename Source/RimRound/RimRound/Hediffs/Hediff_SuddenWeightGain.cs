@@ -20,7 +20,7 @@ namespace RimRound.Hediffs
                 return;
 
             var fndComp = pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
-            if (fndComp is null)
+            if (fndComp is null || !pawn.RaceProps.Humanlike)
                 return;
 
 

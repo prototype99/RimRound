@@ -66,7 +66,7 @@ namespace RimRound.Patch
                 return defaultValue;
 
             FullnessAndDietStats_ThingComp comp = pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
-            if (comp is null)
+            if (comp is null || !pawn.RaceProps.Humanlike)
                 return defaultValue;
 
 
