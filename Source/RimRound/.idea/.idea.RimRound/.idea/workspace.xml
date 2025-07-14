@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e7ed13d-6233-465e-b286-be2d9cdb3f90" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RimRound/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_AutoFeeder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_FoodProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Building_NutrientDistillery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedingTube/Comps/FoodTransmitter_ThingComp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RimRound.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RimRound/AI/PlayWithBlob/JobDriver_PlayWithBlob.cs" afterDir="false" />
-    </list>
+    <list default="true" id="0e7ed13d-6233-465e-b286-be2d9cdb3f90" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,21 +22,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/seirra/Documents/src/coffees-rjw-ideology-addons",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/seirra/Documents/src/coffees-rjw-ideology-addons&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
@@ -74,6 +66,8 @@
       <workItem from="1750563162845" duration="617000" />
       <workItem from="1750563787962" duration="203000" />
       <workItem from="1750625503917" duration="394000" />
+      <workItem from="1752457929855" duration="129000" />
+      <workItem from="1752458099068" duration="1246000" />
     </task>
     <servers />
   </component>
