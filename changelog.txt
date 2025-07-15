@@ -1,5 +1,11 @@
 ==================================================
 Author: Niwatori401
+Date: Tue Jul 15 00:04:55 2025
+
+Fix RimRound showing up in official content part of loading screen
+
+==================================================
+Author: Niwatori401
 Date: Sun Jul 13 21:23:47 2025
 
 Fix error on right click while pawn selected
