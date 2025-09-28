@@ -111,9 +111,9 @@ namespace RimRound.Utilities
             return false;
         }
 
-        public static int RandomInt(int lower, int upper) 
+        public static int RandomInt(int lowerInclusive, int upperInclusive) 
         {
-            return random.Next(lower, upper + 1);
+            return random.Next(lowerInclusive, upperInclusive + 1);
         }
 
         public static float RandomFloat(float lower, float upper) 

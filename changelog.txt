@@ -35,6 +35,13 @@ Add prelimiary 1.6 support
 
 ==================================================
 Author: Niwatori401
+Date: Sun Jan 26 22:02:48 2025
+
+Ticks bars adjust to prevent lag with very large stomachs
+Add debug gizmo to add fullness capacity
+
+==================================================
+Author: Niwatori401
 Date: Thu Jan 23 01:38:54 2025
 
 Fix error that tried to draw world pawns
@@ -231,6 +238,14 @@ Author: Niwatori401
 Date: Sat Jan 25 23:03:42 2025
 
 Add debug gizmo for fixing broken nutrition
+==================================================
+
+Author: Niwatori401
+Date: Thu Jan 23 01:38:54 2025
+
+Start fix for humanoid pawns without a food need
+Fix error that tried to draw world pawns
+Remove unnecessary logging
 
 ==================================================
 Author: Niwatori401
@@ -277,6 +292,35 @@ Date: Sun Jan 12 22:48:39 2025
 
 Add new male body set and clothing (Courtesy Gosuke)
 Remove unused files
+
+==================================================
+Author: Niwatori401
+Date: Sun Jan 12 20:35:22 2025
+
+Add heuristic fix for strangely configured body paths
+
+==================================================
+Author: Niwatori401
+Date: Mon Dec 30 04:37:07 2024
+
+Mods that align head-anchored parts per body type now work with RR bodies
+
+==================================================
+Author: Niwatori401
+Date: Sun Dec 29 08:31:48 2024
+
+Add working preliminary global race support
+- Body parts not aligned with head will not be drawn for RR bodies
+- Body parts will not be scaled with body size for RR bodies
+- All races not otherwise supported default to the human set
+
+==================================================
+Author: Niwatori401
+Date: Sun Dec 29 04:41:52 2024
+
+Apply RR Comps to BasePawn, not just Humans
+Add checks that only humanoids are affected
+Add patch for HAR to prevent scaling with bodysize
 
 ==================================================
 Author: Niwatori401
