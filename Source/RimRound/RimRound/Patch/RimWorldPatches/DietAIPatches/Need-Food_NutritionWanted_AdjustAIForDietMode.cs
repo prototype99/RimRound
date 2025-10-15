@@ -30,13 +30,13 @@ namespace RimRound.Patch
             // Safe check for the "SetAboveHardLimit" state without dereferencing a null fullnessbar
             bool aboveHardLimit = fullnessComp.fullnessbar != null && fullnessComp.fullnessbar.peaceForeverHeld;
 
-            float burstingNutritionMult = 2f;
+            const float burstingNutritionMult = 2f;
 
             switch (fullnessComp.DietMode)
             {
                 case DietMode.Nutrition:
                     {
-                        var ranges = fullnessComp.GetRanges(); // safe: returns (-1,-1) if bars are null
+                        Pair<float, float> ranges = fullnessComp.GetRanges(); // safe: returns (-1,-1) if bars are null
                         float delta = ranges.Second - ranges.First;
                         if (delta < 0) return; // bars not initialized; keep vanilla
                         __result = aboveHardLimit ? delta * burstingNutritionMult : delta;
@@ -50,7 +50,7 @@ namespace RimRound.Patch
                         }
                         else
                         {
-                            var ranges = fullnessComp.GetRanges();
+                            Pair<float, float> ranges = fullnessComp.GetRanges();
                             float target = ranges.Second;
                             if (target < 0) return; // bars not initialized; keep vanilla
                             __result = target - fullnessComp.CurrentFullness; // was: / ratio (intentionally not used)
@@ -65,7 +65,7 @@ namespace RimRound.Patch
                         }
                         else
                         {
-                            var ranges = fullnessComp.GetRanges();
+                            Pair<float, float> ranges = fullnessComp.GetRanges();
                             float target = ranges.Second;
                             if (target < 0) return; // bars not initialized; keep vanilla
                             __result = target - fullnessComp.CurrentFullness;
