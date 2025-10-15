@@ -1,14 +1,11 @@
 ﻿using HarmonyLib;
 using RimRound.Comps;
-using RimRound.Utilities;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace RimRound.Patch
@@ -30,13 +27,12 @@ namespace RimRound.Patch
             if (zigmaMI is null)
                 Log.Error($"Error getting method info for {nameof(Zigma)}!");
 
-            for (int jndex = 0; jndex < codeInstructions.Count; ++jndex) 
+            for (int jndex = 0; jndex < codeInstructions.Count; ++jndex)
             {
-                if (codeInstructions[jndex].opcode == OpCodes.Ldftn && codeInstructions[jndex + 1].opcode == OpCodes.Newobj) 
-                {
-                    startJndex = jndex + 2;
-                    break;
-                }
+                if (codeInstructions[jndex].opcode != OpCodes.Ldftn ||
+                    codeInstructions[jndex + 1].opcode != OpCodes.Newobj) continue;
+                startJndex = jndex + 2;
+                break;
             }
 
             newInstructions.Add(new CodeInstruction(OpCodes.Ldarg_1));
@@ -75,24 +71,21 @@ namespace RimRound.Patch
             {
                 if (eater is null || !eater.RaceProps.Humanlike || t is null || !(eater.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp fullnessComp) || fullnessComp is null)
                 {
-                    if (!eater.RaceProps.Humanlike && t != null)
+                    if (eater != null && (eater.RaceProps.Humanlike || t == null)) return ogPredicate(t);
+                    bool value = false;
+                    try
                     {
-                        bool value = false;
-                        try
-                        {
-                            value = ogPredicate(t) && !t.def.defName.Contains("FeedingTube") && !t.def.defName.Contains("FoodFaucet");
-                        }
-                        catch
-                        {
-                            //💪꒰ ˘ω˘ 💪 ꒱
-                        }
-                        return value;
+                        value = ogPredicate(t) && !t.def.defName.Contains("FeedingTube") && !t.def.defName.Contains("FoodFaucet");
                     }
-                     return ogPredicate(t);
+                    catch
+                    {
+                        //💪꒰ ˘ω˘ 💪 ꒱
+                    }
+                    return value;
                 }
 
                 // If the thing isn't ingestible in the vanilla sense, don't touch the original predicate
-                if (t?.def?.ingestible == null)
+                if (t.def?.ingestible == null)
                     return ogPredicate(t);
 
                 float ftnRatio = FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
@@ -107,7 +100,7 @@ namespace RimRound.Patch
                 if (ranges.Second < 0)
                     return ogPredicate(t);
 
-                float nutritionValueOfMeal = t.GetStatValue(StatDefOf.Nutrition, true) * ftnRatio;
+                float nutritionValueOfMeal = t.GetStatValue(StatDefOf.Nutrition) * ftnRatio;
                 float wantedNutrition = fullnessComp.DietMode == DietMode.Fullness || fullnessComp.DietMode == DietMode.Hybrid
                     ? fullnessComp.RemainingFullnessUntil(ranges.Second) * ftnRatio
                     : fullnessComp.RemainingFullnessUntil(ranges.Second);
