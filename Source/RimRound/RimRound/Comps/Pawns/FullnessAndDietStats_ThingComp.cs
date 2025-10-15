@@ -21,14 +21,13 @@ namespace RimRound.Comps
 {
     public class FullnessAndDietStats_ThingComp : ThingComp
     {
-        private bool? disabled = null;
-
+        // Do not cache this; pawn needs can initialize after the comp is constructed/spawned
         public bool Disabled {
             get {
-                if (disabled == null) {
-                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
-                }
-                return disabled.GetValueOrDefault();
+                Pawn pawn = parent.AsPawn();
+                if (pawn == null) return true;
+                if (!(pawn.RaceProps?.Humanlike ?? false)) return true;
+                return pawn.needs?.food == null;
             }
         }
 
