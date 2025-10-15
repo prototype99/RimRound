@@ -19,33 +19,65 @@ namespace RimRound.Patch
     {
         public static void Postfix(Need_Food __instance , ref float __result, Pawn ___pawn) 
         {
-			FullnessAndDietStats_ThingComp fullnessComp = ___pawn?.TryGetComp<FullnessAndDietStats_ThingComp>();
+            // Guard: pawn and comp must exist and be humanlike; otherwise, respect vanilla result
+            if (___pawn == null || !___pawn.RaceProps.Humanlike)
+                return;
 
-			if (fullnessComp == null)
-				return;
-			if (!fullnessComp.parent.AsPawn().RaceProps.Humanlike)
-				return;
+            FullnessAndDietStats_ThingComp fullnessComp = ___pawn.TryGetComp<FullnessAndDietStats_ThingComp>();
+            if (fullnessComp == null || fullnessComp.Disabled)
+                return;
 
-			float burstingNutritionMult = 2f;
+            // Safe check for the "SetAboveHardLimit" state without dereferencing a null fullnessbar
+            bool aboveHardLimit = fullnessComp.fullnessbar != null && fullnessComp.fullnessbar.peaceForeverHeld;
 
-			switch (fullnessComp.DietMode)
-			{
-				case DietMode.Nutrition:
-					__result = fullnessComp.SetAboveHardLimit ? (fullnessComp.GetRanges().Second - fullnessComp.GetRanges().First) * burstingNutritionMult : fullnessComp.GetRanges().Second - fullnessComp.GetRanges().First;
-					return;
-				case DietMode.Hybrid:
-					__result = fullnessComp.SetAboveHardLimit ? fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) * burstingNutritionMult : (fullnessComp.GetRanges().Second - fullnessComp.CurrentFullness);// / fullnessComp.CurrentFullnessToNutritionRatio;
-					return;
-				case DietMode.Fullness:
-					__result = fullnessComp.SetAboveHardLimit ? fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) * burstingNutritionMult : (fullnessComp.GetRanges().Second - fullnessComp.CurrentFullness);
-					return;
-				case DietMode.Disabled:
-					return;
-				default:
-					Log.Error($"{fullnessComp.parent.AsPawn().Name.ToStringShort}'s DietMode was invalid in RimRound_NeedFood_NutritionWantedPatch");
-					return;
+            float burstingNutritionMult = 2f;
 
-			}
-		}
+            switch (fullnessComp.DietMode)
+            {
+                case DietMode.Nutrition:
+                    {
+                        var ranges = fullnessComp.GetRanges(); // safe: returns (-1,-1) if bars are null
+                        float delta = ranges.Second - ranges.First;
+                        if (delta < 0) return; // bars not initialized; keep vanilla
+                        __result = aboveHardLimit ? delta * burstingNutritionMult : delta;
+                        return;
+                    }
+                case DietMode.Hybrid:
+                    {
+                        if (aboveHardLimit)
+                        {
+                            __result = fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) * burstingNutritionMult;
+                        }
+                        else
+                        {
+                            var ranges = fullnessComp.GetRanges();
+                            float target = ranges.Second;
+                            if (target < 0) return; // bars not initialized; keep vanilla
+                            __result = target - fullnessComp.CurrentFullness; // was: / ratio (intentionally not used)
+                        }
+                        return;
+                    }
+                case DietMode.Fullness:
+                    {
+                        if (aboveHardLimit)
+                        {
+                            __result = fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) * burstingNutritionMult;
+                        }
+                        else
+                        {
+                            var ranges = fullnessComp.GetRanges();
+                            float target = ranges.Second;
+                            if (target < 0) return; // bars not initialized; keep vanilla
+                            __result = target - fullnessComp.CurrentFullness;
+                        }
+                        return;
+                    }
+                case DietMode.Disabled:
+                    return; // respect vanilla
+                default:
+                    Log.Error($"{fullnessComp.parent.AsPawn().Name.ToStringShort}'s DietMode was invalid in RimRound_NeedFood_NutritionWantedPatch");
+                    return;
+            }
+        }
     }
 }
