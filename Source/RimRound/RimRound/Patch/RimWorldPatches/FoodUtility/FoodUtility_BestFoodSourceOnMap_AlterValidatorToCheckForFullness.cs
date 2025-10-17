@@ -91,22 +91,31 @@ namespace RimRound.Patch
                      return ogPredicate(t);
                 }
 
-                float ftnRatio = FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
+                // If the thing isn't ingestible in the vanilla sense, don't touch the original predicate
+                if (t?.def?.ingestible == null)
+                    return ogPredicate(t);
 
-                if (t.TryGetComp<ThingComp_FoodItems_NutritionDensity>() is ThingComp_FoodItems_NutritionDensity nutDensityComp && nutDensityComp != null)
+                float ftnRatio = FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
+                ThingComp_FoodItems_NutritionDensity nutDensityComp = t.TryGetComp<ThingComp_FoodItems_NutritionDensity>();
+                if (nutDensityComp != null)
                 {
                     ftnRatio = nutDensityComp.Props.fullnessToNutritionRatio;
                 }
-                int stackCount = 0;
+
+                // If bars aren't initialized, fall back to original behavior
+                Pair<float, float> ranges = fullnessComp.GetRanges();
+                if (ranges.Second < 0)
+                    return ogPredicate(t);
+
                 float nutritionValueOfMeal = t.GetStatValue(StatDefOf.Nutrition, true) * ftnRatio;
+                float wantedNutrition = fullnessComp.DietMode == DietMode.Fullness || fullnessComp.DietMode == DietMode.Hybrid
+                    ? fullnessComp.RemainingFullnessUntil(ranges.Second) * ftnRatio
+                    : fullnessComp.RemainingFullnessUntil(ranges.Second);
 
-                float wantedNutrition = fullnessComp.DietMode == DietMode.Fullness || fullnessComp.DietMode == DietMode.Hybrid ? fullnessComp.RemainingFullnessUntil(fullnessComp.GetRanges().Second) * ftnRatio : fullnessComp.RemainingFullnessUntil(fullnessComp.GetRanges().Second);
+                int stackCount = FoodUtility.StackCountForNutrition(wantedNutrition, nutritionValueOfMeal);
 
-
-
-                stackCount = FoodUtility.StackCountForNutrition(wantedNutrition, nutritionValueOfMeal);
-
-                if (!fullnessComp.SetAboveHardLimit && fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) <=  nutritionValueOfMeal * stackCount)
+                bool aboveHardLimit = fullnessComp.fullnessbar != null && fullnessComp.fullnessbar.peaceForeverHeld;
+                if (!aboveHardLimit && fullnessComp.RemainingFullnessUntil(fullnessComp.HardLimit) <= nutritionValueOfMeal * stackCount)
                     return false;
 
                 return ogPredicate(t);
