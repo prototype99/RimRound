@@ -24,7 +24,7 @@ namespace RimRound.Patch
 
             Pawn pawn = __instance.pawn;
 
-            if (pawn is null)
+            if (pawn is null || !pawn.RaceProps.Humanlike)
                 return;
 
             var comp = pawn.TryGetComp<FullnessAndDietStats_ThingComp>();

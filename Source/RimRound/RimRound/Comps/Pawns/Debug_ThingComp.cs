@@ -18,15 +18,32 @@ namespace RimRound.Comps
 
         PawnBodyType_ThingComp cachedPBTComp = null;
 
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            if (Disabled) { return; }
             cachedPBTComp = parent.TryGetComp<PawnBodyType_ThingComp>();
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (Disabled) { yield break; }
+
             if (Prefs.DevMode)
             {
                 yield return new Command_Action
@@ -236,6 +253,21 @@ namespace RimRound.Comps
                         }
                     };
 
+                    yield return new Command_Action
+                    {
+                        defaultLabel = $"{(positivity == 1 ? "Add" : "Subtract")} Fullness capacity ({offsetAmounts[offsetAmountsIndex]} Liters)",
+                        icon = (positivity == 1 ? Resources.ADD_SEVERITY_ICON : Resources.REDUCE_SEVERITY_ICON),
+                        action = delegate ()
+                        {
+                            Resources.gizmoClick.PlayOneShotOnCamera(null);
+                            FullnessAndDietStats_ThingComp comp = ((Pawn)parent).TryGetComp<FullnessAndDietStats_ThingComp>();
+
+                            if (comp is null)
+                                return;
+
+                            comp.AddFullnessCapacity(positivity * offsetAmounts[offsetAmountsIndex]);
+                        }
+                    };
 
                     yield return new Command_Action
                     {

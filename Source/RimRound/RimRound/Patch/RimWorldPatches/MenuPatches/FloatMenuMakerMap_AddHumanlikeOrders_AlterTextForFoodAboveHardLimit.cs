@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimRound.Comps;
 using RimRound.Utilities;
 using RimWorld;
@@ -37,7 +37,7 @@ namespace RimRound.Patch
                     clickedThing.TryGetComp<ThingComp_FoodItems_NutritionDensity>()?.Props?.fullnessToNutritionRatio ??
                     FullnessAndDietStats_ThingComp.defaultFullnessToNutritionRatio;
 
-                if (selectedPawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp &&
+                if (selectedPawn.RaceProps.Humanlike && selectedPawn.TryGetComp<FullnessAndDietStats_ThingComp>() is FullnessAndDietStats_ThingComp FnDStatsComp &&
                     clickedThing.def.ingestible.CachedNutrition * fullnessToNutritionRatio >= FnDStatsComp.RemainingFullnessUntil(FnDStatsComp.HardLimit))
                 {
                     if (!FnDStatsComp.fullnessbar.peaceForeverHeld)

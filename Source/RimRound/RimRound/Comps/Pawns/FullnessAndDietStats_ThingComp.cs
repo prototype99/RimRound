@@ -21,14 +21,13 @@ namespace RimRound.Comps
 {
     public class FullnessAndDietStats_ThingComp : ThingComp
     {
-        private bool? disabled = null;
-
+        // Do not cache this; pawn needs can initialize after the comp is constructed/spawned
         public bool Disabled {
             get {
-                if (disabled == null) {
-                    disabled = this.parent.AsPawn()?.needs?.food == null;
-                }
-                return disabled.GetValueOrDefault();
+                Pawn pawn = parent.AsPawn();
+                if (pawn == null) return true;
+                if (!(pawn.RaceProps?.Humanlike ?? false)) return true;
+                return pawn.needs?.food == null;
             }
         }
 
@@ -52,6 +51,7 @@ namespace RimRound.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+            if (Disabled) { return; }
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
@@ -638,6 +638,10 @@ namespace RimRound.Comps
                 ((CurrentFullness / CurrentFullnessToNutritionRatio) + incomingNutrition);
         }
 
+
+        public void AddFullnessCapacity(float liters) {
+            softLimitPersonal = Mathf.Max(softLimitPersonal + liters, 0.5f);
+        }
 
         public DietMode DietMode
         {

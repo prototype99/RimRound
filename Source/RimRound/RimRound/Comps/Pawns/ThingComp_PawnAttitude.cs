@@ -12,16 +12,33 @@ namespace RimRound.Comps
 {
     public class ThingComp_PawnAttitude : ThingComp
     {
+
+        private bool? disabled = null;
+
+        public bool Disabled
+        {
+            get
+            {
+                if (disabled == null)
+                {
+                    disabled = !this.parent.AsPawn().RaceProps.Humanlike || this.parent.AsPawn()?.needs?.food == null;
+                }
+                return disabled.GetValueOrDefault();
+            }
+        }
+
+
         public override void PostExposeData()
         {
             base.PostExposeData();
-
+            if (Disabled) { return; }
             Scribe_Values.Look<WeightOpinion>(ref weightOpinion, "weightOpinion");
             Scribe_Values.Look<float?>(ref gainingResistance, "gainingResistance");
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (Disabled) { yield break; }
             if (Prefs.DevMode)
             {
                 yield return new Command_Action
