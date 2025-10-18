@@ -1,11 +1,7 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimRound.Utilities;
 using RimWorld;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse.AI;
 
 namespace RimRound.Patch
@@ -30,7 +26,7 @@ namespace RimRound.Patch
                 toil.actor.Drawer.renderer.renderTree.SetDirty();
             };
 
-            __result.initAction = new Action(() => { vanillaAction(); newAction(); });
+            __result.initAction = () => { vanillaAction(); newAction(); };
         }
     }
 }
